@@ -1,0 +1,7 @@
+.vault_pass
+.vagrant
+vendor/roles
+group_vars/
+
+*.py[co]
+

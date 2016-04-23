@@ -1,0 +1,553 @@
+/*
+ * Plugin: Shortcodes Indep
+ * Author: ThemesIndep
+ * Copyright: ThemesIndep, 2013
+ * License: GNU General Public License version 3.0
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+
+/* -- ACCORDION ------------------------- */
+.sc-accordion {
+	margin-bottom: 18px;	
+}
+
+.sc-accordion .trigger {
+	display: block;
+	position:relative;
+	color: #444;
+	padding: 21px 0 18px 30px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	font-size: 1em;
+	line-height: 1.5em;
+	text-decoration: none;
+	margin-top: -1px;
+}
+.sc-accordion .trigger:hover {
+	color:#777;
+}
+
+.sc-accordion .trigger:after,
+.sc-accordion .trigger.active:after{
+	position:absolute;
+	top:15px;
+	left:0;
+	font:normal 32px "Courier New", Courier, monospace;
+}
+
+.sc-accordion .trigger:after {
+	content:"+";
+}
+
+.sc-accordion .trigger.active:after {
+	content:"-";
+}
+
+.sc-accordion .trigger.active:hover {
+	color: #000;
+}
+
+.sc-accordion .content {
+	display: none;
+	color: #555;
+	overflow: hidden;
+	padding: 18px 0 21px 30px;
+	border-bottom: 1px solid #000;
+	border-top: 0;
+}
+
+
+
+/* -- Buttons ------------------------- */
+.sc-button {
+	font-size: 14px;
+	display: inline-block;
+	text-decoration: none;
+	margin-bottom: 4px;
+	transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.sc-button span{
+	display: block;
+	padding: 1.2em 1.5em;
+	line-height: 0.9em;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.sc-button:hover {
+	opacity:0.7;
+}
+
+
+
+/* -- Info Box & Image Box ------------------------- */
+.sc-dropcap {
+    float:left;
+    font-size:90px;
+    line-height:76px;
+    font-weight:bold;
+    padding:0 15px 0 0;
+}
+
+
+
+/* -- Info Box & Image Box ------------------------- */
+.sc-box {
+	padding: 12px;
+	margin-bottom: 18px;
+}
+
+
+.sc-box.opacity-on {
+	background-image: linear-gradient(to bottom,  rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%);
+}
+
+
+.sc-box.content-white,
+.sc-box.content-white h2 {
+	color: #fff;
+}
+	.sc-box.content-white .inner {
+		border: 1px solid #fff;
+	}
+	.sc-box.content-white .sep{
+		background-color:#fff;
+	}
+
+.sc-box.content-black {
+	color: #000;
+}
+	.sc-box.content-black .inner {
+		border: 1px solid #000;
+	}
+	.sc-box.content-black .sep{
+		background-color:#000;
+	}
+	
+.sc-box .inner{
+	padding-left: 60px;
+	padding-right: 60px;
+	text-align: center;
+	position: relative;
+	transition: all 0.2s linear;
+}
+
+.sc-box.content-white .inner:hover,
+.sc-box.content-black .inner:hover{
+	opacity: 0.5;
+}
+
+.sc-box h2{
+	font-size: 32px !important;
+	font-weight:bold;
+	line-height: 38px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.sc-box span{
+	display: block;
+	font-size: 18px;
+}
+
+.sc-box .sep{
+	height: 1px;
+	padding:0;
+	margin: 18px auto 16px;
+	width:30%;
+}
+
+.sc-box a.sc-link{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* -- Image Box ------------------------- */
+.sc-box.sc-image.content-white,
+.sc-box.sc-image.content-black {
+	background-size: cover;
+	background-position: center;
+}
+
+.sc-image.content-white { background: #000; }
+.sc-image.content-black { background: #fff; }
+
+.sc-image.content-white .inner:hover{
+	background: #000;
+	border:1px solid #000;
+	opacity: 0.8;
+}
+
+.sc-image.content-black .inner:hover{
+	background: #fff;
+	border:1px solid #fff;
+	opacity: 0.9;
+}
+
+
+
+/* -- Info Box & Buttons Colors  ------------------------- */
+.color-black span, .color-black:hover	{ color: #000; }
+.color-white span, .color-white:hover	{ color: #fff; }
+
+.bg-red		{ background-color: #fe6969; }
+.bg-pink	{ background-color: #f15ac0; }
+.bg-orange	{ background-color: #ffb105; }
+.bg-yellow	{ background-color: #face00; }
+.bg-green	{ background-color: #00deaf; }
+.bg-teal	{ background-color: #00babe; }
+.bg-blue	{ background-color: #0faded; }
+.bg-purple	{ background-color: #664c66; }
+.bg-brown	{ background-color: #cccbad; }
+.bg-gray	{ background-color: #ddd; }
+.bg-black	{ background-color: #111; }
+
+
+
+/* -- Columns ------------------------- */
+.sc-columns {
+    clear: both;
+	margin-left: -2%;	
+}
+
+.sc-columns div.col{
+	float: left;
+	margin-left: 2%;
+	margin-bottom: 18px;
+}
+
+.sc-columns div.col img{
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+.sc-columns.half div.col{
+	width: 48%;
+}
+
+.sc-columns.third div.col {
+	width: 31.33%;
+}
+
+.sc-columns.fourth div.col {
+	width: 23%;
+}
+
+.sc-columns.two-thirds-and-third div.col:first-of-type{
+	width: 64.67%;
+}
+
+.sc-columns.two-thirds-and-third div.col{
+	width: 31.33%;
+}
+
+.sc-columns.third-and-two-thirds div.col:first-of-type{
+	width: 31.33%;
+}
+
+.sc-columns.third-and-two-thirds div.col{
+	width: 64.67%;
+}
+
+.sc-columns > br,
+.sc-columns .col + br{
+	display:none;
+}
+
+
+/* -- Tabs ------------------------- */
+.sc-tabs {
+	margin: 18px 0;
+	border-top: 3px solid #000;
+	border-bottom: 1px solid #ddd;
+}
+
+.sc-tabs .tabs-nav {
+	display: block;
+	margin: 0 !important;
+	padding: 0 !important;
+	border-bottom: 1px solid #ddd;
+}
+
+.sc-tabs .tabs-nav li {
+	display: block;
+	float: left;
+	width: auto;
+	margin: 0 !important;
+	padding: 10px 0 0 !important;
+	outline: none;
+	list-style: none !important;
+}
+
+.sc-tabs .tabs-nav li a {
+	display: block;
+	width: auto;
+	line-height: 40px;
+	margin: 0 0 0 30px;
+	font-size: 1em;
+	text-decoration: none;
+	color: #777;
+	outline:none;
+}
+
+.sc-tabs .tabs-nav li:first-child a {
+	margin-left: 0;
+}
+
+.sc-tabs .tabs-nav li a:hover {
+	color: #222;
+}
+
+.sc-tabs .tabs-nav a.current {
+	background: #fff;
+	height: 45px;
+	position: relative;
+	color: #222;
+	border-bottom: 3px solid #000 !Important;
+}
+
+.sc-tabs .tabs-nav a.current:hover {
+	background: #fff;
+}
+
+.sc-tabs .tab-content {
+	padding: 18px 0;
+	background: #fff;
+}
+
+
+	/* -- Vertcal Tabs Layout Media Query ------------------------- */
+	.sc-tabs.tabs-vertical .tabs-nav{
+		float: left;
+		width: 30%;
+		border-right: 1px solid #ddd;
+		border-bottom: 0;
+		padding: 40px 50px 50px 0 !important;
+		box-sizing:border-box;
+	}
+	
+	.sc-tabs.tabs-vertical .tabs-nav li {
+		float: none;
+		display: block;
+		padding: 0 !important;
+		height: 45px;
+		border-bottom: 1px solid #ddd;
+	}
+	
+	.sc-tabs.tabs-vertical .tabs-nav li a {
+		height: 45px;
+		line-height: 48px;
+		margin: 0;
+	}
+	
+	.sc-tabs.tabs-vertical .panes {
+		float: left;
+		width: 62.6%;
+	}
+	
+	.sc-tabs.tabs-vertical .tab-content {
+		padding: 50px;
+		border-left: 1px solid #ddd;
+		margin-left: -1px;
+	}
+
+
+/* -- Title ------------------------- */
+.sc-title {
+	text-align: center;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+	
+}
+
+.sc-title .title {
+	font-size: 50px !important;
+	line-height: 120% !important;
+	margin-bottom: 0 !important;
+}
+
+.sc-title .title span {
+	display: inline-block;
+	background: #fff;
+	padding: 0 20px;
+}
+
+.sc-title .sub-title {
+	font-size: 18px;
+	letter-spacing: 0.2em;
+	color: #8c919b;
+}
+
+
+
+/* -- Authors ------------------------- */
+.sc-authors {
+	margin: 0;
+	padding: 0 !important;
+	margin-left: -2%;
+	text-align:center;
+}
+
+.sc-authors li {
+	display:inline-block;
+	list-style: none !important;
+	text-align:center;
+	padding: 0 !important;
+	margin-left: 2%;
+}
+
+.sc-authors.two-cols li {
+	width: 48%;
+}
+
+.sc-authors.three-cols li {
+	width: 31.33%;
+}
+
+.sc-authors.four-cols li {
+	width: 23%;
+}
+
+.author-avatar {
+	text-align:center;
+    margin-bottom:18px;
+}
+
+.author-avatar.round img {
+	border-radius:50%;
+}
+
+.entry-content .sc-authors li h2 {
+	font-size:18px;
+    line-height:100%;
+	text-transform:uppercase;
+}
+
+.entry-content .sc-authors li h2 a {
+	text-decoration:none;
+}
+
+
+
+/* -- Separator ------------------------- */
+.sc-separator {
+	margin: 15px 0 30px;
+}
+
+.sc-separator.type-thin {
+	border-top: 1px solid #8c919b;
+}
+
+.sc-separator.type-thick {
+	border-top: 3px solid #8c919b;
+}
+
+.sc-separator.type-space {
+	clear: both;
+	height: 1px;
+	margin:30px 0 50px;
+}
+
+
+/* -- Image Box & Info Box ------------------------- */
+.sc-box h2 {
+	letter-spacing:-0.05em;
+}
+
+.sc-box .inner {
+	padding-left:5%;
+	padding-right:5%;
+}
+
+
+/* -- Clear Floats ------------------------- */
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+} 
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+
+
+@media only screen and (max-width: 750px) {
+
+	/* -- Columns & Authors ------------------------- */
+	.sc-columns,
+	.sc-authors {
+		text-align:center;
+	}
+
+	.sc-columns div.col,
+	.sc-authors li {
+		float: none;
+		margin-left: 0;
+		width:100% !important;
+	}
+	
+
+	/* --  Tabs ------------------------- */
+	.sc-tabs .tabs-nav li {
+		padding:0 !important;
+		float:none;
+		border-bottom: 1px solid #eee;
+		height:61px;
+	}
+
+	.sc-tabs .tabs-nav li a {
+		line-height: 45px;
+		padding:8px 0;
+		margin:0;
+	}
+
+	.sc-tabs .tabs-nav a.current,
+	.sc-tabs .tabs-nav a.current:hover {
+		background: #f8f8f8;
+		border:0 !important;
+	}
+
+	.sc-tabs .tab-content,
+	.sc-tabs.tabs-vertical .tab-content {
+		padding: 32px 0 14px;
+		border:none;
+	}
+
+
+	.sc-tabs.tabs-vertical .tabs-nav{
+		float:none;
+		width: 100%;
+		border-right: 0;
+		padding: 0 !important;
+	}
+	
+	.sc-tabs.tabs-vertical .tabs-nav li {
+		float:none;
+		width:100%;
+		height:61px;
+		border-bottom: 1px solid #eee;
+	}
+	
+}
+
+/* -- Remove the <p> tag from the WP Editor section --*/
+.sc-tabs p,
+.sc-box p,
+.sc-accordion p {margin:0 !important; padding:0 !important;}

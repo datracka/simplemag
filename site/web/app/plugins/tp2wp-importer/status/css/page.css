@@ -1,0 +1,32 @@
+.tp2wp-status-check,
+.tp2wp-status-check td,
+.tp2wp-status-check th {
+    border: 1px solid #ccc;
+}
+
+.tp2wp-status-check td,
+.tp2wp-status-check th {
+    padding: .5em;
+    vertical-align: top;
+}
+
+.tp2wp-status-check .result-cell {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+.tp2wp-status-check tbody th {
+    text-align: left;
+}
+
+.tp2wp-status-check .warning {
+    background-color: #FAF8BE;
+}
+
+.tp2wp-status-check .success {
+    background-color: #96FF98;
+}
+
+.tp2wp-status-check .error {
+    background-color: #FF8F8F;
+}

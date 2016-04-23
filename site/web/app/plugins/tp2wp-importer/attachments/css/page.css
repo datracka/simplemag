@@ -1,0 +1,33 @@
+#tp2wp-import-log {
+    width: 99%;
+    font-family: Consolas,Monaco,monospace;
+    direction: ltr;
+    line-height: 1.4;
+    padding: 4px 6px 1px;
+    border: 1px solid #DDD;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07) inset;
+    background-color: #FFF;
+    color: #333;
+    transition: border-color 0.05s ease-in-out 0s;
+
+    height: 20em;
+    overflow: scroll
+}
+
+
+#tp2wp-import-log .log-message-success {
+    background-color: #96FF98;
+}
+
+#tp2wp-import-log .log-message-error {
+    background-color: #FF8F8F;
+}
+
+#tp2wp-import-log .log-message-info {
+    background-color: #FAF8BE;
+}
+
+.form-table td label,
+.form-table dt {
+    font-weight: bold;
+}
