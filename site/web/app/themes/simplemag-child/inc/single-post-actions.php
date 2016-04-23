@@ -187,13 +187,13 @@ function single_posts_nav() {
     <nav class="single-box clearfix nav-single">
         <?php if ( !empty( $prev_post ) ) { ?>
         <div class="nav-previous">
-            <?php previous_post_link ( '%link', '<i class="icomoon-chevron-left"></i><span class="nav-title">' . __( 'Previous article', 'themetext' ) . '</span>%title', TRUE ); ?>
+            <?php previous_post_link ( '%link', '<i class="icomoon-chevron-left"></i><span class="nav-title">' . __( 'Artículo anterior', 'themetext' ) . '</span>%title', TRUE ); ?>
         </div>
         <?php } ?>
 
         <?php if ( !empty( $next_post ) ){ ?>
         <div class="nav-next">
-            <?php next_post_link( '%link', '<i class="icomoon-chevron-right"></i><span class="nav-title">' . __( 'Next article', 'themetext' ) . '</span>%title', TRUE ); ?>
+            <?php next_post_link( '%link', '<i class="icomoon-chevron-right"></i><span class="nav-title">' . __( 'Siguiente artículo', 'themetext' ) . '</span>%title', TRUE ); ?>
         </div>
         <?php } ?>
     </nav><!-- .nav-single -->
