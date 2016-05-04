@@ -1,0 +1,818 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SendinBlue plugin\n"
+"POT-Creation-Date: 2015-10-14 19:26+0700\n"
+"PO-Revision-Date: 2015-10-14 19:26+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.7\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../page/page-campaigns.php:39 ../page/page-home.php:285
+msgid "Campaigns"
+msgstr "Campagnes"
+
+#: ../page/page-form.php:39
+msgid "Settings"
+msgstr "Paramètres"
+
+#: ../page/page-form.php:123
+msgid "Sign up process"
+msgstr "Processus d'inscription"
+
+#: ../page/page-form.php:126
+msgid ""
+"Confirmation emails will be sent through your own email server, but you have "
+"no guarantees on their deliverability. <br/> <a href=\"https://mysmtp."
+"sendinblue.com\" target=\"_blank\">Click here</a> to send your emails "
+"through SendinBlue in order to improve your deliverability and get statistics"
+msgstr ""
+"Les emails de confirmation seront envoyés par votre propre serveur email. "
+"Vous n'avez donc aucune garantie sur la délivrabilité de vos emails. <br/> "
+"Pour améliorer la délivrabilité et obtenir des statistiques, activez l'envoi "
+"des emails via le serveur SMTP de SendinBlue en <a href=\"https://mysmtp."
+"sendinblue.com\" target=\"_blank\">cliquant ici</a>"
+
+#: ../page/page-form.php:127
+msgid ""
+"The template you selected does not include a link [DOUBLEOPTIN] to allow "
+"subscribers to confirm their subscription. <br/> Please edit the template to "
+"include a link with [DOUBLEOPTIN] as URL."
+msgstr ""
+"Le template choisi ne contient pas de lien [DOUBLEOPTIN] qui permet aux "
+"inscrits de confirmer leur inscription. <br/> Vous devez modifier votre "
+"template pour inclure le shortcode [DOUBLEOPTIN] à la place d'une URL avant "
+"de pouvoir le choisir."
+
+#: ../page/page-form.php:130
+msgid "Select the list where you want to add your new subscribers"
+msgstr "Sélectionner la liste ou vous voulez enregistrer vos contacts"
+
+#: ../page/page-form.php:136
+msgid "Send a confirmation email"
+msgstr "Envoyer un message de confirmation"
+
+#: ../page/page-form.php:136 ../page/page-form.php:311
+msgid "Confirmation message"
+msgstr "Message de confirmation"
+
+#: ../page/page-form.php:136
+msgid ""
+"You can choose to send a confirmation email. You will be able to set up the "
+"template that will be sent to your new suscribers"
+msgstr ""
+"Vous pouvez choisir d'envoyer un message de confirmation. Vous serez ainsi "
+"capable de paramétrer le template qui sera envoyé à vos nouveaux inscrits"
+
+#: ../page/page-form.php:138 ../page/page-form.php:157
+#: ../page/page-form.php:182
+msgid "Yes"
+msgstr "Oui"
+
+#: ../page/page-form.php:139 ../page/page-form.php:158
+#: ../page/page-form.php:187
+msgid "No"
+msgstr "Non"
+
+#: ../page/page-form.php:142
+msgid ""
+"Select \"Yes\" if you want your subscribers to receive a confirmation email"
+msgstr ""
+"Sélectionner \"Oui\" si vous souhaitez que vous nouveaux inscrits reçoivent "
+"un email de confirmation"
+
+#: ../page/page-form.php:147
+msgid "Default"
+msgstr "Défaut"
+
+#: ../page/page-form.php:151 ../page/page-form.php:169
+msgid "Set up my templates"
+msgstr "Paramétrer mes templates"
+
+#: ../page/page-form.php:155
+msgid "Double Opt-In"
+msgstr "Double Opt-In"
+
+#: ../page/page-form.php:155
+msgid ""
+"Your subscribers will receive an email inviting them to confirm their "
+"subscription. Be careful, your subscribers are not saved in your list before "
+"confirming their subscription."
+msgstr ""
+"Les inscrits à votre newsletter recevront un email pour confirmer leur "
+"inscription. Attention, les inscrits ne sont pas rajoutés à votre liste de "
+"contact tant que leur inscription n'est pas confirmée."
+
+#: ../page/page-form.php:161
+msgid ""
+"Select \"Yes\" if you want your subscribers to confirm their email address"
+msgstr ""
+"Sélectionner \"Oui\" si vous souhaitez que vous nouveaux inscrits confirment "
+"leurs adresses emails"
+
+#: ../page/page-form.php:173
+msgid "Redirect to this URL after clicking in the email"
+msgstr "Rediriger sur cette URL après avoir cliqué sur le lien dans l'email"
+
+#: ../page/page-form.php:180
+msgid "Redirect to this URL after subscription"
+msgstr "Rediriger vers ce lien après inscription"
+
+#: ../page/page-form.php:190
+msgid ""
+"Select \"Yes\" if you want to redirect your subscribers to a specific page "
+"after they fullfill the form"
+msgstr ""
+"Sélectionner \"Oui\" si vous voulez rediriger vos nouveaux inscrits sur une "
+"page après inscription"
+
+#: ../page/page-form.php:206 ../page/page-form.php:299
+#: ../page/page-form.php:344
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: ../page/page-form.php:219
+msgid "Subscription form"
+msgstr "Formulaire d'inscription"
+
+#: ../page/page-form.php:233
+msgid "Use the shortcode"
+msgstr "Utiliser le shortcode"
+
+#: ../page/page-form.php:237
+msgid "inside a post, page or text widget to display your sign-up form."
+msgstr ""
+"à l'intérieur d'un article, d'une page ou d'un widget de texte afin d'y "
+"ajouter votre formulaire d'inscription"
+
+#: ../page/page-form.php:238
+msgid "Do not copy and paste the above form mark up, that will not work"
+msgstr "Ne copiez coller pas le code ci-dessus, cela ne fonctionnera pas"
+
+#: ../page/page-form.php:243
+msgid "Email Address"
+msgstr "Adresse email"
+
+#: ../page/page-form.php:244
+msgid "Sign up"
+msgstr "S'inscrire"
+
+#: ../page/page-form.php:245
+msgid "Select SendinBlue Attribute"
+msgstr "Sélectionner un attribut SendinBlue"
+
+#: ../page/page-form.php:246
+msgid "SendinBlue merge fields : Normal"
+msgstr "Champs synchronisé avec SendinBlue : normal"
+
+#: ../page/page-form.php:247
+msgid "SendinBlue merge fields : Category"
+msgstr "Champs synchronisé avec SendinBlue : catégorie"
+
+#: ../page/page-form.php:248
+msgid "Other"
+msgstr "Autre"
+
+#: ../page/page-form.php:249
+msgid "Submit Button"
+msgstr "Bouton de validation"
+
+#: ../page/page-form.php:252
+msgid "Add a new Field"
+msgstr "Ajouter un nouveau champ"
+
+#: ../page/page-form.php:253
+msgid "Add a New Field"
+msgstr "Ajouter un nouveau champ"
+
+#: ../page/page-form.php:253
+msgid "Choose an attribute and add it to the subscription form of your Website"
+msgstr ""
+"Choisir un attribut et l'ajouter au formulaire d'inscription de votre site"
+
+#: ../page/page-form.php:259
+msgid "Label"
+msgstr "Intitulé"
+
+#: ../page/page-form.php:259 ../page/page-form.php:263
+#: ../page/page-form.php:267
+msgid "Optional"
+msgstr "Optionnel"
+
+#: ../page/page-form.php:263
+msgid "Place holder"
+msgstr "Ordre"
+
+#: ../page/page-form.php:267
+msgid "Initial value"
+msgstr "Valeur initiale"
+
+#: ../page/page-form.php:271 ../widget/widget_form.php:84
+msgid "Button Text"
+msgstr "Bouton de texte"
+
+#: ../page/page-form.php:277
+msgid "Wrap in Paragraph (&lt;p&gt;) tags ?"
+msgstr "Entourer de balise <p> ?"
+
+#: ../page/page-form.php:280
+msgid "Required field ?"
+msgstr "Champ obligatoire ?"
+
+#: ../page/page-form.php:283
+msgid "Drop-down List"
+msgstr "Liste déroulante"
+
+#: ../page/page-form.php:284
+msgid "Radio List"
+msgstr "boutons radio"
+
+#: ../page/page-form.php:288
+msgid "Add to form"
+msgstr "Ajouter au formulaire"
+
+#: ../page/page-form.php:291
+msgid "Generated HTML"
+msgstr "HTML généré"
+
+#: ../page/page-form.php:315 ../page/page-form.php:318
+msgid "Success message"
+msgstr "Message de validation"
+
+#: ../page/page-form.php:318
+msgid ""
+"Set up the success message that will appear when one of your visitors "
+"surccessfully signs up"
+msgstr "Paramétrer le message qui apparaît lorsque l'inscription est réussie"
+
+#: ../page/page-form.php:322
+msgid "General error message"
+msgstr "Message d'erreur"
+
+#: ../page/page-form.php:325
+msgid "General message error"
+msgstr "Message d'erreur"
+
+#: ../page/page-form.php:325
+msgid ""
+"Set up the message that will appear when an error occurs during the "
+"subscritpion process"
+msgstr "Paramétrer le message qui apparaît lorsqu'une erreur survient"
+
+#: ../page/page-form.php:329
+msgid "Existing subscribers"
+msgstr "Contact existant déjà"
+
+#: ../page/page-form.php:332
+msgid "Existing Suscribers"
+msgstr "Contact existant déjà"
+
+#: ../page/page-form.php:332
+msgid ""
+"Set up the message that will appear when a suscriber is already in your "
+"database"
+msgstr ""
+"Paramétrer le message qui apparaît lorsque le contact est déjà présent dans "
+"votre base de données"
+
+#: ../page/page-form.php:336
+msgid "Invalid email address"
+msgstr "Adresse email invalide"
+
+#: ../page/page-form.php:339
+msgid "Invalid email adress"
+msgstr "Adresse email invalide"
+
+#: ../page/page-form.php:339
+msgid ""
+"Set up the message that will appear when the email address used to sign up "
+"is not valid"
+msgstr ""
+"Paramétrer le message qui apparaît lorsque l'adresse utilisée pour "
+"l'inscription n'est pas valide"
+
+#: ../page/page-home.php:39 ../page/page-home.php:533
+#: ../page/page-home.php:675 ../sendinblue.php:1034
+msgid "SendinBlue"
+msgstr "SendinBlue"
+
+#: ../page/page-home.php:40
+msgid "Home"
+msgstr "Page d'accueil"
+
+#: ../page/page-home.php:115 ../page/page-home.php:148
+msgid "Step"
+msgstr "Etape"
+
+#: ../page/page-home.php:116
+msgid "Create a SendinBlue Account"
+msgstr "Créer un compte SendinBlue"
+
+#: ../page/page-home.php:120
+msgid ""
+"By Creating a free SendinBlue account, you will have access to send a "
+"confirmation message."
+msgstr ""
+"En créant un compte gratuit SendinBlue, vous pourrez envoyer un message de "
+"confirmation après inscription."
+
+#: ../page/page-home.php:123
+msgid "Collect your contacts and upload your lists"
+msgstr "Collectez vos contacts et importez vos listes"
+
+#: ../page/page-home.php:126
+msgid "Use SendinBlue SMTP to send your transactional emails"
+msgstr "Utilisez le SMTP SendinBlue pour vos emails transactionnels"
+
+#: ../page/page-home.php:129
+msgid "Email marketing builders"
+msgstr "Editeurs d'Email Marketing"
+
+#: ../page/page-home.php:132
+msgid "Create and schedule your email marketing campaigns"
+msgstr "Créer une nouvelle campagne email"
+
+#: ../page/page-home.php:135
+msgid "See all of"
+msgstr "Consulter toutes les"
+
+#: ../page/page-home.php:138
+msgid "SendinBlue's features"
+msgstr "Fonctionnalités de Sendinblue"
+
+#: ../page/page-home.php:142
+msgid "Create an account"
+msgstr "Créer un compte"
+
+#: ../page/page-home.php:149
+msgid "Activate your account with your API key"
+msgstr "Activez votre compte avec votre clé API"
+
+#: ../page/page-home.php:154
+msgid "You successfully activate your account."
+msgstr "Voter compte a bien été activé"
+
+#: ../page/page-home.php:156 ../page/page-home.php:162
+msgid "Please input correct information."
+msgstr "Merci de rentrer des clés valides"
+
+#: ../page/page-home.php:158
+msgid "Please install curl on site to use sendinblue plugin."
+msgstr "S'il vous plaît installer CURL sur le serveur"
+
+#: ../page/page-home.php:159
+msgid "Curl error."
+msgstr "Erreur Curl."
+
+#: ../page/page-home.php:164
+msgid ""
+"Once your have created your SendinBlue account, activate this plugin to send "
+"all your transactional emails by using SendinBlue SMTP to make sure all of "
+"your emails get to your contacts inbox."
+msgstr ""
+"Une fois votre compte SendinBlue créé, activez ce plugin pour envoyer tous "
+"vos emails transactionnels avec SendinBlue SMTP. Vous vous assurerez que vos "
+"contacts reçoivent vos emails."
+
+#: ../page/page-home.php:166
+msgid "To activate your plugin, enter your API Access key."
+msgstr "Pour activer ce plugin, entrez votre clé API d'accès. "
+
+#: ../page/page-home.php:172
+msgid "Get your API key from your account"
+msgstr "Obtenez la clé API de votre compte"
+
+#: ../page/page-home.php:181
+msgid "Access Key"
+msgstr "Clé d'accès"
+
+#: ../page/page-home.php:186
+msgid "Login"
+msgstr "Identifiant"
+
+#: ../page/page-home.php:251
+msgid "My Account"
+msgstr "Mon Compte"
+
+#: ../page/page-home.php:255
+msgid "You are currently logged in as : "
+msgstr "Vous êtes actuellement connecté comme : "
+
+#: ../page/page-home.php:264
+msgid "credits"
+msgstr "crédits"
+
+#: ../page/page-home.php:268
+msgid "Log out"
+msgstr "Se déconnecter"
+
+#: ../page/page-home.php:272
+msgid "Contacts"
+msgstr "Contacts"
+
+#: ../page/page-home.php:276
+msgid "You have"
+msgstr "Vous avez"
+
+#: ../page/page-home.php:276
+msgid "contacts."
+msgstr "contacts."
+
+#: ../page/page-home.php:281
+msgid "Access to the list of all my contacts"
+msgstr "Accéder à ma liste de tous mes contacts"
+
+#: ../page/page-home.php:291
+msgid "Email Campaigns"
+msgstr "Campagnes Email"
+
+#: ../page/page-home.php:299 ../page/page-home.php:333
+#: ../page/page-home.php:367
+msgid "Sent"
+msgstr "Envoyées"
+
+#: ../page/page-home.php:305 ../page/page-home.php:339
+#: ../page/page-home.php:373
+msgid "Draft"
+msgstr "Brouillons"
+
+#: ../page/page-home.php:311 ../page/page-home.php:345
+#: ../page/page-home.php:379
+msgid "Scheduled"
+msgstr "Programmées"
+
+#: ../page/page-home.php:317
+msgid "Create new email campaign"
+msgstr "Créer une nouvelle campagne email"
+
+#: ../page/page-home.php:325
+msgid "SMS Campaigns"
+msgstr "Campagnes SMS"
+
+#: ../page/page-home.php:351
+msgid "Create new sms campaign"
+msgstr "Créer une nouvelle campagne SMS"
+
+#: ../page/page-home.php:359
+msgid "Trigger Marketing"
+msgstr "Trigger Marketing"
+
+#: ../page/page-home.php:385
+msgid "Create new trigger campaign"
+msgstr "Créer une nouvelle campagne de trigger "
+
+#: ../page/page-home.php:395
+msgid "Transactional emails"
+msgstr "Emails transactionnels"
+
+#: ../page/page-home.php:402
+msgid ""
+"Unfortunately, your \"Transactional emails\" are not activated because your "
+"SendinBlue SMTP account is not active. Please send an email to "
+"contact@sendinblue.com in order to ask for SMTP account activation"
+msgstr ""
+"Malheureusement, vous ne pouvez pas activer \"Emails transactionnels\" parce "
+"que votre compte SMTP SendinBlue n'a pas été validé. Merci d'envoyer un "
+"email à contact@sendinblue.com afin de demander l'activation de votre compte "
+"SMTP"
+
+#: ../page/page-home.php:407
+msgid "Mail Sent."
+msgstr "Email envoyé"
+
+#: ../page/page-home.php:409
+msgid "Please input valid email."
+msgstr "Insérer une adresse valide"
+
+#: ../page/page-home.php:411
+msgid "Activate email through SendinBlue"
+msgstr "Activer les emails avec SendinBlue "
+
+#: ../page/page-home.php:427
+msgid ""
+"Choose \"Yes\" if you want to use SendinBlue SMTP to send transactional "
+"emails"
+msgstr ""
+"Choisir \"Oui\" pour utiliser SMTP SendinBlue pour envoyer vos emails "
+"transactionnels"
+
+#: ../page/page-home.php:436
+msgid "Enter email to send a test"
+msgstr "Entrer une adresse email pour envoyer un test"
+
+#: ../page/page-home.php:441
+msgid "Send email"
+msgstr "Envoyer l'email"
+
+#: ../page/page-home.php:446
+msgid "Select here the email address you want to send a test email to."
+msgstr ""
+"Sélectionner ici l'adresse email à qui vous souhaitez envoyer un email de "
+"test"
+
+#: ../page/page-home.php:460
+msgid "About SendinBlue"
+msgstr "A propos de SendinBlue"
+
+#: ../page/page-home.php:462
+msgid ""
+"SendinBlue is an online software that allows you to send emails and SMS. "
+"Easily manage your Marketing campaigns, transactional emails and SMS."
+msgstr ""
+"SendinBlue est un logiciel en ligne qui permet d'envoyer SMS et emails. "
+"Gérer de manière simple et efficace vos campagnes Marketing, SMS et emails  "
+"transactionnels"
+
+#: ../page/page-home.php:467
+msgid "Who we are"
+msgstr "Qui sommes nous"
+
+#: ../page/page-home.php:472
+msgid "Pricing"
+msgstr "Tarifs"
+
+#: ../page/page-home.php:477
+msgid "Features"
+msgstr "Fonctionnalités"
+
+#: ../page/page-home.php:484
+msgid "Need Help ?"
+msgstr "Besoin d'aide"
+
+#: ../page/page-home.php:486
+msgid "You have a question or need more information ?"
+msgstr "Vous avez une question, ou besoin de plus d'information ? "
+
+#: ../page/page-home.php:491
+msgid "Tutorials"
+msgstr "Tutoriels"
+
+#: ../page/page-home.php:494
+msgid "FAQ"
+msgstr "FAQ"
+
+#: ../page/page-home.php:500
+msgid "Recommended this plugin"
+msgstr "Recommender ce plugin"
+
+#: ../page/page-home.php:502
+msgid "You like this plugin? Let everybody knows and review it"
+msgstr "Vous aimez ce plugin ? Faites-le savoir et notez le"
+
+#: ../page/page-home.php:505
+msgid "Review this plugin"
+msgstr "Noter ce plugin"
+
+#: ../page/page-home.php:537
+msgid ""
+"You are currently not logged in. Create an account or log in to benefit from "
+"all of SendinBlue's features an your Wordpress site."
+msgstr ""
+"Vous n'êtes actuellement pas connecté. Créez un compte ou connectez vous "
+"pour bénéficier de toutes les fonctionnalités de SendinBlue pour votre site "
+"Wordpress"
+
+#: ../page/page-home.php:541
+msgid "Collect and manage your contacts"
+msgstr "Collectez et gérez vos contacts"
+
+#: ../page/page-home.php:544
+msgid "Send transactional emails via SMTP or API"
+msgstr "Envoyer des emails transactionnels via SMTP ou API"
+
+#: ../page/page-home.php:547
+msgid "Real time statistics and email tracking"
+msgstr "Statistiques en temps réel et tracking des emails"
+
+#: ../page/page-home.php:550
+msgid "Edit and send email marketing"
+msgstr "Editer et envoyer des emails marketings"
+
+#: ../page/page-home.php:556
+msgid "Have an account?"
+msgstr "Vous avez un compte ?"
+
+#: ../page/page-home.php:561
+msgid "Free Subscribe Now"
+msgstr "S'inscrire gratuitement"
+
+#: ../page/page-home.php:674
+msgid "[SendinBlue SMTP] test email"
+msgstr "email de test [SendinBlue SMTP]"
+
+#: ../page/page-home.php:676 ../sendinblue.php:1033
+msgid "no-reply@sendinblue.com"
+msgstr "no-reply@sendinblue.com"
+
+#: ../page/page-lists.php:39
+msgid "Lists"
+msgstr "Listes"
+
+#: ../page/page-statistics.php:39
+msgid "Statistics"
+msgstr "Statistiques"
+
+#: ../sendinblue.php:491
+msgid "Thank you, you have successfully registered !"
+msgstr "Vous êtes désormais inscrit !"
+
+#: ../sendinblue.php:492
+msgid "Something wrong occured"
+msgstr "Une erreur est survenue"
+
+#: ../sendinblue.php:493
+msgid "You have already registered"
+msgstr "Vous êtes déjà inscrit"
+
+#: ../sendinblue.php:494
+msgid "Your email address is invalid"
+msgstr "Cette adresse email n'est pas valide"
+
+#: ../sendinblue.php:1017
+msgid "Subscription confirmed"
+msgstr "Inscription newsletter confirmée"
+
+#: ../sendinblue.php:1019
+msgid "Please confirm subscription"
+msgstr "Confirmer l'inscription "
+
+#: ../sendinblue.php:1195
+msgid "Unsubscribe"
+msgstr "Se désabonner"
+
+#: ../sendinblue.php:1214
+msgid "Your request has been taken into account."
+msgstr "Votre demande a bien été prise en compte."
+
+#: ../sendinblue.php:1216
+msgid "The user has been unsubscribed"
+msgstr "L'utilisateur s'est désinscrit"
+
+#: ../sendinblue.php:1309
+msgid "Thank you for subscribing"
+msgstr "Merci pour votre inscription"
+
+#: ../sendinblue.php:1328
+msgid "You have just subscribed to the newsletter of "
+msgstr "Vous vous êtes inscrit à la newsletter de"
+
+#: ../sendinblue.php:1329
+msgid "-SendinBlue"
+msgstr "-SendinBlue"
+
+#: ../widget/widget_form.php:31
+msgid "SendinBlue Newsletter"
+msgstr "Newsletter SendinBlue"
+
+#: ../widget/widget_form.php:37
+msgid "Subscribe"
+msgstr "S'inscrire"
+
+#: ../widget/widget_form.php:63
+msgid "Widget Title"
+msgstr "Titre du Widget"
+
+#: ../widget/widget_form.php:76
+msgid "Display"
+msgstr "Afficher"
+
+#: ../widget/widget_form.php:76
+msgid "Input"
+msgstr "Saisir"
+
+#: ../widget/widget_form.php:90
+msgid "List"
+msgstr "Liste"
+
+#~ msgid ""
+#~ "Unfortunately, you wannot activate \"Transactional emails\"  because your "
+#~ "SendinBlue SMTP account is not valid. Please send an email to "
+#~ "contact@sendinblue.com in order to ask for SMTP account activation"
+#~ msgstr ""
+#~ "Malheureusement, vous ne pouvez pas activer \"Emails transactionnels\" "
+#~ "parce que votre compte SMTP SendinBlue n'a pas été validé. Merci "
+#~ "d'envoyer un email à contact@sendinblue.com afin de demander l'activation "
+#~ "de votre compte SMTP"
+
+#~ msgid "SendinBlue merge fields"
+#~ msgstr "Champs synchronisé avec SendinBlue"
+
+#~ msgid "Double Optin"
+#~ msgstr "Double Optin"
+
+#~ msgid ""
+#~ "The template you selected does not include a link [DOUBLEOPTIN] to allow "
+#~ "subscribers to confirm their subscription. Please edit the template to "
+#~ "include a link with [DOUBLEOPTIN] as URL."
+#~ msgstr ""
+#~ "Le template choisi ne contient pas de lien [DOUBLEOPTIN] qui permet aux "
+#~ "inscrits de confirmer leur inscription. Vous devez modifier votre "
+#~ "template pour inclure le shortcode [DOUBLEOPTIN] à la place d'une URL "
+#~ "avant de pouvoir le choisir."
+
+#~ msgid "Close"
+#~ msgstr "Fermer"
+
+#~ msgid "Confirmation email"
+#~ msgstr "Les emails de confirmation"
+
+#~ msgid ""
+#~ "Confirmation emails will be sent through your own email server, but you "
+#~ "have no guarantees on their deliverability. <a href=\"https://mysmtp."
+#~ "sendinblue.com\" target=\"_blank\">Click here</a> to send your emails "
+#~ "through SendinBlue in order to improve your deliverability and get "
+#~ "statistics"
+#~ msgstr ""
+#~ "Les emails de confirmation seront envoyés par votre propre serveur email. "
+#~ "Vous n'avez donc aucune garantie sur la délivrabilité de vos emails. Pour "
+#~ "améliorer la délivrabilité et obtenir des statistiques, activez l'envoi "
+#~ "des emails via le serveur SMTP de SendinBlue en <a href=\"https://mysmtp."
+#~ "sendinblue.com\" target=\"_blank\">cliquant ici</a>"
+
+#~ msgid ""
+#~ "You can choose to add a step in the confirmation process, by requiring a "
+#~ "new suscriber to click on a link sent to the registered email adress. By "
+#~ "doing so, he will be added to your contact"
+#~ msgstr ""
+#~ "Vous pouvez choisir d'ajouter une étape dans le processus d'inscription, "
+#~ "en demandant à vos nouveaux inscrits de cliquer sur un lien envoyé à "
+#~ "l'adresse email déclarée. Ils seront ensuite ajoutés à votre liste de "
+#~ "contact. "
+
+#~ msgid ""
+#~ "Confirmation emails will be sent through your own email servers. This "
+#~ "means no guarantees on emails deliverability. If you want to improve your "
+#~ "deliverability and get statistics,"
+#~ msgstr ""
+#~ "Les emails de confirmation seront envoyés par votre propre serveur email. "
+#~ "Vous n'avez donc aucune garantie sur la délivrabilité de vos emails. Pour "
+#~ "améliorer la délivrabilité et obtenir des statistiques, activez l'envoi "
+#~ "des emails via le serveur SMTP de SendinBlue en"
+
+#~ msgid "click here"
+#~ msgstr "cliquant ici"
+
+#~ msgid "Set up my senders"
+#~ msgstr "Paramétrer mes expéditeurs"
+
+#~ msgid "To activate your plugin, enter your API Access key and Secret key."
+#~ msgstr ""
+#~ "Pour activer ce plugin, entrez votre clé API d'accès et votre clé API "
+#~ "secrète"
+
+#~ msgid "Secret Key"
+#~ msgstr "Clé secrète"
+
+#~ msgid "Choose Template"
+#~ msgstr "Choisir un Template"
+
+#~ msgid "Choose Sender"
+#~ msgstr "Choisir l'expéditeur"
+
+#~ msgid "And more"
+#~ msgstr "Et bien plus"
+
+#~ msgid "Yes, subscribe me to this list."
+#~ msgstr "Oui, je souhaite m'inscrire à cette liste"
+
+#~ msgid ""
+#~ "If you received this email by mistake, simply delete it. You will not be "
+#~ "subscribed to this list if you don't click the confirmation link above."
+#~ msgstr ""
+#~ "SI vous avez reçu cet email par erreur, merci de le supprimer. Vous ne "
+#~ "serez pas inscrit si vous ne cliquez pas sur le lien de confirmation ci-"
+#~ "dessus"
+
+#~ msgid "Campaign"
+#~ msgstr "Campagne"
+
+#~ msgid "Welcome"
+#~ msgstr "Bienvenue "
+
+#~ msgid "Get it from"
+#~ msgstr "Obtenez les depuis"
+
+#~ msgid "your account"
+#~ msgstr "votre compte"
+
+#~ msgid "SendinBlue API Access Key"
+#~ msgstr "Clé API d'accès"
+
+#~ msgid "Please input Access key to activate."
+#~ msgstr "Insérez votre clé API d'accès pour l'activation"
+
+#~ msgid "SendinBlue API Secret Key"
+#~ msgstr "Clé API secrète"
+
+#~ msgid "Validate"
+#~ msgstr "Valider"
+
+#~ msgid "My account "
+#~ msgstr "Mon compte"
