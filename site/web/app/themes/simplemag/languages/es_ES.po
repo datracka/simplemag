@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SimpleMag 4.0\n"
 "POT-Creation-Date: 2015-12-24 15:27+0200\n"
-"PO-Revision-Date: 2016-04-23 22:29+0200\n"
+"PO-Revision-Date: 2016-05-06 16:30+0200\n"
 "Language-Team: ThemesIndep <admin@themesindep.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: 404.php:19 404.php:21
 msgid "Ooops! That page can not be found"
-msgstr "Ups! Nos parece que esta página no existe…"
+msgstr "¡Ups! Parece que esta página no existe…"
 
 #: admin/acf-fields/add-ons/acf-sidebar-selector/acf-sidebar_selector-v4.php:40
 #: admin/acf-fields/add-ons/acf-sidebar-selector/acf-sidebar_selector-v5.php:37
@@ -1486,7 +1486,7 @@ msgstr ""
 
 #: single.php:102
 msgid "Tags from the story"
-msgstr ""
+msgstr "Tags relacionados"
 
 #: sitemap.php:47
 msgid "Categories"

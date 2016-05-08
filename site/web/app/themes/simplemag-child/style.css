@@ -6,9 +6,44 @@ Author URI: http://themesindep.com/
 Description: Magazine theme for creative things
 Template: simplemag
 */
-
-
 @import url("../simplemag/style.css");
 
 /* Your CSS code goes here
 -------------------------------------- */
+
+.vf-title-text hr {
+    width: 20%;
+    color: #0a0a0a;
+    height: 1px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 750px) {
+
+    .vf-title-text p {
+        font-size: 14px;
+    }
+}
+
+/*
+ * Page 404
+ */
+.error404 .post {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.error404 .post img {
+    margin-bottom: 30px;
+}
+
+.error404 .post h1 {
+    font-size: 25px;
+    text-transform: none;
+}
+
+.read-more:hover {
+    box-shadow: 0px 0px #000, 0px 0px #000, 0px 0px #000 !important;
+    -webkit-transform: none;
+    transform: none;
+}
