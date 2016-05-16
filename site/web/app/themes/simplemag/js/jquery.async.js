@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
     **/
     $(function MegaMenuNav() {
         
-        var mega_menu_container = $('.mega-menu-container'),
+        var mega_menu_container = $('.mega-menu-ajax'),
             parent_link = $('.menu-item-has-mega-menu > a > span'),
             sub_link = $('.menu-item-has-mega-menu .sub-links > .menu-item-type-taxonomy > a > span');
 

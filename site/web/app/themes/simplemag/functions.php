@@ -18,7 +18,7 @@ include_once ( 'admin/tgm/tgm-init.php' );
 
 
 /* Theme Options */
-require_once( 'admin/theme-options.php' );
+require_once ( dirname(__FILE__) . '/admin/theme-options.php' );
 
 
 /**
@@ -180,7 +180,9 @@ function ti_theme_setup() {
      * Applies to:
      * 1. Latest Reviews & Latest Posts sections
      * 2. Latest Reviews widget
-     * 3. Single Post
+     * 3. Single Post when rasting is enabled
+     *
+     * Final calculations in inc/rating-calculations.php
     **/
     function ti_rating_calc() {
 
@@ -215,6 +217,7 @@ include_once( 'inc/styling-options.php' );
 include_once( 'inc/single-post-actions.php' );
 include_once( 'inc/content-post-actions.php' );
 include_once( 'inc/ad-units-actions.php' );
+include_once( 'inc/layouts-post-image.php' );
 
 
 /* Register jQuery Scripts and CSS Styles */
@@ -340,7 +343,6 @@ add_filter( 'wp_link_pages_args', 'ti_wp_link_pages' );
 
 
 
-
 /**
  * Helper Functions
 */
@@ -376,69 +378,12 @@ add_filter( 'excerpt_more', 'ti_excerpt_more' );
 
 
 
+
 /**
- * Different image size based on layout 
- * selection for Homepage, Categories and Posts Page.
-*/
-function layout_based_post_image() {
-    
-    global $ti_option;
-
-	if ( has_post_thumbnail() ) { // Set Featured Image
-        
-        // List or Grid
-        if (   get_sub_field( 'latest_posts_layout' ) == 'list-layout'
-            || get_sub_field( 'latest_posts_layout' ) == 'big-list-layout'
-            || get_field( 'category_posts_layout', 'category_' . get_query_var('cat') ) == 'list-layout'
-            || $ti_option['posts_page_layout'] == 'list-layout'
-            && $ti_option['posts_page_layout'] == 'grid-layout'
-            || get_sub_field( 'latest_posts_layout' ) == 'grid-layout'
-               && get_sub_field( 'latest_cols_number' ) != 'columns-size-2' ) {
-
-                    the_post_thumbnail( 'rectangle-size' );
-        
-        // Two columns Grid
-        } elseif (  get_sub_field( 'latest_posts_layout' ) == 'grid-layout'
-                        && get_sub_field( 'latest_cols_number' ) == 'columns-size-2'
-                        && get_sub_field( 'latest_posts_sidebar' ) == ''
-                    || get_field( 'category_posts_layout', 'category_' . get_query_var('cat') ) == 'grid-layout'
-                        && get_field( 'category_cols_num', 'category_' . get_query_var('cat') ) == 'columns-size-2'
-                        && get_field( 'category_sidebar', 'category_' . get_query_var('cat') ) == 'cat_sidebar_off' ) {
-            
-                    the_post_thumbnail( 'rectangle-size-big' );
-        
-        // Classic List   
-        } elseif (   get_sub_field( 'latest_posts_layout' ) == 'classic-layout'
-                  || get_field( 'category_posts_layout', 'category_' . get_query_var('cat') ) == 'classic-layout'
-                  || $ti_option['posts_page_layout'] == 'classic-layout' ) {
-
-                    the_post_thumbnail( 'big-size' );
-        
-        // Two columns Masonry
-        } elseif (   get_sub_field( 'latest_posts_layout' ) == 'masonry-layout'
-                        && get_sub_field( 'latest_cols_number' ) == 'columns-size-2'
-                        && get_sub_field( 'latest_posts_sidebar' ) == ''
-                  || get_field( 'category_posts_layout', 'category_' . get_query_var('cat') ) == 'masonry-layout'
-                        && get_field( 'category_cols_num', 'category_' . get_query_var('cat') ) == 'columns-size-2'
-                        && get_field( 'category_sidebar', 'category_' . get_query_var('cat') ) == 'cat_sidebar_off' ) {
-            
-                    the_post_thumbnail( 'masonry-size-big' );
-            
-        //Masonry
-        } else {
-
-                    the_post_thumbnail( 'masonry-size' );
-
-        }
-            
-    	
-    } elseif( first_post_image() ) { // Set the first image from the editor
-        echo '<img src="' . esc_url( first_post_image() ) . '" class="wp-post-image" alt="' . get_the_title() . '" />';
-    }
-
-}
-add_action( 'post_item_image', 'layout_based_post_image' );
-
+ * Custom the_content() filter
+ * to make textareas support shortcodess
+**/
+add_filter( 'be_the_content', 'do_shortcode' );
 
 
     
@@ -707,13 +652,15 @@ if ( class_exists ( 'WooCommerce' ) ) :
 
 
     /**
-     * Breadcrumbs shop home URL
-    **/
-    function woo_custom_breadrumb_home_url() {
-        $shop_home = get_permalink( woocommerce_get_page_id( 'shop' ) );
-        return $shop_home;
+     * Class name for Woocomerce homepage
+    */
+    add_filter( 'body_class','woocommerce_body_classes' );
+    function woocommerce_body_classes( $classes ) {
+        if ( is_shop() ) {
+            $classes[] = 'woocommerce-home';
+        }
+        return $classes;
     }
-    add_filter( 'woocommerce_breadcrumb_home_url', 'woo_custom_breadrumb_home_url' );
 
 
     /**
@@ -729,6 +676,27 @@ if ( class_exists ( 'WooCommerce' ) ) :
     function smwc_wrapper_end() {
         echo '</div></section>';
     }
+
+
+    /**
+     * Disable WooCommerce action
+     */    
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+
+
+    /**
+     * Display product category descriptions under category title
+     */
+    /*add_action( 'woocommerce_after_subcategory_title', 'wc_cat_description', 12);
+    function wc_cat_description ( $category ) {
+        $cat_id=$category->term_id;
+        $prod_term=get_term( $cat_id,'product_cat' );
+        $description=$prod_term->description;
+        if ( ! empty( $description ) ) {
+            echo '<div class="category-desc">'. esc_textarea( $description ) .'</div>';
+        }
+    }*/
 
 
     /**

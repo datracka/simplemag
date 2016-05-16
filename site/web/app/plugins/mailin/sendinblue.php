@@ -3,7 +3,7 @@
 Plugin Name: SendinBlue Subscribe Form And WP SMTP
 Plugin URI: https://www.sendinblue.com/?r=wporg
 Description: Easily send emails from your WordPress blog using SendinBlue SMTP and easily add a subscribe form to your site
-Version: 2.5.2
+Version: 2.5.4
 Author: SendinBlue
 Author URI: https://www.sendinblue.com/?r=wporg
 License: GPLv2 or later
@@ -259,8 +259,6 @@ if(!class_exists('SIB_Manager'))
         /** check if wp_mail is declared  */
         static $wp_mail_conflict;
 
-        public static $sender_info;
-
         /**
          * Class constructor
          * Sets plugin url and directory and adds hooks to <i>init</i>. <i>admin_menu</i>
@@ -350,7 +348,7 @@ if(!class_exists('SIB_Manager'))
     <input type="text" class="sib-NAME-area" name="NAME" >
 </p>
 <p>
-    <input type="button" class="sib-default-btn" value="Subscribe">
+    <input type="submit" class="sib-default-btn" value="Subscribe">
 </p>
 EOD;
 
@@ -380,15 +378,6 @@ EOD;
                 $home_settings['activate_email'] = 'no';
                 update_option(SIB_Manager::home_option_name, $home_settings);
             }
-            // set default sender info
-            $senders = SIB_Page_Form::get_sender_lists();
-            if(!isset($home_settings['sender']) && self::is_done_validation()){
-                $home_settings['sender'] = $senders[0]['id'];
-                $home_settings['from_name'] = $senders[0]['from_name'];
-                $home_settings['from_email'] = $senders[0]['from_email'];
-                update_option(SIB_Manager::home_option_name, $home_settings);
-            }
-            self::$sender_info = get_option(self::sender_option_name, array());
 
             // hook wp_mail to send transactional emails
             if( function_exists('wp_mail') ) {
@@ -545,7 +534,7 @@ EOD;
     <input type="text" class="sib-NAME-area" name="NAME" >
 </p>
 <p>
-    <input type="button" class="sib-default-btn" value="Subscribe">
+    <input type="submit" class="sib-default-btn" value="Subscribe">
 </p>
 EOD;
 
@@ -709,7 +698,7 @@ EOD;
                     margin-top: 5px;
 
                 }
-                form#sib_form_<?php echo $this->reference_form_count; ?>-form button.sib-default-btn, form#sib_form_<?php echo $this->reference_form_count; ?>-form input[type=button].sib-default-btn {
+                form#sib_form_<?php echo $this->reference_form_count; ?>-form .sib-default-btn, form#sib_form_<?php echo $this->reference_form_count; ?>-form input[type=submit].sib-default-btn {
                     margin: 0px;
                     margin-top:10px;
                     margin-bottom: 5px;
@@ -732,7 +721,7 @@ EOD;
                     border:1px solid transparent;
                     border-radius: 4px;
                 }
-                form#sib_form_<?php echo $this->reference_form_count; ?>-form button.sib-default-btn:hover, form#sib_form_<?php echo $this->reference_form_count; ?>-form input[type=button].sib-default-btn:hover {
+                form#sib_form_<?php echo $this->reference_form_count; ?>-form .sib-default-btn:hover, form#sib_form_<?php echo $this->reference_form_count; ?>-form input[type=submit].sib-default-btn:hover {
                     background-color: #333333;
                 }
                 p.sib-alert-message {
@@ -765,7 +754,7 @@ EOD;
 
                                 if($widget_attribute != null) {
                                 ?>
-                jQuery('form#sib_form_<?php echo $this->reference_form_count; ?>-form input[type="button"]').attr('value', "<?php echo stripslashes($button_text); ?>");
+                jQuery('form#sib_form_<?php echo $this->reference_form_count; ?>-form input[type="submit"]').attr('value', "<?php echo stripslashes($button_text); ?>");
                 <?php
 
                  if(isset($avail_atts) && is_array($avail_atts)) {
@@ -1095,9 +1084,7 @@ EOD;
                         "cc" => "",
                         "bcc" => "",
                         "attr" => $attrs,
-                        "attachment_url" => "",
-                        "attachment" => array(),
-                        "headers" => array("Content-Type"=> "text/html;charset=iso-8859-1", "X-Mailin-tag"=>$transactional_tags )
+                        //"headers" => array("Content-Type"=> "text/html;charset=iso-8859-1", "X-Mailin-tag"=>$transactional_tags )
                     );
                     $mailin->send_transactional_template($data);
                 }
@@ -1149,7 +1136,7 @@ EOD;
 
             // Headers
             if ( empty( $headers ) ) {
-                $headers = array();
+                $headers = $reply = $bcc = $cc = array();
             } else {
                 if ( !is_array( $headers ) ) {
                     // Explode the headers out, so this function can take both
@@ -1220,7 +1207,7 @@ EOD;
             }
 
             // Set destination addresses
-            if( !is_array($to) ) $to = explode(',', $to);
+            if( !is_array($to) ) $to = explode(',', preg_replace('/\s+/', '', $to)); // strip all whitespace
 
             $processed_to = array();
             foreach ( $to as $email ) {
@@ -1237,6 +1224,20 @@ EOD;
             foreach($attachments as $attachment){
                 $attachment_content = array_merge($attachment_content, self::getAttachmentStruct($attachment));
             }
+
+            // Common transformations for the HTML part
+            if ( is_array($message) ) {
+                foreach ($message as &$value){
+                    $value['content'] = preg_replace('#<(https?://[^*]+)>#', '$1', $value['content']);
+                    //$value['content'] = nl2br($value['content']);
+                }
+
+            } else {
+                $message = preg_replace('#<(https?://[^*]+)>#', '$1', $message);
+                //$message = nl2br($message);
+            }
+
+            // sending...
             $mailin = new Mailin(SIB_Manager::sendinblue_api_url, SIB_Manager::$access_key);
             $data = array(
                 "to" => $to,
@@ -1554,22 +1555,6 @@ EOD;
             }
 
             return false;
-        }
-
-		/**
-         * get user ip
-         */
-        function get_the_user_ip() {
-            if ( ! empty( $_SERVER['HTTP_CLIENT_IP'] ) ) {
-            //check ip from share internet
-                $ip = $_SERVER['HTTP_CLIENT_IP'];
-            } elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
-            //to check ip is pass from proxy
-                $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-            } else {
-                $ip = $_SERVER['REMOTE_ADDR'];
-            }
-            return $ip;
         }
 
       /**

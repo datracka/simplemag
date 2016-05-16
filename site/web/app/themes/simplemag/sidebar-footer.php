@@ -30,14 +30,14 @@ if ( is_active_sidebar( 'sidebar-full-width' ) ) : ?>
     <div class="full-width-sidebar">
         <?php 
         global $ti_option;
-        if ( $ti_option['full_width_widget'] == 1 ) :
-        ?>
-        <div class="wrapper">
-            <?php dynamic_sidebar( 'sidebar-full-width' ); ?>
-        </div>
-        <?php
-        else :
+        if ( $ti_option['full_width_widget'] == 'winwidth' ) :
             dynamic_sidebar( 'sidebar-full-width' );
+        else :
+        ?>
+            <div class="wrapper">
+                <?php dynamic_sidebar( 'sidebar-full-width' ); ?>
+            </div>
+        <?php
         endif; 
         ?>
     </div><!-- Full Width Sidebar -->

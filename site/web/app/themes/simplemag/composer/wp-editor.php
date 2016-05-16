@@ -6,13 +6,22 @@
  * @package SimpleMag
  * @since 	SimpleMag 3.0
 **/
+
+
+/**
+ * Options to make Editor site width (default) or full window width
+**/
+if ( get_sub_field( 'wp_ti_editor_width' ) == 'editor_site_width' ) :
+    $wrapper = sanitize_html_class( 'wrapper' );
+endif;
 ?>
 
-<section class="wrapper home-section wp-editor-section">
+<section class="home-section wp-editor-section <?php echo isset( $wrapper ) ? $wrapper : 'full-width-section'; ?>">
     
     <?php 
     // If Sidebar
-    if ( get_sub_field( 'wp_ti_sidebar' ) != '' ) :
+    if (    get_sub_field( 'wp_ti_sidebar' ) != '' 
+         && get_sub_field( 'wp_ti_editor_width' ) != 'editor_win_width' ) :
     ?>
         <div class="grids">
             <div class="grid-8 column-1">
@@ -24,7 +33,8 @@
                 
     <?php
     // If Sidebar
-    if ( get_sub_field( 'wp_ti_sidebar' ) != '' ) :
+    if (    get_sub_field( 'wp_ti_sidebar' ) != ''
+         && get_sub_field( 'wp_ti_editor_width' ) != 'editor_win_width' ) :
     ?>
             </div>
             

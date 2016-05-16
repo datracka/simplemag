@@ -48,6 +48,11 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	$classes[] = 'last';
 }
 
+$smwc_layout_field = $ti_option['smwc_page_layout'];
+if ( $smwc_layout_field == 'masonry-layout' || $smwc_layout_field == 'grid-layout' ) {
+    $classes[] = 'grid-4';
+}
+
 if ( $ti_option['smwc_rating_stars'] == '0' ) {
     $classes[] = 'no-rating';
 }
@@ -61,6 +66,9 @@ if ( $woocommerce_loop['loop'] % 2 == 0 ) {
 } else {
     $classes[] = 'odd-post clearfix';
 }
+
+// Check if product details over the image
+$smwc_product_overlay = $ti_option['smwc_description_on_image'] == true;
 ?>
 
 <article <?php post_class( $classes ); ?>>
@@ -144,6 +152,11 @@ if ( $woocommerce_loop['loop'] % 2 == 0 ) {
                     ?>
                     
                     <?php woocommerce_template_loop_add_to_cart(); ?>
+        
+                    <?php // Show an extra link if details over the image
+                    if ( $smwc_layout_field == $smwc_product_overlay ) { ?>
+                    <a class="entry-link" href="<?php the_permalink(); ?>"></a>
+                    <?php } ?>
 
                 </div>
             </div>

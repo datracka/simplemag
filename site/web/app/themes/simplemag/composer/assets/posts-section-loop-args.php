@@ -25,7 +25,8 @@ if ( get_sub_field ( 'latest_section_type' ) == 'latest_posts' ) :
         'cat' => $excluded_cats,
         'offset' => $offset_numb,
         'post__not_in' => array( $post->ID ),
-        'ignore_sticky_posts' => 1
+        'ignore_sticky_posts' => 1,
+        'no_found_rows' => true,
     );
 
 
@@ -47,7 +48,8 @@ elseif ( get_sub_field ( 'latest_section_type' ) == 'hp_featured_posts' ) :
         'posts_per_page' => $posts_to_show,
         'offset' => $offset_numb,
         'post__not_in' => array( $post->ID ),
-        'ignore_sticky_posts' => 1
+        'ignore_sticky_posts' => 1,
+        'no_found_rows' => true,
     );
 
 
@@ -70,7 +72,8 @@ elseif ( get_sub_field ( 'latest_section_type' ) == 'latest_by_category' ) :
         'posts_per_page' => $posts_to_show,
         'offset' => $offset_numb,
         'post__not_in' => array( $post->ID ),
-        'ignore_sticky_posts' => 1
+        'ignore_sticky_posts' => 1,
+        'no_found_rows' => true,
     );
 
 
@@ -93,7 +96,8 @@ elseif ( get_sub_field ( 'latest_section_type' ) == 'latest_reviews' ) :
         'posts_per_page' => $posts_to_show,
         'offset' => $offset_numb,
         'post__not_in' => array( $post->ID ),
-        'ignore_sticky_posts' => 1
+        'ignore_sticky_posts' => 1,
+        'no_found_rows' => true,
     );
 
 
@@ -124,7 +128,8 @@ elseif ( get_sub_field ( 'latest_section_type' ) == 'latest_by_format' ) :
         'tax_query' => array( $format_query ),
         'offset' => $offset_numb,
         'post__not_in' => array( $post->ID ),
-        'ignore_sticky_posts' => 1
+        'ignore_sticky_posts' => 1,
+        'no_found_rows' => true,
     );
 
 endif;

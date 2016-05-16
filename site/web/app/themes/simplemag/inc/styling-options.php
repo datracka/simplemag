@@ -8,59 +8,47 @@
 **/
 function ti_custom_styling() {
 global $ti_option;
-
 ?>
 <style type="text/css">
 .header .logo{max-width:<?php echo $ti_option['site_logo']['width']; ?>px;}
+<?php if ( !empty( $ti_option['site_top_strip_logo']['url'] ) ) { ?>
+.top-strip-logo{width:<?php echo $ti_option['site_top_strip_logo']['width']; ?>px;height:<?php echo $ti_option['site_top_strip_logo']['height']; ?>px;}
+<?php } ?>
+.lines-button .lines, .lines-button .lines:after, .lines-button .lines:before{background:<?php echo $ti_option['site_top_strip_links']['regular']; ?>;}
+.top-strip .search-form input,.top-strip .search-form button,.top-strip .mobile-search-button{color:<?php echo $ti_option['site_top_strip_links']['regular']; ?>}
 .main-menu .sub-links .active-link,
 .main-menu .mega-menu-item:hover .item-title a,
 .main-menu > ul > .sub-menu-columns > .sub-menu > .sub-links > li > a {color:<?php echo $ti_option['main_sub_links_left']['hover']; ?>;}
-    
 .main-menu .sub-menu-two-columns > .sub-menu > .sub-links li a:after {background-color:<?php echo $ti_option['main_sub_links_left']['hover']; ?>;}
-
 .main-menu .posts-loading:after {border-top-color:<?php echo $ti_option['main_sub_links_left']['hover']; ?>;border-bottom-color:<?php echo $ti_option['main_sub_links_left']['hover']; ?>;}
- 
 .secondary-menu ul > li:hover > a {color:<?php echo $ti_option['site_top_strip_links']['hover']; ?>;}
- 
 .main-menu > ul > .link-arrow > a:after {border-color:transparent transparent <?php echo $ti_option['main_sub_menu_pointer']; ?>;}
-
 .main-menu > ul > li > .sub-menu {border-top-color:<?php echo $ti_option['main_sub_menu_pointer']; ?>;}
-    
 .main-menu .mega-menu-container .mega-menu-posts-title:hover:after{color:<?php echo $ti_option['main_sub_links_left']['regular']; ?>;}
- 
-.top-strip #searchform input,
-.top-strip #searchform button{color:<?php echo $ti_option['site_top_strip_links']['regular']; ?>}
-
 .modern .content-over-image-tint .entry-image:before,
 .modern .content-over-image-tint.full-width-image:before{opacity:<?php echo $ti_option['slider_tint_strength']; ?>;}
 .modern .content-over-image-tint:hover .entry-image:before,
 .modern .content-over-image-tint.full-width-image:hover:before,
 .modern .content-over-image-tint .gallery-item:not(.slick-active) .entry-image:before{opacity:<?php echo $ti_option['slider_tint_strength_hover']; ?>;}
-
 .sidebar .widget{border-bottom:1px solid <?php echo $ti_option['sidebar_border']['border-color']; ?>;}
-
 .footer-sidebar .widget_rss li:after,
-.footer-sidebar .widget_pages li a:after,
-.footer-sidebar .widget_nav_menu li a:after,
+.footer-sidebar .widget_pages li:after,
+.footer-sidebar .widget_nav_menu li:after,
 .footer-sidebar .widget_categories ul li:after,
 .footer-sidebar .widget_recent_entries li:after,
 .footer-sidebar .widget_recent_comments li:after{background-color:<?php echo $ti_option['footer_links']['regular']; ?>;}
-
 .entry-title {text-transform:<?php echo $ti_option['post_title_style']; ?>;}
-    
 <?php if ($ti_option['titles_background_switch'] == true && $ti_option['titles_background_image'] == true  ){ ?>
 .title-with-sep{background:url("<?php echo get_template_directory_uri(); ?>/images/section-header.png") repeat-x 0 50%;}
 <?php } ?>
-
 <?php
 /**
  * Woocommerce style
 **/
 if( function_exists ( 'is_woocommerce' ) && is_woocommerce() ) {
 ?>
-.price, .stock, .side-shopping-cart .ssc-button .amount, span.onsale, .button, .added_to_cart, td.product-name{font-family:<?php echo $ti_option['font_titles']['font-family']; ?>;}
+.price, .stock, .side-shopping-cart .ssc-button .amount, span.onsale, .single_add_to_cart_button, td.product-name{font-family:<?php echo $ti_option['font_titles']['font-family']; ?>;}
 <?php } ?>
-    
 <?php
 /**
  * Posts Section Background & Text Colors
@@ -165,17 +153,20 @@ if( have_rows( 'page_composer' ) ) :
         
     
         /**
-         * Full Width Image section background
+         * Full Width Media section background
+         * Code outpputed only if the image option is selected
         **/
-        if( get_row_layout() == 'full_width_image' ) :
+        if( get_row_layout() == 'full_width_image' && get_sub_field( 'full_media_type' ) == 'media_type_image' ) :
             
+           
             $get_image_bg = get_sub_field( 'full_image_upload' );
 
             if ( ! empty( $get_image_bg ) ) {
                 $image_bg = '.image-' . $get_image_bg['id'];
             }
-    
+
             echo $image_bg . '{background-image:url(' . $get_image_bg['url'] . ');}';
+           
     
         endif;
      
@@ -184,11 +175,10 @@ if( have_rows( 'page_composer' ) ) :
     
 endif;
 ?>
-    
 <?php if ($ti_option['titles_background_switch'] == true && $ti_option['titles_background_image'] == false ){ ?>
 .title-with-sep{background:url("<?php echo $ti_option['titles_background_upload']['url']; ?>") repeat-x 50%;}
 <?php } ?>
-@media only screen and (min-width: 960px) {#gallery-carousel,#gallery-carousel .gallery-item{height:<?php echo $ti_option['site_carousel_height'] ?>px;}}
+@media only screen and (min-width: 960px) {.full-width-media .gallery-carousel,.full-width-media .gallery-carousel .gallery-item{height:<?php echo $ti_option['site_carousel_height'] ?>px;}}
 <?php if ( $ti_option['custom_css'] != '' ) { ?>
 /* Custom CSS */
 <?php echo $ti_option['custom_css']; ?>

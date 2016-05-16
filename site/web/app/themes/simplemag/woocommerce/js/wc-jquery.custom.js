@@ -27,8 +27,7 @@ jQuery(document).ready(function($) {
             }
         });*/
 	
-	});
-    
+	}); 
 
         
     /* Product slider */
@@ -72,10 +71,10 @@ jQuery(document).ready(function($) {
 	/* customize select tags */
     $('.woocommerce-page form:not(.comment-form, .woocommerce-shipping-calculator, .woocommerce-checkout, .woocommerce-account) select').wrap('<div class="styled-select" />');
 	
-	/* LightBox */
-	$('a.zoom').swipebox({
-		hideBarsDelay:0
-	});
+	/* LightBox */        
+    $('.single-product-image a[href$="jpg"],.single-product-image a[href$="jpeg"],.single-product-image a[href$="png"],.single-product-image a[href$="gif"]').swipebox({
+        hideBarsDelay:0
+    });
 	
 	
 	/* (+/-) Button Number Incrementers */

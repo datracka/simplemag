@@ -269,11 +269,11 @@
 			// row limit reached
 			if( this.o.max > 0 && this.count() >= this.o.max ) {
 				
-				this.$el.find('> .acf-hl .acf-button').addClass('disabled');
+				this.$el.find('> .acf-actions .button').addClass('disabled');
 				
 			} else {
 				
-				this.$el.find('> .acf-hl .acf-button').removeClass('disabled');
+				this.$el.find('> .acf-actions .button').removeClass('disabled');
 				
 			}
 			
@@ -494,9 +494,13 @@
 				
 				$tr.removeClass('-collapsed');
 				
+				acf.do_action('show', $tr, 'collapse');
+				
 			} else {
 				
 				$tr.addClass('-collapsed');
+				
+				acf.do_action('hide', $tr, 'collapse');
 				
 			}
 			
@@ -588,10 +592,14 @@
 		
 		render: function(){
 			
+			// vars
+			var self = this;
+			
+			
 			// update order numbers
 			this.$values.children('.layout').each(function( i ){
 			
-				$(this).find('> .acf-fc-layout-handle .fc-layout-order').html( i+1 );
+				$(this).find('> .acf-fc-layout-handle .acf-fc-layout-order').html( i+1 );
 				
 			});
 			
@@ -611,13 +619,28 @@
 			// row limit reached
 			if( this.o.max > 0 && this.count() >= this.o.max ) {
 				
-				this.$el.find('> .acf-hl .acf-button').addClass('disabled');
+				this.$el.find('> .acf-actions .button').addClass('disabled');
 				
 			} else {
 				
-				this.$el.find('> .acf-hl .acf-button').removeClass('disabled');
+				this.$el.find('> .acf-actions .button').removeClass('disabled');
 				
 			}
+			
+		},
+		
+		render_layout: function( $layout ){
+			
+			// update order number
+			
+			
+			
+			// update text
+/*
+			var data = acf.serialize_form($layout);
+			
+			console.log( data );
+*/
 			
 		},
 			
@@ -1114,6 +1137,40 @@
 			// sync collapsed order
 			this.sync();
 			
+			
+			// vars
+			var data = acf.serialize( $layout );
+			
+			
+			// append
+			$.extend(data, {
+				action: 	'acf/fields/flexible_content/layout_title',
+				field_key: 	this.$field.data('key'),
+				post_id: 	acf.get('post_id'),
+				i: 			$layout.index(),
+				layout:		$layout.data('layout'),
+			});
+			
+			
+			// ajax get title HTML
+			$.ajax({
+		    	url			: acf.get('ajaxurl'),
+				dataType	: 'html',
+				type		: 'post',
+				data		: data,
+				success: function( html ){
+					
+					// bail early if no html
+					if( !html ) return;
+					
+					
+					// update html
+					$layout.find('> .acf-fc-layout-handle').html( html );
+					
+				}
+			});
+
+			
 		}
 		
 	});	
@@ -1296,7 +1353,7 @@
 			// vars
 			var data = acf.prepare_for_ajax({
 				action		: 'acf/fields/gallery/get_sort_order',
-				field_key	: acf.get_field_key(this.$field),
+				field_key	: this.$field.data('key'),
 				post_id		: acf.get('post_id'),
 				ids			: [],
 				sort		: sort
@@ -1454,7 +1511,7 @@
 			// vars
 			var data = acf.prepare_for_ajax({
 				action		: 'acf/fields/gallery/get_attachment',
-				field_key	: acf.get_field_key(this.$field),
+				field_key	: this.$field.data('key'),
 				nonce		: acf.get('nonce'),
 				post_id		: acf.get('post_id'),
 				id			: id
@@ -1771,7 +1828,7 @@
 				title:		acf._e('gallery', 'select'),
 				mode:		'select',
 				type:		'',
-				field:		acf.get_field_key(this.$field),
+				field:		this.$field.data('key'),
 				multiple:	'add',
 				library:	this.o.library,
 				mime_types: this.o.mime_types,

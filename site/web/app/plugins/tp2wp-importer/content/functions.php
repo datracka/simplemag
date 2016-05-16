@@ -64,8 +64,8 @@ function tp2wp_importer_content_post_exists ($name, $post_date, $status) {
     FROM
       $wpdb->posts
     WHERE
-      post_name = %s,
-      post_date = %s,
+      post_name = %s AND
+      post_date = %s AND
       post_status = %s
     LIMIT
       1";

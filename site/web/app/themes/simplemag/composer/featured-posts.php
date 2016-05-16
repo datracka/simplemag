@@ -24,6 +24,7 @@ $ti_featured_posts = new WP_Query(
         'meta_key' => 'featured_post_add',
         'meta_value' => '1',
         'posts_per_page' => '15',
+        'no_found_rows' => true,
     )
 );
 ?>
@@ -96,7 +97,7 @@ $ti_featured_posts = new WP_Query(
 
                                 <header class="entry-header">
                                     <div class="entry-meta">
-                                       <?php the_category(', '); ?>
+                                       <span class="entry-category"><?php the_category(', '); ?></span>
                                     </div>
 
                                     <h2 class="entry-title">
@@ -105,9 +106,11 @@ $ti_featured_posts = new WP_Query(
 
                                     <?php if ( $posts_column == 0 ) : ?>
                                     <span class="written-by"><?php _e( 'by','themetext' ); ?></span>
-                                    <a class="author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author">
-                                        <?php the_author_meta( 'display_name' ); ?>
-                                    </a>
+                                    <span class="author">
+                                        <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author">
+                                            <?php the_author_meta( 'display_name' ); ?>
+                                        </a>
+                                    </span>
                                     <?php endif; ?>
                                 </header>
 

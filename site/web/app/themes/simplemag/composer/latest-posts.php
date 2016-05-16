@@ -39,7 +39,7 @@ include locate_template( 'composer/assets/section-colors.php' );
         <?php endif; ?>
 
 
-        <div class="grids grid-layout entries">
+        <div class="grids entries">
 
             <?php
             /**
@@ -49,7 +49,8 @@ include locate_template( 'composer/assets/section-colors.php' );
 
             $ti_newest_posts = new WP_Query(
                 array(
-                    'posts_per_page' => 3
+                    'posts_per_page' => 3,
+                    'no_found_rows' => true,
                 )
             );
 
@@ -103,9 +104,11 @@ include locate_template( 'composer/assets/section-colors.php' );
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </h2>
                                 <span class="written-by"><?php _e( 'by','themetext' ); ?></span>
-                                <a class="author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author">
-                                    <?php the_author_meta( 'display_name' ); ?>
-                                </a>
+                                <span class="author">
+                                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author">
+                                        <?php the_author_meta( 'display_name' ); ?>
+                                    </a>
+                                </span>
                             </header>
 
                             <?php if ( $posts_column == 0 ) : ?>
@@ -141,8 +144,9 @@ include locate_template( 'composer/assets/section-colors.php' );
             **/
             $ti_newest_right_posts = new WP_Query(
                 array(
-                    'posts_per_page' => 5,
-                    'offset' => 3
+                    'posts_per_page' => 3,
+                    'offset' => 3,
+                    'no_found_rows' => true,
                 )
             );
 
@@ -164,6 +168,12 @@ include locate_template( 'composer/assets/section-colors.php' );
                                 <h2 class="entry-title">
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </h2>
+                                <span class="written-by"><?php _e( 'by','themetext' ); ?></span>
+                                <span class="author">
+                                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author">
+                                        <?php the_author_meta( 'display_name' ); ?>
+                                    </a>
+                                </span>
                             </header>
 
                         </article>
@@ -181,4 +191,4 @@ include locate_template( 'composer/assets/section-colors.php' );
     
     </div><!-- .wrapper -->
     
-</section><!-- Latest Post -->
+</section><!-- Latest Posts -->

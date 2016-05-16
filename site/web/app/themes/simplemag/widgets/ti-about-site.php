@@ -124,7 +124,7 @@ class TI_About_Site extends WP_Widget {
 		$logo_url = isset( $instance['logo_url'] );
 
 		if (function_exists('icl_translate')) { // If WPML is installed
-			$free_text = icl_translate('themetext', "free_text", $instance['free_text']); 
+			$free_text = icl_translate('themetext', "free_text", $instance['free_text']);
 		} else {
 			$free_text = $instance['free_text'];
 		}
@@ -141,7 +141,9 @@ class TI_About_Site extends WP_Widget {
 			
 			// Text about the site
 			if ( !empty ( $free_text ) ) {
-				printf( '%s', wpautop( $free_text ) );
+                echo '<div class="' . $center_icons . '">';
+				    printf( '%s', wpautop( $free_text ) );
+                echo '</div>';
 			}
 			
 			// Display the social links
@@ -214,7 +216,7 @@ class TI_About_Site extends WP_Widget {
         </p>
         <p>
         	<input type="checkbox" id="<?php echo $this->get_field_id( 'center_icons' ); ?>" name="<?php echo $this->get_field_name( 'center_icons' ); ?>" <?php if( $instance['center_icons'] == true ) echo 'checked'; ?> /> 
-			<label for="<?php echo $this->get_field_id( 'center_icons' ); ?>"><?php _e('Center the social icons', 'themetext'); ?></label>
+			<label for="<?php echo $this->get_field_id( 'center_icons' ); ?>"><?php _e('Center text and social icons', 'themetext'); ?></label>
         </p>
         <p>
         	<input type="checkbox" id="<?php echo $this->get_field_id( 'new_window' ); ?>" name="<?php echo $this->get_field_name( 'new_window' ); ?>" <?php if( $instance['new_window'] == true ) echo 'checked'; ?> /> 

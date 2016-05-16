@@ -177,10 +177,6 @@ function acf_get_valid_field( $field = false ) {
 	$field['_name'] = $field['name'];
 	
 	
-	// translate
-	$field = acf_translate_keys( $field, acf_get_setting('l10n_field') );
-	
-	
 	// field specific defaults
 	$field = apply_filters( "acf/get_valid_field", $field );
 	$field = apply_filters( "acf/get_valid_field/type={$field['type']}", $field );
@@ -190,8 +186,55 @@ function acf_get_valid_field( $field = false ) {
 	$field['_valid'] = 1;
 	
 	
+	// translate
+	$field = acf_translate_field( $field );
+	
+	
 	// return
 	return $field;
+}
+
+
+
+
+/*
+*  acf_translate_field
+*
+*  This function will translate field's settings
+*
+*  @type	function
+*  @date	8/03/2016
+*  @since	5.3.2
+*
+*  @param	$field (array)
+*  @return	$field
+*/
+
+function acf_translate_field( $field ) {
+	
+	// vars
+	$l10n = acf_get_setting('l10n');
+	$l10n_textdomain = acf_get_setting('l10n_textdomain');
+	
+	
+	// if
+	if( $l10n && $l10n_textdomain ) {
+		
+		// translate
+		$field['label'] = acf_translate( $field['label'] );
+		$field['instructions'] = acf_translate( $field['instructions'] );
+		
+		
+		// filters
+		$field = apply_filters( "acf/translate_field", $field );
+		$field = apply_filters( "acf/translate_field/type={$field['type']}", $field );
+		
+	}
+	
+	
+	// return
+	return $field;
+	
 }
 
 
@@ -300,7 +343,7 @@ function acf_is_sub_field( $field ) {
 function acf_get_field_label( $field ) {
 	
 	// vars
-	$label = esc_html($field['label']);
+	$label = $field['label'];
 	
 	
 	if( $field['required'] ) {
@@ -308,6 +351,10 @@ function acf_get_field_label( $field ) {
 		$label .= ' <span class="acf-required">*</span>';
 		
 	}
+	
+	
+	// filter for 3rd party customization
+	$label = apply_filters("acf/get_field_label", $label, $field);
 	
 	
 	// return
@@ -1850,5 +1897,6 @@ function acf_get_sub_field( $selector, $field ) {
 	return false;
 	
 }
+
 
 ?>

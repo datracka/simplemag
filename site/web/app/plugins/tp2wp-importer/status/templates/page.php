@@ -350,7 +350,7 @@ RewriteRule ^\.a/(.*)$ /wp-content/uploads/tp2wp-migrated/$1 - [L,R=301]
                         <p>
                             <?php echo __( 'There are currently' ); ?>
                             <strong><?php echo count( $bad_plugins ); ?></strong>
-                            <?php echo __( 'plugins active in your Wordpress install that are unrelated to importing to the TP2WP imporitng process.' ); ?>
+                            <?php echo __( 'plugins active in your Wordpress install that are unrelated to importing to the TP2WP importing process.' ); ?>
                             <?php echo __( 'While most other plugins will not effect your import, some plugins can slow or halt the importing process.' ); ?>
                         </p>
                         <p>
@@ -364,6 +364,38 @@ RewriteRule ^\.a/(.*)$ /wp-content/uploads/tp2wp-migrated/$1 - [L,R=301]
                     <td class="success">
                         <p>
                             <?php echo __( 'There are currently no other plugins active in your Wordpress installation.' ); ?>
+                        </p>
+                    </td>
+                <?php endif; ?>
+            </tr>
+
+            <?php // Check that WP's cron seems to be disabled ?>
+            <tr>
+                <th scope="row">
+                    <?php echo __( 'Wordpress cron is disabled' ); ?>
+                </th>
+                <?php if ( $is_cron_disabled !== true ): ?>
+                    <td class="warning result-cell">
+                        <?php echo __( 'Warning' ); ?>
+                    </td>
+                    <td class="warning">
+                        <p>
+                            <?php echo __( 'Currently Wordpress\'s built in "cron" system is enabled and configured to run periodically.' ); ?>
+                            <?php echo __( 'This can cause interuptions and slowdowns in the TP2WP importing process.' ); ?>
+                            <?php echo __( 'Please disable the Wordpress "cron" system during the import process.  Once the migration is complete, you should re-enable "cron".' ); ?>
+                        </p>
+                        <p>
+                            <?php echo __( 'To disable cron, add the following line to the top of your wp-config.php file.' ); ?>
+                        </p>
+                        <textarea readonly="readonly" rows="4" style="width: 100%">define( 'DISABLE_WP_CRON', true );</textarea>
+                    </td>
+                <?php else: ?>
+                    <td class="success result-cell">
+                        <?php echo __( 'Pass' ); ?>
+                    </td>
+                    <td class="success">
+                        <p>
+                            <?php echo __( 'The Wordpresss "cron" system appears to be disabled.' ); ?>
                         </p>
                     </td>
                 <?php endif; ?>

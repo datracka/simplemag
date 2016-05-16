@@ -41,7 +41,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
                         $visibility		= ' visible';
                 }*/
 
-                if ( $ti_option['smwc_enable_cart_ste_wide'] == true ) :
+                if ( $ti_option['smwc_enable_cart_ste_wide'] == true && ! is_cart() && ! is_checkout() ) :
                 
                     //echo '<div class="side-shopping-cart' . esc_attr( $visibility ) . '">';
                     echo '<div class="side-shopping-cart">';
@@ -56,7 +56,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
                             the_widget( 'WooCommerce_Widget_Cart', 'title=' );
                         }
                     echo '</div>';
-                
+
                 elseif ( is_woocommerce() ) :
 
                     //echo '<div class="side-shopping-cart' . esc_attr( $visibility ) . '">';

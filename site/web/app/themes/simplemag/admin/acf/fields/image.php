@@ -95,6 +95,7 @@ class acf_field_image extends acf_field {
 		
 		// vars
 		$url = '';
+		$alt = '';
 		$div = array(
 			'class'					=> 'acf-image-uploader acf-cf',
 			'data-preview_size'		=> $field['preview_size'],
@@ -107,8 +108,12 @@ class acf_field_image extends acf_field {
 		// has value?
 		if( $field['value'] && is_numeric($field['value']) ) {
 			
+			// update vars
 			$url = wp_get_attachment_image_src($field['value'], $field['preview_size']);
+			$alt = get_post_meta($field['value'], '_wp_attachment_image_alt', true);
 			
+			
+			// url exists
 			if( $url ) {
 				
 				$url = $url[0];
@@ -125,7 +130,7 @@ class acf_field_image extends acf_field {
 		<?php acf_hidden_input(array( 'name' => $field['name'], 'value' => $field['value'], 'data-name' => 'id' )); ?>
 	</div>
 	<div class="view show-if-value acf-soh">
-		<img data-name="image" src="<?php echo $url; ?>" alt=""/>
+		<img data-name="image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
 		<ul class="acf-hl acf-soh-target">
 			<?php if( $uploader != 'basic' ): ?>
 				<li><a class="acf-icon -pencil dark" data-name="edit" href="#"></a></li>
@@ -144,7 +149,7 @@ class acf_field_image extends acf_field {
 			
 		<?php else: ?>
 			
-			<p style="margin:0;"><?php _e('No image selected','acf'); ?> <a data-name="add" class="acf-button" href="#"><?php _e('Add Image','acf'); ?></a></p>
+			<p style="margin:0;"><?php _e('No image selected','acf'); ?> <a data-name="add" class="acf-button button" href="#"><?php _e('Add Image','acf'); ?></a></p>
 			
 		<?php endif; ?>
 	</div>

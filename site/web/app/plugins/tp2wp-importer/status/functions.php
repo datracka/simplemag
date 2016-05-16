@@ -10,6 +10,30 @@ function tp2wp_importer_status_active_plugins () {
     return (array) get_option( 'active_plugins', array() );
 }
 
+
+/**
+ * Checks to see if (it looks like) Wordpress's automatic, request based
+ * "cron" system is enabled.
+ *
+ * Note that this function only checks to see if the define has been added,
+ * but is unable to check that it was set in the correct place.  If the
+ * define('DISABLE_WP_CRON', true); call was made elsewhere in the code,
+ * this will be a false positive.
+ *
+ * @return boolean
+ *   Returns true if DISABLE_WP_CRON has been defined as true, and otherwise
+ *   returns false.
+ */
+function tp2wp_importer_status_is_cron_disabled () {
+
+    if ( ! defined( 'DISABLE_WP_CRON' ) ) {
+        return false;
+    }
+
+    return DISABLE_WP_CRON === true;    
+}
+
+
 /**
  * Returns the currently configured PHP memory limit
  *
@@ -28,6 +52,7 @@ function tp2wp_importer_status_memory_limit () {
 
     return tp2wp_importer_status_convert_to_bytes( $limit );
 }
+
 
 /**
  * Returns the number of seconds wordpress can run before it's killed
@@ -130,6 +155,7 @@ function tp2wp_importer_status_time_config_value ($setting) {
     return $value;
 }
 
+
 /**
  * Returns a boolean description of whether the XML extension is installed
  * in the local PHP instance.
@@ -140,6 +166,7 @@ function tp2wp_importer_status_time_config_value ($setting) {
 function tp2wp_importer_status_xml_extension_exists () {
     return extension_loaded( 'xml' );
 }
+
 
 /**
  * Returns a boolean description of whether the currently enabled theme
@@ -161,12 +188,14 @@ function tp2wp_importer_status_is_theme_bundled () {
         'twentythirteen' => 'Twenty Thirteen',
         'twentyfourteen' => 'Twenty Fourteen',
         'twentyfifteen' => 'Twenty Fifteen',
+        'twentysixteen' => 'Twenty Sixteen',
     );
 
     $theme = wp_get_theme();
-    $theme_name = $theme->get('Name');
+    $theme_name = $theme->get( 'Name' );
     return in_array( $theme_name, $default_themes );
 }
+
 
 /**
  * Converts a integer count of bytes to a nicer, human readable size.
@@ -228,3 +257,4 @@ function tp2wp_importer_status_convert_to_bytes ($size) {
 
     return $size;
 }
+

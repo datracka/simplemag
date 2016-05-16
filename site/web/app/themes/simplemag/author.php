@@ -21,7 +21,7 @@ get_header(); ?>
                         
                         <?php $curauth = ( isset( $_GET['author_name'] ) ) ? get_user_by( 'slug', $author_name ) : get_userdata( intval( $author ) ); ?>
 
-                        <div class="avatar">
+                        <div class="author-avatar">
                             <?php
                             // Author Image
                             $itemprop = array( 'extra_attr' => 'itemprop="image"' );

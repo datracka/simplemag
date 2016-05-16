@@ -21,6 +21,10 @@ function acf_get_metadata( $post_id = 0, $name = '', $hidden = false ) {
 	$value = null;
 	
 	
+	// bail early if no $post_id (acf_form - new_post)
+	if( !$post_id ) return $value;
+	
+	
 	// add prefix for hidden meta
 	if( $hidden ) {
 		
@@ -297,10 +301,6 @@ function acf_update_option( $option = '', $value = '', $autoload = null ) {
 */
 
 function acf_get_value( $post_id = 0, $field ) {
-	
-	// bail early if no $post_id (acf_form - new_post)
-	if( !$post_id ) return null;
-	
 	
 	// try cache
 	$found = false;

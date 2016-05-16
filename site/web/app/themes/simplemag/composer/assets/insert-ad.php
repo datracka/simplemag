@@ -1,6 +1,6 @@
 <?php
 /**
- * Insert Ads in Latest Posts section if
+ * Insert Ads in Posts Section section if
  * Image Ad or Code Ad options are selected.
  * Insert the ad after selected number of posts.
 **/

@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Advanced Custom Fields Pro
+Plugin Name: Advanced Custom Fields PRO
 Plugin URI: http://www.advancedcustomfields.com/
 Description: Customise WordPress with powerful, professional and intuitive fields
-Version: 5.3.3.2
-Author: elliot condon
+Version: 5.3.7
+Author: Elliot Condon
 Author URI: http://www.elliotcondon.com/
 Copyright: Elliot Condon
 Text Domain: acf
@@ -17,9 +17,6 @@ if( ! class_exists('acf') ) :
 
 class acf {
 	
-	// vars
-	var $settings;
-		
 	
 	/*
 	*  __construct
@@ -61,7 +58,7 @@ class acf {
 			
 			// basic
 			'name'				=> __('Advanced Custom Fields', 'acf'),
-			'version'			=> '5.3.3.2',
+			'version'			=> '5.3.7',
 						
 			// urls
 			'basename'			=> plugin_basename( __FILE__ ),
@@ -82,9 +79,7 @@ class acf {
 			'uploader'			=> 'wp',
 			'autoload'			=> false,
 			'l10n'				=> true,
-			'l10n_textdomain'	=> '',
-			'l10n_field'		=> array('label', 'instructions'),
-			'l10n_field_group'	=> array('title'),
+			'l10n_textdomain'	=> ''
 		);
 		
 		
@@ -103,9 +98,11 @@ class acf {
 		acf_include('core/ajax.php');
 		acf_include('core/field.php');
 		acf_include('core/input.php');
+		acf_include('core/validation.php');
 		acf_include('core/json.php');
 		acf_include('core/local.php');
 		acf_include('core/location.php');
+		acf_include('core/loop.php');
 		acf_include('core/media.php');
 		acf_include('core/revisions.php');
 		acf_include('core/compatibility.php');

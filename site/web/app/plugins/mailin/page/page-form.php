@@ -484,14 +484,18 @@ if(!class_exists('SIB_Page_Form'))
             $mailin = new Mailin(SIB_Manager::sendinblue_api_url, SIB_Manager::$access_key);
             $data = array( "option" => "" );
             $response = $mailin->get_senders($data);
-            // reorder by id
-            $senders = array();
-            foreach($response['data'] as $sender){
-                $senders[$sender['id']] = array('id'=>$sender['id'], 'from_name' => $sender['from_name'], 'from_email' => $sender['from_email']);
-            }
-            update_option(SIB_Manager::sender_option_name, $senders);
+            if($response['code'] == 'success') {
+                // reorder by id
+                $senders = array();
+                foreach ($response['data'] as $sender) {
+                    $senders[$sender['id']] = array('id' => $sender['id'], 'from_name' => $sender['from_name'], 'from_email' => $sender['from_email']);
+                }
+                update_option(SIB_Manager::sender_option_name, $senders);
 
-            return $response['data'];
+                return $response['data'];
+            }else{
+                return false;
+            }
         }
 
         /**

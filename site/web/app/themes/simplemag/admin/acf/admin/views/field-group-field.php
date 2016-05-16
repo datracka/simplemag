@@ -204,7 +204,7 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 					<td class="acf-input">
 						<ul class="acf-hl">
 							<li>
-								<a class="edit-field acf-button grey" title="<?php _e("Close Field",'acf'); ?>" href="#"><?php _e("Close Field",'acf'); ?></a>
+								<a class="button edit-field" title="<?php _e("Close Field",'acf'); ?>" href="#"><?php _e("Close Field",'acf'); ?></a>
 							</li>
 						</ul>
 					</td>

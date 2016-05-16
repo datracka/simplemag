@@ -1,33 +1,45 @@
-<?php
+<?php 
 /**
  * Free Title or Text
  * Page Composer Section
  *
  * @package SimpleMag
- * @since    SimpleMag 2.0
- **/
+ * @since 	SimpleMag 2.0
+**/
 ?>
 
-<section class="wrapper home-section title-text vf-title-text">
-    <hr/>
-    <?php
-    $content = get_sub_field('title_text_content');
-    $tag = get_sub_field('title_styling');
+<section class="wrapper home-section title-text">
+	<?php 
+    /* Title */
+	$title = get_sub_field( 'title_text_content' ); 
+	$tag = get_sub_field( 'title_styling' );
+	
+	$title_type = array (
+		'theme_title' => '<div class="section-title title-with-sep"><h2 class="title">' . $title . '</h2></div>',
+		'heading_1' => '<h1>' . $title . '</h1>',
+		'heading_2' => '<h2>' . $title . '</h2>'
+	);
+	
+	// Loop through select options an output the result
+	foreach ( $title_type as $type => $value ) :
+		if ( $tag == $type ) : 
+            echo '<header class="section-header">' 
+                    . wp_kses( $value, 
+                        array( 
+                            'div' => array(),
+                            'h1' => array(),
+                            'h2' => array()
+                        ) 
+                    ) . 
+                 '</header>';
+        endif;
+	endforeach;
 
-    $content_styling = array(
-        'theme_title' => '<header class="section-header"><div class="section-title title-with-sep"><h2 class="title">' . $content . '</h2></div></header>',
-        'heading_1' => '<h1>' . $content . '</h1>',
-        'heading_2' => '<h2>' . $content . '</h2>',
-        'bold_text' => '<b>' . $content . '</b>',
-        'paragraph_text' => '<p><i>' . $content . '</i></p>',
-    );
 
-    // Loop through select options an output the result
-    foreach ($content_styling as $style => $value) {
-        if ($tag == $style) {
-            echo $value;
-        }
-    }
-    ?>
-    <hr/>
-</section><!-- Title/Text -->
+    /* Text */
+    $text = get_sub_field( 'text_content' );
+    if ( ! empty( $text ) ) :
+        echo '<div class="cat-description">' . esc_textarea( $text ) . '</div>';
+    endif;
+	?>
+</section><!-- Text Box -->

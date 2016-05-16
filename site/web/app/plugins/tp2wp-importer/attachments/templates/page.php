@@ -24,7 +24,7 @@
 
                         <dt><?php echo __( 'Watched domains'); ?></dt>
                         <dd>
-                            <p><?php echo __( 'Any files referenced in your posts served from the below domains will be imported.  Enter one domain per line, in the format <em>example.org</em>.  Do not include the protocol (ex <em>http://</em> or <em>https://</em>).' ); ?></p>
+                            <p><?php echo __( 'Any files referenced in your posts served from the below domains will be imported.  Enter one domain per line, in the format <em>example.org</em>.  Do not include the protocol (ex <em>http://</em> or <em>https://</em>) or the port (ex <em>:8080</em> or <em>:8443</em>).' ); ?></p>
                             <textarea id="tp2wp-domains" rows="5" cols="50" class="large-text code"><?php echo implode( "\n", $domains ) ;?></textarea>
 
                             <p><input id="tp2wp-update-domains" class="button" value="<?php echo __( 'Update domains' ); ?>" type="submit" /></p>

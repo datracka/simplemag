@@ -44,8 +44,8 @@ class TI_Latest_Posts extends WP_Widget {
 			array(
 				'post_type' => 'post',
 				'posts_per_page' => $items_num,
-				'post__not_in' => array( $post->ID ),
-				'ignore_sticky_posts' => 1
+				'ignore_sticky_posts' => 1,
+                'no_found_rows' => true
 			)
 		);
 		

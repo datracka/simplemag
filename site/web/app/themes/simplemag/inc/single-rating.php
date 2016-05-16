@@ -1,33 +1,17 @@
 <?php
 /**
- * Single Post Rating
- * Rating is defined by post author in post edit screen
+ * Single Post Rating - Circles
+ * Rating is defined by post author in post edit screen.
  *
  * @package SimpleMag
  * @since 	SimpleMag 3.0
 **/
 
-// Call total score calculation function
-$get_result = apply_filters( 'ti_score_total', '' );
 
-// Get the final score
-$total_score = number_format( $get_result, 1, '.', '' );
-
-// If final score is decimal like 5.0 or is equal to 10.0
-// remove .0 to display it as integer
-if ( strlen ( $total_score ) || $total_score == '10.0' ) {
-    $final_result = str_replace( ".0", "", $total_score );
-} else {
-    $final_result = $total_score;
-}
-
-// Multiply by 10 to remove the decimal value
-// Displayed in data-cirlce attr.
-$final_result_no_decimal = $total_score * 10;
-
+include( locate_template( 'inc/rating-calculations.php' ) );
 ?>
 	
-<div class="clearfix single-box single-rating">
+<div class="clearfix single-box single-rating single-rating-circle">
     
     <?php
     // Output rating note
@@ -36,7 +20,7 @@ $final_result_no_decimal = $total_score * 10;
         echo '<p class="description">' . $rating_note . '</p>';
     }
     ?>
-
+    
     <div class="rating-labels">
         <?php
         $score_output = get_field( 'rating_module' );

@@ -41,7 +41,7 @@ function social_share_icons() {
 
 ?>
 
-    <div class="clearfix social-sharing<?php echo isset( $social_style ) ? $social_style : ''; ?>" data-permalink="<?php the_permalink();?>">
+    <div class="social-sharing<?php echo isset( $social_style ) ? $social_style : ''; ?>" data-permalink="<?php the_permalink();?>">
         
         <a class="share-item share-facebook" href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&t=<?php the_title_attribute(); ?>" target="blank">
             <i class="icomoon-facebook"></i>
@@ -62,12 +62,11 @@ function social_share_icons() {
             $showpinimage = first_post_image();
         }
         ?>
-        <a class="share-item share-pinterest" href="//pinterest.com/pin/create/button/?url=<?php the_permalink();?>&media=<?php echo esc_url( isset( $showpinimage ) ? $showpinimage : '' ); ?>&description=<?php the_title_attribute(); ?>" target="_blank">
+        <a data-pin-custom="true" class="share-item share-pinterest" href="//pinterest.com/pin/create/button/?url=<?php the_permalink();?>&media=<?php echo esc_url( isset( $showpinimage ) ? $showpinimage : '' ); ?>&description=<?php the_title_attribute(); ?>" target="_blank">
             <i class="icomoon-pinterest"></i>
             <?php echo isset( $label_pinterest ) ? $label_pinterest : ''; ?>
         </a>
-        
-        
+
         <?php 
         // Display other icons only in single post
         if ( is_single() ) {
@@ -78,11 +77,11 @@ function social_share_icons() {
             <span class="share-plus"></span>
 
             <div class="share-more-items">
-                <a class="share-gplus" href="https://plusone.google.com/_/+1/confirm?hl=en-US&url=<?php the_permalink(); ?>">
+                <a class="share-gplus" href="https://plusone.google.com/_/+1/confirm?hl=en-US&url=<?php the_permalink(); ?>" target="_blank">
                     <span class="share-label"><?php _e( 'Google +', 'themetext' ); ?></span>
                 </a>
 
-                <a class="share-linkedin" href="https://www.linkedin.com/countserv/count/share?url=<?php the_permalink(); ?>">
+                <a class="share-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>&amp;source=<?php bloginfo( 'name' ); ?>" target="_blank">
                     <span class="share-label"><?php _e( 'LinkedIn', 'themetext' ); ?></span>
                 </a>
 
@@ -94,7 +93,6 @@ function social_share_icons() {
         </div>
         
         <?php } ?>
-        
 
     </div><!-- social-sharing -->
 

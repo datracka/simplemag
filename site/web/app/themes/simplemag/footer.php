@@ -24,7 +24,7 @@ global $ti_option;
             <div class="copyright">
                 <div class="wrapper">
                 	<div class="grids">
-                        <div class="grid-10" style="width:100%">
+                        <div class="grid-10">
                             <?php echo $ti_option['copyright_text']; ?>
                         </div>
                         <div class="grid-2">

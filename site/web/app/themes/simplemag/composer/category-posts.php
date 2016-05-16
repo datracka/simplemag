@@ -39,7 +39,7 @@ include locate_template( 'composer/assets/section-colors.php' );
         <?php endif; ?>
 
 
-        <div class="grids grid-layout entries">
+        <div class="grids entries">
 
             <?php
             $cats_to_show = get_sub_field( 'category_posts_per_page');
@@ -48,7 +48,8 @@ include locate_template( 'composer/assets/section-colors.php' );
             $ti_cat_posts = new WP_Query(
                 array(
                     'posts_per_page' => 5,
-                    'cat' => $cat_id
+                    'cat' => $cat_id,
+                    'no_found_rows' => true,
                 )
             );
 
@@ -96,17 +97,17 @@ include locate_template( 'composer/assets/section-colors.php' );
                                 </a>
                             </figure>
 
-                            
                             <header class="entry-header">
-                                
-                                <span class="written-by"><?php _e( 'by','themetext' ); ?></span>
-                                <a class="author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author">
-                                    <?php the_author_meta( 'display_name' ); ?>
-                                </a>
-                                
                                 <h2 class="entry-title">
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </h2>
+
+                                <span class="written-by"><?php _e( 'by','themetext' ); ?></span>
+                                <span class="author">
+                                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author">
+                                        <?php the_author_meta( 'display_name' ); ?>
+                                    </a>
+                                </span>
                             </header>
 
                             <?php if ( $posts_column == 0 ) : ?>

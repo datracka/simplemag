@@ -1,7 +1,7 @@
 <?php
 /**
- * Create a welcomepage with all the information about theme
- * and redirect to this page right after the theme was activated.
+ * A Welcome page with all the information about theme.
+ * Page opens right after the theme was activated.
  *
  * @package SimpleMag
  * @since 	SimpleMag 4.0
@@ -9,8 +9,8 @@
 
 
 /**
- * Create the welcomepage.
- * Redirect to the welcomepage after theme activation.
+ * Create the welcome page.
+ * Redirect to the welcome page after theme activation.
 **/
 function ti_welcome_page() {
 
@@ -28,7 +28,7 @@ function ti_welcome_page() {
 add_action( 'admin_menu', 'ti_welcome_page' );
 
 
-/* Hide welcomepage menu item from the menu */
+/* Hide welcome page menu item from the menu */
 function ti_admin_css() {
   echo '<style>#adminmenu .wp-submenu a[href="themes.php?page=simplemag-welcome"], .appearance_page_simplemag-welcome #setting-error-tgmpa{display:none;}</style>';
 }
@@ -69,15 +69,28 @@ function ti_welcome_page_content() {
 	.ti-block {
 		margin-bottom:60px;
 	}
+    .about-wrap .ti-block h2 {
+        text-align:left !important;
+        margin:20px 0 !important;
+    }
 	.white-panel {
 		background:#fff;
 		padding:10px 30px;
 	}
+    .about-wrap .feature-section {
+        padding:0;
+    }
+    .about-wrap .feature-section .col {
+        margin-top:0;
+    }
+    .change-log-msg {
+        padding:20px 0 10px;
+    }
 	</style>
 
 	<div class="wrap about-wrap">
 
-		<div class="welcome-wrap">
+		<div class="welcome-wrap ti-block">
 
 			<p class="ti-block">Thank you for installing the theme!</p>
 
@@ -94,8 +107,9 @@ function ti_welcome_page_content() {
 			<div class="ti-author">
 				<i>by</i> 
                 <a href="http://themesindep.com" target="_blank"><?php echo $ti_current_theme->get( 'Author' ); ?></a>&nbsp; | &nbsp;
+                <a href="#setup">Setup &amp; Configuration</a> &nbsp;&middot;&nbsp;
+                <a href="#support">Support</a>&nbsp; | &nbsp;
                 <a href="http://themesindep.com/showcase" target="_blank">Showcase</a> &nbsp;&middot;&nbsp;
-                <a href="http://themesindep.com/support/" target="_blank">Support Center</a> &nbsp;&middot;&nbsp;
                 <a href="http://facebook.com/ThemesIndep" target="_blank">Facebook</a> &nbsp;&middot;&nbsp;
                 <a href="https://twitter.com/themesindep" target="_blank">Twitter</a>
             </div>
@@ -110,9 +124,47 @@ function ti_welcome_page_content() {
         
         
         <div class="white-panel ti-block">
-            <h2>What's new in version 4.1</h2>
+            <h2>What's new in version <?php echo $ti_current_theme->get( 'Version' ); ?></h2>
 			<hr>
-			<div class="feature-section under-the-hood three-col">
+			<div class="feature-section three-col">
+                <div class="col">
+					<h4>Mega Menu Type Switch</h4>
+					<p>Choose between Ajax and regular Mega Menu. Theme Options, Header tab, Main Menu.</p>
+                </div>
+                <div class="col">
+					<h4>Number Of Posts In Posts Slider</h4>
+					<p>Due to multiple requests added a field where you can set a limit of posts in the Posts Slider section.</p>
+				</div>
+				<div class="col">
+					<h4>WooCommerce Columns Number</h4>
+					<p>Change the number of columns for Shop page and Product Categories. Theme Options, WooCommerce tab.</p>
+				</div>
+            </div>
+            <div class="feature-section three-col">
+                <div class="col">
+					<h4>Review Design Switch</h4>
+					<p>Choose bewteen the new Circles review and the old SimpleMag Bars reviews design. Theme Options, Single Post tab.</p>
+                </div>
+                <div class="col">
+					<h4>Relatest Posts Random Order</h4>
+					<p>Related Posts in single post now show in random order. Now your site visitors will see even older posts you have published.</p>
+				</div>
+				<div class="col">
+					<h4>Mobile Menu Styling Switch</h4>
+					<p>Now you can select the mobile menu styling: White Or Dark. Theme Options, Design Options tab.</p>
+				</div>
+            </div>
+            <hr>
+            <div class="change-log-msg">
+                <small>For full list of changes see <a href="http://www.themesindep.com/support/simplemag-change-log/" target="_blank">Change Log</a></small>
+            </div>
+        </div>
+        
+        
+        <div class="ti-block">
+            <h2>Version 4.1</h2>
+			<hr>
+			<div class="feature-section three-col">
                 <div class="col">
 					<h4>Latest Posts Section</h4>
 					<p>New Latest Posts section to show your most latest posts in a fresh unique way.</p>
@@ -128,15 +180,13 @@ function ti_welcome_page_content() {
 					<p>We've added another layout for this section so you can controll the look and feel of your site media.</p>
 				</div>
             </div>
-            <hr>
-            <h5>For more extened info about new features and bug fixes see <a href="http://www.themesindep.com/support/simplemag-change-log/" target="_blank">Change Log</a></h5>
         </div>
         
         
 		<div class="ti-block">
 			<h2>Version 4.0</h2>
 			<hr>
-			<div class="feature-section under-the-hood three-col">
+			<div class="feature-section three-col">
 				<div class="col">
 					<h4>WooCommerce</h4>
 					<p>Full support and styling for WooCommerce in accordence to the new SimpleMag 4.0 look &amp; feel.</p>
@@ -152,7 +202,7 @@ function ti_welcome_page_content() {
 					<p>Variety of new drag &amp; drop customizable sections, sidebar select for all Posts related sections.</p>
 				</div>
 			</div>
-            <div class="feature-section under-the-hood three-col">
+            <div class="feature-section three-col">
 				<div class="col">
 					<h4>Beautiful Layouts</h4>
 					<p>Big or Small thumbnails list, Grid &amp; Masonry in two, three or four columns with enable/disable sidebar option.</p>
@@ -168,7 +218,7 @@ function ti_welcome_page_content() {
 					<p>Makes your site being displayed visually richer in search results and gives a more descriptive information about page content.</p>
 				</div>
 			</div>
-            <div class="feature-section under-the-hood three-col">
+            <div class="feature-section three-col">
                 <div class="col">
 					<h4>Ajax Technology</h4>
 					<p>Ajax based features for faster site loading times such as Mega Menu, Latest By Format embeds and more.</p>
@@ -188,9 +238,10 @@ function ti_welcome_page_content() {
 
 
 		<div class="ti-block">
-			<h2>Theme Setup &amp; Customization</h2>
+            <a name="setup"></a>
+			<h2>Theme Setup &amp; Configuration</h2>
 			<hr>
-			<div class="feature-section under-the-hood two-col">
+			<div class="feature-section two-col">
 				<div class="col">
 					<h4>Install Plugins</h4>
 					<p>SimpleMag comes with a small list of recommended and required plugins which are needed to get more from the theme</p>
@@ -206,9 +257,10 @@ function ti_welcome_page_content() {
 		</div>
 
 		<div class="ti-block">
+            <a name="support"></a>
 			<h2>Support Center</h2>
             <hr>
-			<div class="feature-section under-the-hood three-col">
+			<div class="feature-section three-col">
 				<div class="col">
 					<h4>Knowledge Base</h4>
 					<p>Contains all the most important topics and code snippets.</p>

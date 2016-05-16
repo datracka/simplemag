@@ -111,10 +111,10 @@ get_header();
                         $cat_cols_num = get_field ( 'category_cols_num', 'category_' . get_query_var('cat') );
                         if ( $cat_cols_num == 'columns-size-2' ) {
                             $columns_num = 'columns-size-2';
-                        } elseif ( $cat_cols_num == 'columns-size-3' ) {
-                            $columns_num = 'columns-size-3';
-                        } else {
+                        } elseif ( $cat_cols_num == 'columns-size-4' ) {
                             $columns_num = 'columns-size-4';
+                        } else {
+                            $columns_num = 'columns-size-3';
                         }
                     
                     // For Tag and Date archives

@@ -13,11 +13,13 @@
  * Add posts to slider only if the 'Add To Slider' 
  * custom field checkbox was checked on the Post edit page
 **/
+$slides_num = get_sub_field( 'slides_to_show' );
 $ti_posts_slider = new WP_Query(
     array(
-        'post_type' => 'post',
+        'posts_per_page' => $slides_num,
         'meta_key' => 'homepage_slider_add',
-        'meta_value' => '1'
+        'meta_value' => '1',
+        'no_found_rows' => true,
     )
 );
 
@@ -57,9 +59,7 @@ endif;
                         $slide_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), '' );
                         $slide_bg_image = 'style="background-image:url(' . esc_url( $slide_image_url[0] ) . ');"';
                     } ?>
-                    <div class="entry-image full-width-slider-image" <?php echo isset( $slide_bg_image ) ? $slide_bg_image : ''; ?>>
-                        <a class="entry-link" href="<?php the_permalink(); ?>"></a>
-                    </div>
+                    <div class="entry-image full-width-slider-image" <?php echo isset( $slide_bg_image ) ? $slide_bg_image : ''; ?>></div>
                 <?php 
                 /**
                  * Slider "Regular" option is slected
@@ -68,7 +68,6 @@ endif;
                 else : 
                 ?>
                     <figure class="entry-image">
-                        <a class="entry-link" href="<?php the_permalink(); ?>"></a>
                         <?php if ( has_post_thumbnail() ) { ?>
                             <?php the_post_thumbnail( 'big-size' ); ?>
                         <?php } else { ?>
@@ -79,6 +78,7 @@ endif;
                 <?php endif; ?>
 
                 <header class="entry-header">
+                    <a class="entry-link" href="<?php the_permalink(); ?>"></a>
                     <div class="inner">
                         <div class="inner-cell">
                             <div class="entry-frame">
@@ -88,7 +88,7 @@ endif;
                                     </span>
                                 </div>
                                 <h2 class="entry-title">
-                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    <?php the_title(); ?>
                                 </h2>
                                 <a class="read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'themetext' ); ?></a>
                             </div>

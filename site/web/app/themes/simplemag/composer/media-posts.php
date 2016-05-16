@@ -33,7 +33,8 @@ $media_query = new WP_Query(
     array(
         'post_type' => 'post',
         'posts_per_page' => $posts_to_show,
-        'tax_query' => array( $media_query_args )
+        'tax_query' => array( $media_query_args ),
+        'no_found_rows' => true,
     )
 );
 

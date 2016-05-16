@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SimpleMag 4.0\n"
-"POT-Creation-Date: 2015-12-24 15:27+0200\n"
-"PO-Revision-Date: 2015-12-24 15:28+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2016-04-01 00:18+0200\n"
+"PO-Revision-Date: 2016-04-01 00:19+0200\n"
+"Last-Translator: ThemesIndep <admin@themesindep.com>\n"
 "Language-Team: ThemesIndep <admin@themesindep.com>\n"
 "Language: en_EN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: _e;__\n"
@@ -285,970 +285,1083 @@ msgstr ""
 msgid "Theme Options"
 msgstr ""
 
-#: admin/theme-options.php:294 admin/theme-options.php:845
+#: admin/theme-options.php:258 admin/theme-options.php:868
 msgid "Header"
 msgstr ""
 
-#: admin/theme-options.php:295
+#: admin/theme-options.php:259
 msgid "Site Header Options"
 msgstr ""
 
-#: admin/theme-options.php:302 admin/theme-options.php:579
-#: admin/theme-options.php:866
+#: admin/theme-options.php:266 admin/theme-options.php:562
+#: admin/theme-options.php:889
 msgid "Top Strip"
 msgstr ""
 
-#: admin/theme-options.php:308
+#: admin/theme-options.php:272
 msgid "Strip Visibility"
 msgstr ""
 
-#: admin/theme-options.php:309
+#: admin/theme-options.php:273
 msgid "Enable or Disable the top strip"
 msgstr ""
 
-#: admin/theme-options.php:316
+#: admin/theme-options.php:280
 msgid "Logo"
 msgstr ""
 
-#: admin/theme-options.php:317
+#: admin/theme-options.php:281
 msgid "Upload a logo to be shown in top strip"
 msgstr ""
 
-#: admin/theme-options.php:330
+#: admin/theme-options.php:294
 msgid "Main Logo Area"
 msgstr ""
 
-#: admin/theme-options.php:336
+#: admin/theme-options.php:300
 msgid "Area Visibility"
 msgstr ""
 
-#: admin/theme-options.php:337
+#: admin/theme-options.php:301
 msgid "Enable or Disable main logo area"
 msgstr ""
 
-#: admin/theme-options.php:344
+#: admin/theme-options.php:308
 msgid "Main Logo"
 msgstr ""
 
-#: admin/theme-options.php:345
+#: admin/theme-options.php:309
 msgid ""
 "Upload your site logo. Default logo will be used unless you upload your own"
 msgstr ""
 
-#: admin/theme-options.php:356
+#: admin/theme-options.php:320
 msgid "Tagline"
 msgstr ""
 
-#: admin/theme-options.php:357
+#: admin/theme-options.php:321
 msgid "Enable or Disable the tagline under the logo"
 msgstr ""
 
-#: admin/theme-options.php:364
+#: admin/theme-options.php:328
 msgid "Area Type"
 msgstr ""
 
-#: admin/theme-options.php:365
+#: admin/theme-options.php:329
 msgid ""
 "1. Logo<br />2. Logo, social profiles and search<br />3. Logo and ad unit. "
 "To add the ad unit click on the Ad Units tab."
 msgstr ""
 
-#: admin/theme-options.php:384 admin/theme-options.php:390
-#: admin/theme-options.php:596 admin/theme-options.php:923 functions.php:78
+#: admin/theme-options.php:348 admin/theme-options.php:354
+#: admin/theme-options.php:579 admin/theme-options.php:946 functions.php:82
 msgid "Main Menu"
 msgstr ""
 
-#: admin/theme-options.php:391
+#: admin/theme-options.php:355
 msgid "Enable or Disable the main menu"
 msgstr ""
 
-#: admin/theme-options.php:398
+#: admin/theme-options.php:362
 msgid "Mega Menu"
 msgstr ""
 
-#: admin/theme-options.php:399
+#: admin/theme-options.php:363
 msgid "Enable or Disable the mega menu"
 msgstr ""
 
-#: admin/theme-options.php:411
+#: admin/theme-options.php:369
+msgid "Mega Menu Type"
+msgstr ""
+
+#: admin/theme-options.php:370
+msgid "Select between ajax or regular menu"
+msgstr ""
+
+#: admin/theme-options.php:387
 msgid "Header Features"
 msgstr ""
 
-#: admin/theme-options.php:412
+#: admin/theme-options.php:388
 msgid "All options below are applicable for top strip and main logo area"
 msgstr ""
 
-#: admin/theme-options.php:418
+#: admin/theme-options.php:394
 msgid "Fixed Element"
 msgstr ""
 
-#: admin/theme-options.php:419
+#: admin/theme-options.php:395
 msgid "Select header fixed element:<br />None, Top Strip, Main Menu"
 msgstr ""
 
-#: admin/theme-options.php:430
+#: admin/theme-options.php:406
 msgid "Search Visibility"
 msgstr ""
 
-#: admin/theme-options.php:431
+#: admin/theme-options.php:407
 msgid "Enable or Disable the search"
 msgstr ""
 
-#: admin/theme-options.php:437 inc/user-fields.php:13
+#: admin/theme-options.php:413 inc/user-fields.php:13
 msgid "Social Profiles"
 msgstr ""
 
-#: admin/theme-options.php:438
+#: admin/theme-options.php:414
 msgid "Enable or Disable top strip socical profiles"
 msgstr ""
 
-#: admin/theme-options.php:442
+#: admin/theme-options.php:418
 msgid "Social Profiles URLs"
 msgstr ""
 
-#: admin/theme-options.php:443
+#: admin/theme-options.php:419
 msgid "Enter full URLs of your social profiles"
 msgstr ""
 
-#: admin/theme-options.php:495
+#: admin/theme-options.php:471
 msgid "General Settings"
 msgstr ""
 
-#: admin/theme-options.php:501
+#: admin/theme-options.php:477
 msgid "Fixed Sidebar"
 msgstr ""
 
-#: admin/theme-options.php:502
+#: admin/theme-options.php:478
 msgid "Make sidebar fixed site wide"
 msgstr ""
 
-#: admin/theme-options.php:508
+#: admin/theme-options.php:484
 msgid "Custom Gallery"
 msgstr ""
 
-#: admin/theme-options.php:509
+#: admin/theme-options.php:485
 msgid "Enable or Disable theme custom WordPress gallery"
 msgstr ""
 
-#: admin/theme-options.php:515
+#: admin/theme-options.php:491
 msgid "Gallery Carousel Height"
 msgstr ""
 
-#: admin/theme-options.php:516
+#: admin/theme-options.php:492
 msgid ""
 "Set the height of the gallery carousel. Applies to Posts Carousel section "
 "and Gallery Format post."
 msgstr ""
 
-#: admin/theme-options.php:517
+#: admin/theme-options.php:493
 msgid ""
 "After changing the height you need to run the Force Regenerate Thumbnails "
 "plugin."
 msgstr ""
 
-#: admin/theme-options.php:524
+#: admin/theme-options.php:500
 msgid "Comments in static pages"
 msgstr ""
 
-#: admin/theme-options.php:525
+#: admin/theme-options.php:501
 msgid "Enable or Disable comments in all static pages."
 msgstr ""
 
-#: admin/theme-options.php:531
+#: admin/theme-options.php:507
+msgid "Footer Full Width Widget"
+msgstr ""
+
+#: admin/theme-options.php:508
+msgid "Footer widget full browser width"
+msgstr ""
+
+#: admin/theme-options.php:514
 msgid "Footer Text"
 msgstr ""
 
-#: admin/theme-options.php:532
+#: admin/theme-options.php:515
 msgid "Your site footer copyright text"
 msgstr ""
 
-#: admin/theme-options.php:541
+#: admin/theme-options.php:524
 msgid "Typography"
 msgstr ""
 
-#: admin/theme-options.php:547
+#: admin/theme-options.php:530
 msgid ""
 "Standard System Fonts and Google Webfonts are avaialble in each Font Family "
 "dropdown"
 msgstr ""
 
-#: admin/theme-options.php:555
+#: admin/theme-options.php:538
 msgid "Site Menus"
 msgstr ""
 
-#: admin/theme-options.php:562
+#: admin/theme-options.php:545
 msgid "Menus"
 msgstr ""
 
-#: admin/theme-options.php:563
+#: admin/theme-options.php:546
 msgid "Specify font style for top strip secondary and main menus"
 msgstr ""
 
-#: admin/theme-options.php:580
+#: admin/theme-options.php:563
 msgid "Top strip menu font size"
 msgstr ""
 
-#: admin/theme-options.php:597
+#: admin/theme-options.php:580
 msgid "Main menu font size"
 msgstr ""
 
-#: admin/theme-options.php:622
+#: admin/theme-options.php:605
 msgid "Titles and Heading"
 msgstr ""
 
-#: admin/theme-options.php:629
+#: admin/theme-options.php:612
 msgid "Titles and Headings"
 msgstr ""
 
-#: admin/theme-options.php:630
+#: admin/theme-options.php:613
 msgid "Specify font style for titles and headings"
 msgstr ""
 
-#: admin/theme-options.php:648
+#: admin/theme-options.php:631
 msgid "Composer Main Titles Size"
 msgstr ""
 
-#: admin/theme-options.php:649
+#: admin/theme-options.php:632
 msgid "Specify sections titles size"
 msgstr ""
 
-#: admin/theme-options.php:667 admin/theme-options.php:1350
+#: admin/theme-options.php:650 admin/theme-options.php:1373
 msgid "Post Item"
 msgstr ""
 
-#: admin/theme-options.php:668
+#: admin/theme-options.php:651
 msgid "Apllies to: composer, posts page, category or other archives"
 msgstr ""
 
-#: admin/theme-options.php:686
+#: admin/theme-options.php:669
 msgid "Single Post and Page"
 msgstr ""
 
-#: admin/theme-options.php:687
+#: admin/theme-options.php:670
 msgid "Titles size for Single Post and Static Page"
 msgstr ""
 
-#: admin/theme-options.php:703
+#: admin/theme-options.php:686
 msgid "Titles Style"
 msgstr ""
 
-#: admin/theme-options.php:704
+#: admin/theme-options.php:687
 msgid "Titles styling. Applies to Post Item, Single Post and Static Page"
 msgstr ""
 
-#: admin/theme-options.php:724
+#: admin/theme-options.php:707
 msgid "Editor Text"
 msgstr ""
 
-#: admin/theme-options.php:730
+#: admin/theme-options.php:713
 msgid "Font Family"
 msgstr ""
 
-#: admin/theme-options.php:731
+#: admin/theme-options.php:714
 msgid "Editor text font familty"
 msgstr ""
 
-#: admin/theme-options.php:746
+#: admin/theme-options.php:729
 msgid "Font Size"
 msgstr ""
 
-#: admin/theme-options.php:747
+#: admin/theme-options.php:730
 msgid "Editor text font size"
 msgstr ""
 
-#: admin/theme-options.php:773
+#: admin/theme-options.php:756
 msgid "Design Options"
 msgstr ""
 
-#: admin/theme-options.php:779
+#: admin/theme-options.php:761
+msgid "Main Site Options"
+msgstr ""
+
+#: admin/theme-options.php:768
 msgid "Text alignment"
 msgstr ""
 
-#: admin/theme-options.php:780
+#: admin/theme-options.php:769
 msgid "Select your site text alignment. Centered or Left."
 msgstr ""
 
-#: admin/theme-options.php:792
+#: admin/theme-options.php:781
 msgid "Site Layout"
 msgstr ""
 
-#: admin/theme-options.php:793
+#: admin/theme-options.php:782
 msgid "Select site layout. Fullwidth or Boxed."
 msgstr ""
 
-#: admin/theme-options.php:805
+#: admin/theme-options.php:794
 msgid "Body Background"
 msgstr ""
 
-#: admin/theme-options.php:806
+#: admin/theme-options.php:795
 msgid "Pick a body background color or upload an image"
 msgstr ""
 
-#: admin/theme-options.php:851
+#: admin/theme-options.php:812
+msgid "Main Colors"
+msgstr ""
+
+#: admin/theme-options.php:818
+msgid "Main Color"
+msgstr ""
+
+#: admin/theme-options.php:819
+msgid "Color for comments avatar, ratings, etc."
+msgstr ""
+
+#: admin/theme-options.php:826
+msgid "Secondary Color"
+msgstr ""
+
+#: admin/theme-options.php:827
+msgid "Color for rating bar text, etc."
+msgstr ""
+
+#: admin/theme-options.php:842
+msgid "Mobile Menu"
+msgstr ""
+
+#: admin/theme-options.php:848
+msgid "Color"
+msgstr ""
+
+#: admin/theme-options.php:849
+msgid "Select mobile menu color"
+msgstr ""
+
+#: admin/theme-options.php:874
 msgid "Header Background"
 msgstr ""
 
-#: admin/theme-options.php:852
+#: admin/theme-options.php:875
 msgid "Pick the header background color"
 msgstr ""
 
-#: admin/theme-options.php:872 admin/theme-options.php:929
-#: admin/theme-options.php:1086 admin/theme-options.php:1160
-#: admin/theme-options.php:1198 admin/theme-options.php:1227
-#: admin/theme-options.php:1293 admin/theme-options.php:1324
+#: admin/theme-options.php:895 admin/theme-options.php:952
+#: admin/theme-options.php:1109 admin/theme-options.php:1183
+#: admin/theme-options.php:1221 admin/theme-options.php:1250
+#: admin/theme-options.php:1316 admin/theme-options.php:1347
 msgid "Background"
 msgstr ""
 
-#: admin/theme-options.php:873
+#: admin/theme-options.php:896
 msgid "Top strip background color."
 msgstr ""
 
-#: admin/theme-options.php:880 admin/theme-options.php:973
+#: admin/theme-options.php:903 admin/theme-options.php:996
 msgid "Bottom Border"
 msgstr ""
 
-#: admin/theme-options.php:881
+#: admin/theme-options.php:904
 msgid "Bottom border color"
 msgstr ""
 
-#: admin/theme-options.php:896 admin/theme-options.php:937
+#: admin/theme-options.php:919 admin/theme-options.php:960
 msgid "Menu Links"
 msgstr ""
 
-#: admin/theme-options.php:897
+#: admin/theme-options.php:920
 msgid "Menu links color"
 msgstr ""
 
-#: admin/theme-options.php:908
+#: admin/theme-options.php:931
 msgid "Social Icons"
 msgstr ""
 
-#: admin/theme-options.php:909
+#: admin/theme-options.php:932
 msgid "Social icons styling"
 msgstr ""
 
-#: admin/theme-options.php:930
+#: admin/theme-options.php:953
 msgid "Main menu background color"
 msgstr ""
 
-#: admin/theme-options.php:938
+#: admin/theme-options.php:961
 msgid "Main menu links color"
 msgstr ""
 
-#: admin/theme-options.php:949
+#: admin/theme-options.php:972
 msgid "Links Separator"
 msgstr ""
 
-#: admin/theme-options.php:950
+#: admin/theme-options.php:973
 msgid "Links seprator color"
 msgstr ""
 
-#: admin/theme-options.php:957
+#: admin/theme-options.php:980
 msgid "Top Border"
 msgstr ""
 
-#: admin/theme-options.php:958
+#: admin/theme-options.php:981
 msgid "Main Menu top border"
 msgstr ""
 
-#: admin/theme-options.php:974
+#: admin/theme-options.php:997
 msgid "Main Menu bottom border"
 msgstr ""
 
-#: admin/theme-options.php:996
+#: admin/theme-options.php:1019
 msgid "Main Menu Dropdown"
 msgstr ""
 
-#: admin/theme-options.php:1004
+#: admin/theme-options.php:1027
 msgid "Pointer &amp; Top Border"
 msgstr ""
 
-#: admin/theme-options.php:1005
+#: admin/theme-options.php:1028
 msgid "Pointer and top border color"
 msgstr ""
 
-#: admin/theme-options.php:1013
+#: admin/theme-options.php:1036
 msgid "Background Color"
 msgstr ""
 
-#: admin/theme-options.php:1014
+#: admin/theme-options.php:1037
 msgid "Pick menu background color"
 msgstr ""
 
-#: admin/theme-options.php:1021 admin/theme-options.php:1251
+#: admin/theme-options.php:1044 admin/theme-options.php:1274
 msgid "Links Color"
 msgstr ""
 
-#: admin/theme-options.php:1022
+#: admin/theme-options.php:1045
 msgid "Pick menu links color"
 msgstr ""
 
-#: admin/theme-options.php:1041
+#: admin/theme-options.php:1064
 msgid "Titles Background"
 msgstr ""
 
-#: admin/theme-options.php:1047
+#: admin/theme-options.php:1070
 msgid "On/Off"
 msgstr ""
 
-#: admin/theme-options.php:1048
+#: admin/theme-options.php:1071
 msgid "Turn the background image on or off"
 msgstr ""
 
-#: admin/theme-options.php:1054
+#: admin/theme-options.php:1077
 msgid "Background Type"
 msgstr ""
 
-#: admin/theme-options.php:1055
+#: admin/theme-options.php:1078
 msgid "Use deafult background or upload custom"
 msgstr ""
 
-#: admin/theme-options.php:1066
+#: admin/theme-options.php:1089
 msgid "Upload Custom"
 msgstr ""
 
-#: admin/theme-options.php:1067
+#: admin/theme-options.php:1090
 msgid "Upload custom background"
 msgstr ""
 
-#: admin/theme-options.php:1080
+#: admin/theme-options.php:1103
 msgid "Slider"
 msgstr ""
 
-#: admin/theme-options.php:1087
+#: admin/theme-options.php:1110
 msgid "Slider background color"
 msgstr ""
 
-#: admin/theme-options.php:1094
+#: admin/theme-options.php:1117
 msgid "Tint strength"
 msgstr ""
 
-#: admin/theme-options.php:1095
+#: admin/theme-options.php:1118
 msgid "Slider tint regular strength"
 msgstr ""
 
-#: admin/theme-options.php:1106
+#: admin/theme-options.php:1129
 msgid "Tint strength hover"
 msgstr ""
 
-#: admin/theme-options.php:1107
+#: admin/theme-options.php:1130
 msgid "Slider tint regular strength mouse over"
 msgstr ""
 
-#: admin/theme-options.php:1125 admin/theme-options.php:1608
+#: admin/theme-options.php:1148 admin/theme-options.php:1692
 msgid "Sidebar"
 msgstr ""
 
-#: admin/theme-options.php:1131
+#: admin/theme-options.php:1154
 msgid "Sidebar Border"
 msgstr ""
 
-#: admin/theme-options.php:1132
+#: admin/theme-options.php:1155
 msgid "Select sidebar border styling"
 msgstr ""
 
-#: admin/theme-options.php:1154
+#: admin/theme-options.php:1177
 msgid "Single Post Slide Dock"
 msgstr ""
 
-#: admin/theme-options.php:1161 admin/theme-options.php:1199
-#: admin/theme-options.php:1228 admin/theme-options.php:1294
-#: admin/theme-options.php:1325
+#: admin/theme-options.php:1184 admin/theme-options.php:1222
+#: admin/theme-options.php:1251 admin/theme-options.php:1317
+#: admin/theme-options.php:1348
 msgid "Pick a color for the backgound"
 msgstr ""
 
-#: admin/theme-options.php:1168
+#: admin/theme-options.php:1191
 msgid "Text Elements"
 msgstr ""
 
-#: admin/theme-options.php:1169
+#: admin/theme-options.php:1192
 msgid "Pick a color for dock title and post text"
 msgstr ""
 
-#: admin/theme-options.php:1176
+#: admin/theme-options.php:1199
 msgid "Post title"
 msgstr ""
 
-#: admin/theme-options.php:1177
+#: admin/theme-options.php:1200
 msgid "Pick a color for the post title"
 msgstr ""
 
-#: admin/theme-options.php:1192 admin/theme-options.php:1489
+#: admin/theme-options.php:1215 admin/theme-options.php:1565
 msgid "Author Box"
 msgstr ""
 
-#: admin/theme-options.php:1206 admin/theme-options.php:1301
-#: admin/theme-options.php:1332
+#: admin/theme-options.php:1229 admin/theme-options.php:1324
+#: admin/theme-options.php:1355
 msgid "Text and Links"
 msgstr ""
 
-#: admin/theme-options.php:1207
+#: admin/theme-options.php:1230
 msgid "Pick a color for titles, text and links"
 msgstr ""
 
-#: admin/theme-options.php:1221
+#: admin/theme-options.php:1244
 msgid "Widgetized Footer"
 msgstr ""
 
-#: admin/theme-options.php:1235
+#: admin/theme-options.php:1258
 msgid "Titles"
 msgstr ""
 
-#: admin/theme-options.php:1236
+#: admin/theme-options.php:1259
 msgid "Pick a color for widget titles"
 msgstr ""
 
-#: admin/theme-options.php:1243
+#: admin/theme-options.php:1266
 msgid "Text"
 msgstr ""
 
-#: admin/theme-options.php:1244
+#: admin/theme-options.php:1267
 msgid "Pick a color for widget text"
 msgstr ""
 
-#: admin/theme-options.php:1252
+#: admin/theme-options.php:1275
 msgid "Pick a color for widget links"
 msgstr ""
 
-#: admin/theme-options.php:1263
+#: admin/theme-options.php:1286
 msgid "Borders Color"
 msgstr ""
 
-#: admin/theme-options.php:1264
+#: admin/theme-options.php:1287
 msgid "Pick a color for borders"
 msgstr ""
 
-#: admin/theme-options.php:1286
+#: admin/theme-options.php:1309
 msgid "Full Width Footer"
 msgstr ""
 
-#: admin/theme-options.php:1287 functions.php:536
+#: admin/theme-options.php:1310 functions.php:460
 msgid "Can be used for your Instagram feed"
 msgstr ""
 
-#: admin/theme-options.php:1302 admin/theme-options.php:1333
+#: admin/theme-options.php:1325 admin/theme-options.php:1356
 msgid "Pick a color for text and links"
 msgstr ""
 
-#: admin/theme-options.php:1317
+#: admin/theme-options.php:1340
 msgid "Footer Copyright"
 msgstr ""
 
-#: admin/theme-options.php:1318
+#: admin/theme-options.php:1341
 msgid "Footer with your site copyright text"
 msgstr ""
 
-#: admin/theme-options.php:1355
+#: admin/theme-options.php:1378
 msgid "Controls the post item in categories, archives and posts page."
 msgstr ""
 
-#: admin/theme-options.php:1360
-msgid "Excerpt Length"
+#: admin/theme-options.php:1383
+msgid "Date"
 msgstr ""
 
-#: admin/theme-options.php:1361
-msgid "Enter a number of words to limit the exceprt site wide"
+#: admin/theme-options.php:1384
+msgid "Enable or Disable the date"
 msgstr ""
 
-#: admin/theme-options.php:1368
-msgid "Read More Link"
-msgstr ""
-
-#: admin/theme-options.php:1369
-msgid "Enable or Disable the reaed more link"
-msgstr ""
-
-#: admin/theme-options.php:1375
-msgid "Share Icons"
-msgstr ""
-
-#: admin/theme-options.php:1376
-msgid "Enable or Disable the share icons"
-msgstr ""
-
-#: admin/theme-options.php:1386
-msgid "Single Post"
+#: admin/theme-options.php:1390
+msgid "Author Name"
 msgstr ""
 
 #: admin/theme-options.php:1391
+msgid "Enable or Disable the author name"
+msgstr ""
+
+#: admin/theme-options.php:1397 admin/theme-options.php:1777
+msgid "Excerpt"
+msgstr ""
+
+#: admin/theme-options.php:1398
+msgid "Enable or Disable the execrpt"
+msgstr ""
+
+#: admin/theme-options.php:1404
+msgid "Excerpt Length"
+msgstr ""
+
+#: admin/theme-options.php:1405
+msgid "Enter a number of words to limit the exceprt site wide"
+msgstr ""
+
+#: admin/theme-options.php:1412
+msgid "Share Icons"
+msgstr ""
+
+#: admin/theme-options.php:1413
+msgid "Enable or Disable the share icons"
+msgstr ""
+
+#: admin/theme-options.php:1419 composer/assets/media-posts-one.php:145
+#: composer/posts-slider.php:94 composer/slider-latest.php:75
+#: inc/category-slider.php:57 inc/content-post-actions.php:322
+#: inc/content-post-actions.php:330 index.php:99 search.php:69
+msgid "Read More"
+msgstr ""
+
+#: admin/theme-options.php:1420
+msgid "Enable or Disable the read more link"
+msgstr ""
+
+#: admin/theme-options.php:1430
+msgid "Single Post"
+msgstr ""
+
+#: admin/theme-options.php:1435
 msgid "Media Position"
 msgstr ""
 
-#: admin/theme-options.php:1392
+#: admin/theme-options.php:1436
 msgid "Applies to Featured Image, Gallery, Video or Audio."
 msgstr ""
 
-#: admin/theme-options.php:1393
+#: admin/theme-options.php:1437
 msgid ""
 "\"Full Width\" and \"Above the Content\" will work site wide.<br /> \"Define "
 "Per Post\" enables the \"Media Position\" option in \"Post Options\" box in "
 "each post."
 msgstr ""
 
-#: admin/theme-options.php:1404 admin/theme-options.php:1717
+#: admin/theme-options.php:1448 admin/theme-options.php:1819
 msgid "Title Position"
 msgstr ""
 
-#: admin/theme-options.php:1405
+#: admin/theme-options.php:1449
 msgid "Applies to post main title"
 msgstr ""
 
-#: admin/theme-options.php:1406
+#: admin/theme-options.php:1450
 msgid ""
 "\"Full Width\" and \"Above the Content\" will work site wide.<br /> \"Define "
 "Per Post\" enables the \"Title Position\" option in \"Post Options\" box in "
 "each post."
 msgstr ""
 
-#: admin/theme-options.php:1417
+#: admin/theme-options.php:1461
 msgid "Featured Image"
 msgstr ""
 
-#: admin/theme-options.php:1418
+#: admin/theme-options.php:1462
 msgid "Enable or Disable featured image"
 msgstr ""
 
-#: admin/theme-options.php:1424
-msgid "Rating Box Position"
-msgstr ""
-
-#: admin/theme-options.php:1425
-msgid "Specify where to show the rating box"
-msgstr ""
-
-#: admin/theme-options.php:1435
+#: admin/theme-options.php:1468
 msgid "Author name"
 msgstr ""
 
-#: admin/theme-options.php:1436
+#: admin/theme-options.php:1469
 msgid "Enable or Disable post author name"
 msgstr ""
 
-#: admin/theme-options.php:1442 admin/theme-options.php:1659
+#: admin/theme-options.php:1475 admin/theme-options.php:1761
 msgid "Category name"
 msgstr ""
 
-#: admin/theme-options.php:1443 admin/theme-options.php:1660
+#: admin/theme-options.php:1476 admin/theme-options.php:1762
 msgid "Enable or Disable the post category name"
 msgstr ""
 
-#: admin/theme-options.php:1449
+#: admin/theme-options.php:1482
 msgid "Post Date"
 msgstr ""
 
-#: admin/theme-options.php:1450
+#: admin/theme-options.php:1483
 msgid "Enable or Disable the post date"
 msgstr ""
 
-#: admin/theme-options.php:1456
-msgid "Tags"
+#: admin/theme-options.php:1489 admin/theme-options.php:1496
+msgid "Manual Excerpt"
 msgstr ""
 
-#: admin/theme-options.php:1457
-msgid "Enable or Disable the tags list"
-msgstr ""
-
-#: admin/theme-options.php:1463
-msgid "Social Share Links"
-msgstr ""
-
-#: admin/theme-options.php:1464
-msgid "Enable or Disable social share links panel"
-msgstr ""
-
-#: admin/theme-options.php:1470
-msgid "Social Share Link Style"
-msgstr ""
-
-#: admin/theme-options.php:1471
-msgid "Specify social share links panel styling"
-msgstr ""
-
-#: admin/theme-options.php:1483
-msgid "Twitter Username"
-msgstr ""
-
-#: admin/theme-options.php:1484
-msgid "Your Twitter username for Twitter share link, without @"
-msgstr ""
-
-#: admin/theme-options.php:1490
-msgid "Enable or Disable the author box"
-msgstr ""
-
-#: admin/theme-options.php:1496
-msgid "Slide Dock"
-msgstr ""
-
-#: admin/theme-options.php:1497
-msgid "Enable or Disable the slide dock in the bottom right corner"
+#: admin/theme-options.php:1490 admin/theme-options.php:1497
+msgid "Enable or Disable the manual Excerpt"
 msgstr ""
 
 #: admin/theme-options.php:1503
-msgid "Related Posts"
+msgid "Previous and Next Nav"
 msgstr ""
 
 #: admin/theme-options.php:1504
-msgid "Enable or Disable the Related Posts box"
+msgid "Enable or Disable Previous Post and Next Post navigation"
 msgstr ""
 
 #: admin/theme-options.php:1510
-msgid "Show Related Posts By"
+msgid "Tags"
 msgstr ""
 
 #: admin/theme-options.php:1511
-msgid "Specify the Related Posts output"
+msgid "Enable or Disable the tags list"
 msgstr ""
 
-#: admin/theme-options.php:1521
-msgid "Number of Related Posts"
+#: admin/theme-options.php:1517
+msgid "Social Share Links"
 msgstr ""
 
-#: admin/theme-options.php:1522
-msgid "Specify the number Related Posts to output"
+#: admin/theme-options.php:1518
+msgid "Enable or Disable social share links panel"
+msgstr ""
+
+#: admin/theme-options.php:1524
+msgid "Social Share Link Style"
+msgstr ""
+
+#: admin/theme-options.php:1525
+msgid "Specify social share links panel styling"
 msgstr ""
 
 #: admin/theme-options.php:1537
+msgid "Twitter Username"
+msgstr ""
+
+#: admin/theme-options.php:1538
+msgid "Your Twitter username for Twitter share link, without @"
+msgstr ""
+
+#: admin/theme-options.php:1543
+msgid "Rating Box Style"
+msgstr ""
+
+#: admin/theme-options.php:1544
+msgid "Select rating box style"
+msgstr ""
+
+#: admin/theme-options.php:1554
+msgid "Rating Box Position"
+msgstr ""
+
+#: admin/theme-options.php:1555
+msgid "Specify where to show the rating box"
+msgstr ""
+
+#: admin/theme-options.php:1566
+msgid "Enable or Disable the author box"
+msgstr ""
+
+#: admin/theme-options.php:1572
+msgid "Slide Dock"
+msgstr ""
+
+#: admin/theme-options.php:1573
+msgid "Enable or Disable the slide dock in the bottom right corner"
+msgstr ""
+
+#: admin/theme-options.php:1579
+msgid "Related Posts"
+msgstr ""
+
+#: admin/theme-options.php:1580
+msgid "Enable or Disable the Related Posts box"
+msgstr ""
+
+#: admin/theme-options.php:1586
+msgid "Show Related Posts By"
+msgstr ""
+
+#: admin/theme-options.php:1587
+msgid "Specify the Related Posts output"
+msgstr ""
+
+#: admin/theme-options.php:1597
+msgid "Number of Related Posts"
+msgstr ""
+
+#: admin/theme-options.php:1598
+msgid "Specify the number Related Posts to output"
+msgstr ""
+
+#: admin/theme-options.php:1613
 msgid "Posts Page"
 msgstr ""
 
-#: admin/theme-options.php:1542
+#: admin/theme-options.php:1618
 msgid ""
 "Posts Page is created under Settings &rarr; Reading. For extended info "
 "please see \"03. Posts Page\" in the documentaion."
 msgstr ""
 
-#: admin/theme-options.php:1547
+#: admin/theme-options.php:1623
 msgid "Page Title"
 msgstr ""
 
-#: admin/theme-options.php:1548
+#: admin/theme-options.php:1624
 msgid "Specify the page title behavior"
 msgstr ""
 
-#: admin/theme-options.php:1559
+#: admin/theme-options.php:1635
 msgid "Posts Slider"
 msgstr ""
 
-#: admin/theme-options.php:1560
+#: admin/theme-options.php:1636
 msgid "Enable or Disable the slider."
 msgstr ""
 
-#: admin/theme-options.php:1566
+#: admin/theme-options.php:1642
 msgid "Posts Layout"
 msgstr ""
 
-#: admin/theme-options.php:1567
+#: admin/theme-options.php:1643
 msgid "Select the page layout"
 msgstr ""
 
-#: admin/theme-options.php:1579
+#: admin/theme-options.php:1655 admin/theme-options.php:1730
 msgid "Number Of Columns"
 msgstr ""
 
-#: admin/theme-options.php:1580
+#: admin/theme-options.php:1656
 msgid "Select the number of columns for this layout"
 msgstr ""
 
-#: admin/theme-options.php:1602 functions.php:547
+#: admin/theme-options.php:1678 functions.php:471
 msgid "WooCommerce"
 msgstr ""
 
-#: admin/theme-options.php:1609
+#: admin/theme-options.php:1684
+msgid "Cart"
+msgstr ""
+
+#: admin/theme-options.php:1685
+msgid "Enable or Disable cart site wide, not only in shop pages"
+msgstr ""
+
+#: admin/theme-options.php:1693
 msgid "Enable or Disable Sidebar on Products Categories"
 msgstr ""
 
-#: admin/theme-options.php:1616
+#: admin/theme-options.php:1700
 msgid "Product Sorting"
 msgstr ""
 
-#: admin/theme-options.php:1617
+#: admin/theme-options.php:1701
 msgid "Show or Hide Product Sorting"
 msgstr ""
 
-#: admin/theme-options.php:1625
+#: admin/theme-options.php:1709
 msgid "Product Item"
 msgstr ""
 
-#: admin/theme-options.php:1626
+#: admin/theme-options.php:1710
 msgid "Product item on Shop Page and on Category Page"
 msgstr ""
 
-#: admin/theme-options.php:1631
+#: admin/theme-options.php:1715
 msgid "Layout"
 msgstr ""
 
-#: admin/theme-options.php:1632
+#: admin/theme-options.php:1716
 msgid ""
 "Select products layout<br /><br /> 1. Masonry<br />2. Grid<br />3. List<br /"
 ">4. Classic<br />5. Asymmetric<br /><br />"
 msgstr ""
 
-#: admin/theme-options.php:1646
+#: admin/theme-options.php:1731
+msgid ""
+"Select the number of columns for this layout<br/>(Applies only to Masonry or "
+"Grid layout)"
+msgstr ""
+
+#: admin/theme-options.php:1748
 msgid "Image Overlay"
 msgstr ""
 
-#: admin/theme-options.php:1647
+#: admin/theme-options.php:1749
 msgid ""
 "Enable or Disable product details over the image on mouseover<br />(Applies "
 "only to Masonry or Grid layout)<br /><br />"
 msgstr ""
 
-#: admin/theme-options.php:1667
+#: admin/theme-options.php:1769
 msgid "Rating Stars"
 msgstr ""
 
-#: admin/theme-options.php:1668
+#: admin/theme-options.php:1770
 msgid "Enable or Disable the rating stars under the title"
 msgstr ""
 
-#: admin/theme-options.php:1675
-msgid "Excerpt"
-msgstr ""
-
-#: admin/theme-options.php:1676
+#: admin/theme-options.php:1778
 msgid "Show or Hide the excerpt on product"
 msgstr ""
 
-#: admin/theme-options.php:1683
+#: admin/theme-options.php:1785
 msgid "Add To Cart button"
 msgstr ""
 
-#: admin/theme-options.php:1684
+#: admin/theme-options.php:1786
 msgid ""
 "Show or Hide the Add To Cart button on Archive Page<br />(The button will "
 "appear only on Product Page)"
 msgstr ""
 
-#: admin/theme-options.php:1698
+#: admin/theme-options.php:1800
 msgid "Single Product Page"
 msgstr ""
 
-#: admin/theme-options.php:1705
+#: admin/theme-options.php:1807
 msgid "Slider on Product Page"
 msgstr ""
 
-#: admin/theme-options.php:1706
+#: admin/theme-options.php:1808
 msgid "Switch between Images List or Slider on Product Page"
 msgstr ""
 
-#: admin/theme-options.php:1718
+#: admin/theme-options.php:1820
 msgid "Applies to single product main title"
 msgstr ""
 
-#: admin/theme-options.php:1738
+#: admin/theme-options.php:1840
 msgid "Custom Code"
 msgstr ""
 
-#: admin/theme-options.php:1743
+#: admin/theme-options.php:1845
 msgid "Custom CSS"
 msgstr ""
 
-#: admin/theme-options.php:1744
+#: admin/theme-options.php:1846
 msgid "Quickly add some CSS by adding it to this block."
 msgstr ""
 
-#: admin/theme-options.php:1750
+#: admin/theme-options.php:1852
 msgid "Custom JavaScript/Analytics Header"
 msgstr ""
 
-#: admin/theme-options.php:1751
+#: admin/theme-options.php:1853
 msgid ""
 "Paste here JavaScript and/or Analytics code wich will appear in the Header "
 "of your site. DO NOT include opening and closing script tags."
 msgstr ""
 
-#: admin/theme-options.php:1757
+#: admin/theme-options.php:1859
 msgid "Custom JavaScript/Analytics Footer"
 msgstr ""
 
-#: admin/theme-options.php:1758
+#: admin/theme-options.php:1860
 msgid ""
 "Paste JavaScript and/or Analytics code wich will appear in the Footer of "
 "your site. DO NOT include opening and closing script tags."
 msgstr ""
 
-#: admin/theme-options.php:1768
+#: admin/theme-options.php:1870
 msgid "Ad Units"
 msgstr ""
 
-#: admin/theme-options.php:1773
+#: admin/theme-options.php:1875
 msgid ""
 "Add ads in one of the two formats: Image Ad or Code Generated Ad.<br />All "
 "ads sizes are unless it is says otherwise:<br />1. With sidebar: 770<br />2. "
 "Without sidebar: 1170"
 msgstr ""
 
-#: admin/theme-options.php:1780
+#: admin/theme-options.php:1882
 msgid "Header Ad"
 msgstr ""
 
-#: admin/theme-options.php:1787 admin/theme-options.php:1824
-#: admin/theme-options.php:1860 admin/theme-options.php:1895
+#: admin/theme-options.php:1889 admin/theme-options.php:1926
+#: admin/theme-options.php:1962 admin/theme-options.php:1997
 msgid "Click the Upload button to upload the ad image"
 msgstr ""
 
-#: admin/theme-options.php:1788 admin/theme-options.php:1825
-#: admin/theme-options.php:1861 admin/theme-options.php:1896
+#: admin/theme-options.php:1890 admin/theme-options.php:1927
+#: admin/theme-options.php:1963 admin/theme-options.php:1998
 msgid "Ad Image"
 msgstr ""
 
-#: admin/theme-options.php:1789
+#: admin/theme-options.php:1891
 msgid "Best size for header ad image is 728x90"
 msgstr ""
 
-#: admin/theme-options.php:1797 admin/theme-options.php:1833
-#: admin/theme-options.php:1869 admin/theme-options.php:1904
+#: admin/theme-options.php:1899 admin/theme-options.php:1935
+#: admin/theme-options.php:1971 admin/theme-options.php:2006
 msgid "Ad link"
 msgstr ""
 
-#: admin/theme-options.php:1798 admin/theme-options.php:1834
-#: admin/theme-options.php:1870 admin/theme-options.php:1905
+#: admin/theme-options.php:1900 admin/theme-options.php:1936
+#: admin/theme-options.php:1972 admin/theme-options.php:2007
 msgid "Enter a full URL of ad link"
 msgstr ""
 
-#: admin/theme-options.php:1804 admin/theme-options.php:1840
-#: admin/theme-options.php:1876 admin/theme-options.php:1911
+#: admin/theme-options.php:1906 admin/theme-options.php:1942
+#: admin/theme-options.php:1978 admin/theme-options.php:2013
 msgid "Ad Code"
 msgstr ""
 
-#: admin/theme-options.php:1805
+#: admin/theme-options.php:1907
 msgid "Paste the code generated ad. Best size is 728x90"
 msgstr ""
 
-#: admin/theme-options.php:1817
+#: admin/theme-options.php:1919
 msgid "Single Post - Above the content"
 msgstr ""
 
-#: admin/theme-options.php:1853
+#: admin/theme-options.php:1955
 msgid "Single Post - Under the content"
 msgstr ""
 
-#: admin/theme-options.php:1888
+#: admin/theme-options.php:1990
 msgid "Footer"
 msgstr ""
 
-#: admin/theme-options.php:1925
+#: admin/theme-options.php:2027
 msgid "Page 404"
 msgstr ""
 
-#: admin/theme-options.php:1931
+#: admin/theme-options.php:2033
 msgid "Click the Upload button to upload the image"
 msgstr ""
 
-#: admin/theme-options.php:1932
+#: admin/theme-options.php:2034
 msgid "Upload Image"
 msgstr ""
 
-#: admin/theme-options.php:1933
+#: admin/theme-options.php:2035
 msgid "Upload an image for the 404 error page"
 msgstr ""
 
-#: admin/theme-options.php:2036
+#: admin/theme-options.php:2138
 msgid "Section via hook"
 msgstr ""
 
-#: admin/theme-options.php:2037
+#: admin/theme-options.php:2139
 msgid ""
 "<p class=\"description\">This is a section created by adding a filter to the "
 "sections array. Can be used by child themes to add/remove sections from the "
@@ -1259,15 +1372,15 @@ msgstr ""
 msgid "Author Archive"
 msgstr ""
 
-#: archive.php:126 author.php:88 index.php:136
+#: archive.php:141 author.php:88 index.php:138 search.php:88
 msgid "<i class=\"icomoon-arrow-left\"></i>"
 msgstr ""
 
-#: archive.php:127 author.php:89 index.php:137
+#: archive.php:142 author.php:89 index.php:139 search.php:89
 msgid "<i class=\"icomoon-arrow-right\"></i>"
 msgstr ""
 
-#: archive.php:140 composer/latest-posts.php:103 index.php:143
+#: archive.php:155 composer/posts-section.php:115 index.php:145
 msgid "Sorry, no posts were found"
 msgstr ""
 
@@ -1299,40 +1412,34 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: composer/category-posts.php:102 composer/featured-posts.php:107
-#: composer/media-posts.php:185 content-post.php:87
-#: inc/content-post-actions.php:189 inc/content-post-actions.php:203
+#: composer/assets/media-posts-one.php:135 composer/category-posts.php:107
+#: composer/featured-posts.php:109 composer/latest-posts.php:107
+#: composer/latest-posts.php:173 inc/content-post-actions.php:212
+#: inc/content-post-actions.php:227 inc/single-post-actions.php:43
 msgid "by"
 msgstr ""
 
-#: composer/category-posts.php:153
+#: composer/assets/sections-functions.php:65
 msgid "View"
 msgstr ""
 
-#: composer/featured-posts.php:150
+#: composer/featured-posts.php:154
 msgid "There are no featured posts yet"
 msgstr ""
 
-#: composer/latest-reviews.php:118
+#: composer/latest-reviews.php:105
 msgid "There are no reviews yet"
 msgstr ""
 
-#: composer/media-posts.php:195 composer/posts-slider.php:93
-#: composer/slider-latest.php:73 content-post.php:111
-#: inc/category-slider.php:57 inc/content-post-actions.php:234
-#: inc/content-post-actions.php:244 index.php:97 search.php:65
-msgid "Read More"
-msgstr ""
-
-#: composer/posts-carousel.php:68
+#: composer/posts-carousel.php:69
 msgid "Sorry, there are no posts in the carousel"
 msgstr ""
 
-#: composer/posts-slider.php:109 composer/slider-latest.php:89
+#: composer/posts-slider.php:110 composer/slider-latest.php:91
 msgid "Sorry, there are no posts in the slider"
 msgstr ""
 
-#: composer/slider-latest.php:162
+#: composer/slider-latest.php:170
 msgid "There are no latest posts yet"
 msgstr ""
 
@@ -1340,64 +1447,60 @@ msgstr ""
 msgid "Back to top"
 msgstr ""
 
-#: functions.php:79
+#: functions.php:83
 msgid "Top Strip Menu"
 msgstr ""
 
-#: functions.php:322
-msgid "By"
-msgstr ""
-
-#: functions.php:477
+#: functions.php:401
 msgid "Magazine"
 msgstr ""
 
-#: functions.php:479
+#: functions.php:403
 msgid "Sidebar for categories and single posts"
 msgstr ""
 
-#: functions.php:489 sitemap.php:61
+#: functions.php:413 sitemap.php:47
 msgid "Pages"
 msgstr ""
 
-#: functions.php:491
+#: functions.php:415
 msgid "Sidebar for static pages"
 msgstr ""
 
-#: functions.php:501
+#: functions.php:425
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:512
+#: functions.php:436
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:523
+#: functions.php:447
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:534
+#: functions.php:458
 msgid "Footer Full Width"
 msgstr ""
 
-#: functions.php:549
+#: functions.php:473
 msgid "Sidebar for Woocommerce"
 msgstr ""
 
-#: functions.php:561
+#: functions.php:485
 msgid "bbPress"
 msgstr ""
 
-#: functions.php:563
+#: functions.php:487
 msgid "Sidebar for bbPress"
 msgstr ""
 
-#: header.php:134
+#: header.php:136
 msgid "Define your site main menu"
 msgstr ""
 
-#: inc/ad-units-actions.php:41 inc/ad-units-actions.php:82
-#: inc/ad-units-actions.php:123 inc/ad-units-actions.php:162
+#: inc/ad-units-actions.php:41 inc/ad-units-actions.php:85
+#: inc/ad-units-actions.php:127 inc/ad-units-actions.php:167
 msgid "Advertisement"
 msgstr ""
 
@@ -1405,29 +1508,41 @@ msgstr ""
 msgid "Written By"
 msgstr ""
 
-#: inc/author-box.php:25 inc/single-post-actions.php:170
+#: inc/author-box.php:25 inc/single-post-actions.php:239
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: inc/mega-menu.php:53 inc/related-posts.php:152
-msgid "See More"
-msgstr ""
-
-#: inc/mega-menu.php:106
+#: inc/mega-menu.php:78
 msgid "Add some posts to this category"
 msgstr ""
 
-#: inc/related-posts.php:63
+#: inc/mega-menu.php:197
+msgid "No image"
+msgstr ""
+
+#: inc/related-posts.php:65
 msgid "You may also like"
 msgstr ""
 
-#: inc/related-posts.php:64
+#: inc/related-posts.php:67
 msgid "Latest by"
 msgstr ""
 
-#: inc/single-post-actions.php:137 page.php:53
+#: inc/related-posts.php:164
+msgid "See More"
+msgstr ""
+
+#: inc/single-post-actions.php:179 page.php:53
 msgid "Continue Reading"
+msgstr ""
+
+#: inc/single-post-actions.php:204
+msgid "Previous article"
+msgstr ""
+
+#: inc/single-post-actions.php:210
+msgid "Next article"
 msgstr ""
 
 #: inc/slide-dock.php:13
@@ -1446,15 +1561,15 @@ msgstr ""
 msgid "Pinterest"
 msgstr ""
 
-#: inc/social-share.php:82
+#: inc/social-share.php:81
 msgid "Google +"
 msgstr ""
 
-#: inc/social-share.php:86 inc/user-fields.php:57 widgets/ti-about-site.php:50
+#: inc/social-share.php:85 inc/user-fields.php:57 widgets/ti-about-site.php:50
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/social-share.php:90
+#: inc/social-share.php:89
 msgid "Email"
 msgstr ""
 
@@ -1474,27 +1589,27 @@ msgstr ""
 msgid "<small>Search Results for:</small><br />"
 msgstr ""
 
-#: search.php:76
+#: search.php:82
 msgid "Sorry, nothing found"
 msgstr ""
 
-#: searchform.php:11
+#: searchform.php:12
 msgid "Search"
 msgstr ""
 
-#: single.php:102
+#: single.php:125
 msgid "Tags from the story"
 msgstr ""
 
-#: sitemap.php:47
+#: sitemap.php:33
 msgid "Categories"
 msgstr ""
 
-#: sitemap.php:54 widgets/ti-authors.php:177
+#: sitemap.php:40 widgets/ti-authors.php:177
 msgid "Authors"
 msgstr ""
 
-#: sitemap.php:68
+#: sitemap.php:54
 msgid "Archives"
 msgstr ""
 
@@ -1563,23 +1678,23 @@ msgstr ""
 msgid "StumbleUpon"
 msgstr ""
 
-#: widgets/ti-about-site.php:204
+#: widgets/ti-about-site.php:206
 msgid "Title"
 msgstr ""
 
-#: widgets/ti-about-site.php:208
+#: widgets/ti-about-site.php:210
 msgid "Logo URL"
 msgstr ""
 
-#: widgets/ti-about-site.php:212
+#: widgets/ti-about-site.php:214
 msgid "Short text about the site"
 msgstr ""
 
-#: widgets/ti-about-site.php:217
-msgid "Center the social icons"
+#: widgets/ti-about-site.php:219
+msgid "Center text and social icons"
 msgstr ""
 
-#: widgets/ti-about-site.php:221
+#: widgets/ti-about-site.php:223
 msgid "Open social links in new window"
 msgstr ""
 
@@ -1591,10 +1706,10 @@ msgstr ""
 msgid "Display the site authors, editors and contributors"
 msgstr ""
 
-#: widgets/ti-authors.php:168 widgets/ti-code-banner.php:90
+#: widgets/ti-authors.php:168 widgets/ti-code-banner.php:93
 #: widgets/ti-featured-posts.php:129 widgets/ti-image-banner.php:90
-#: widgets/ti-latest-category-posts.php:124 widgets/ti-latest-comments.php:113
-#: widgets/ti-latest-posts.php:132 widgets/ti-latest-reviews.php:159
+#: widgets/ti-latest-category-posts.php:133 widgets/ti-latest-comments.php:113
+#: widgets/ti-latest-posts.php:131 widgets/ti-latest-reviews.php:175
 #: widgets/ti-most-commented.php:108 widgets/ti-video.php:87
 msgid "Title:"
 msgstr ""
@@ -1631,11 +1746,11 @@ msgstr ""
 msgid "Paste your banner JS or Google Adsense code"
 msgstr ""
 
-#: widgets/ti-code-banner.php:94
+#: widgets/ti-code-banner.php:97
 msgid "JS or Google AdSense Code"
 msgstr ""
 
-#: widgets/ti-code-banner.php:99 widgets/ti-image-banner.php:103
+#: widgets/ti-code-banner.php:102 widgets/ti-image-banner.php:103
 msgid "Do not display the title"
 msgstr ""
 
@@ -1647,24 +1762,24 @@ msgstr ""
 msgid "Show featured posts, defined in post edit page"
 msgstr ""
 
-#: widgets/ti-featured-posts.php:133 widgets/ti-latest-category-posts.php:128
-#: widgets/ti-latest-posts.php:136 widgets/ti-latest-reviews.php:163
+#: widgets/ti-featured-posts.php:133 widgets/ti-latest-category-posts.php:137
+#: widgets/ti-latest-posts.php:135 widgets/ti-latest-reviews.php:179
 #: widgets/ti-most-commented.php:112
 msgid "Maximum posts to show:"
 msgstr ""
 
-#: widgets/ti-featured-posts.php:138 widgets/ti-latest-category-posts.php:146
-#: widgets/ti-latest-posts.php:141
+#: widgets/ti-featured-posts.php:138 widgets/ti-latest-category-posts.php:155
+#: widgets/ti-latest-posts.php:140
 msgid "Display posts as Slider"
 msgstr ""
 
-#: widgets/ti-featured-posts.php:141 widgets/ti-latest-category-posts.php:149
-#: widgets/ti-latest-posts.php:144
+#: widgets/ti-featured-posts.php:141 widgets/ti-latest-category-posts.php:158
+#: widgets/ti-latest-posts.php:143
 msgid "Display posts as List"
 msgstr ""
 
-#: widgets/ti-featured-posts.php:144 widgets/ti-latest-category-posts.php:152
-#: widgets/ti-latest-posts.php:147
+#: widgets/ti-featured-posts.php:144 widgets/ti-latest-category-posts.php:161
+#: widgets/ti-latest-posts.php:146
 msgid "Display posts as Classic List"
 msgstr ""
 
@@ -1692,7 +1807,7 @@ msgstr ""
 msgid "Show latest posts from selected category"
 msgstr ""
 
-#: widgets/ti-latest-category-posts.php:132
+#: widgets/ti-latest-category-posts.php:141
 msgid "Select Category:"
 msgstr ""
 
@@ -1724,6 +1839,14 @@ msgstr ""
 msgid "Display the latest posts with reviews"
 msgstr ""
 
+#: widgets/ti-latest-reviews.php:184
+msgid "Cirlces"
+msgstr ""
+
+#: widgets/ti-latest-reviews.php:187
+msgid "Bars"
+msgstr ""
+
 #: widgets/ti-most-commented.php:21
 msgid "TI Most Commented Posts"
 msgstr ""
@@ -1752,7 +1875,7 @@ msgstr ""
 msgid "Cart Totals"
 msgstr ""
 
-#: woocommerce/cart/cart-totals.php:24 woocommerce/cart/mini-cart.php:64
+#: woocommerce/cart/cart-totals.php:24
 msgid "Subtotal"
 msgstr ""
 
@@ -1789,8 +1912,7 @@ msgstr ""
 msgid "Quantity"
 msgstr ""
 
-#: woocommerce/cart/cart.php:49 woocommerce/cart/mini-cart.php:36
-#: woocommerce/inc/cart-drop-down.php:31
+#: woocommerce/cart/cart.php:49 woocommerce/inc/cart-drop-down.php:31
 msgid "Remove this item"
 msgstr ""
 
@@ -1811,20 +1933,8 @@ msgid "Update Cart"
 msgstr ""
 
 #: woocommerce/cart/cross-sells.php:40
-#: woocommerce/content-single-product.php:139
+#: woocommerce/content-single-product.php:127
 msgid "You may be interested in&hellip;"
-msgstr ""
-
-#: woocommerce/cart/mini-cart.php:56
-msgid "No products in the cart."
-msgstr ""
-
-#: woocommerce/cart/mini-cart.php:69
-msgid "View Cart"
-msgstr ""
-
-#: woocommerce/cart/mini-cart.php:70
-msgid "Checkout"
 msgstr ""
 
 #: woocommerce/checkout/form-billing.php:19
@@ -1849,7 +1959,7 @@ msgstr ""
 msgid "You must be logged in to checkout."
 msgstr ""
 
-#: woocommerce/checkout/form-checkout.php:54
+#: woocommerce/checkout/form-checkout.php:55
 msgid "Your order"
 msgstr ""
 
@@ -1903,7 +2013,7 @@ msgstr ""
 msgid "Payment Method:"
 msgstr ""
 
-#: woocommerce/content-single-product.php:133
+#: woocommerce/content-single-product.php:121
 #: woocommerce/single-product/related.php:42
 msgid "Related Products"
 msgstr ""
@@ -1940,20 +2050,15 @@ msgstr ""
 msgid "Previous product"
 msgstr ""
 
-#: woocommerce/inc/product-nav.php:30
+#: woocommerce/inc/product-nav.php:28
 msgid "Next product"
 msgstr ""
 
-#: woocommerce/single-product/add-to-cart/variable.php:25
-#, php-format
-msgid "Choose a %s"
-msgstr ""
-
-#: woocommerce/single-product/add-to-cart/variable.php:92
+#: woocommerce/single-product/add-to-cart/variable.php:31
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
 
-#: woocommerce/single-product/product-image.php:41
+#: woocommerce/single-product/product-image.php:43
 msgid "Placeholder"
 msgstr ""
 

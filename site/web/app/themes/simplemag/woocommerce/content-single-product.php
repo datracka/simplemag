@@ -66,50 +66,36 @@ if ( $ti_option['smwc_single_title_position'] == 'fullwidth' ) {
             </div>
         </div><!-- .grid-6 -->
 
-        <div class="grid-5 column-2<?php echo isset( $sticky_product_details ) ? $sticky_product_details : ''; ?>">       
-            <?php
-                /**
-                 * woocommerce_single_product_summary hook
-                 *
-                 * @hooked woocommerce_template_single_title - 5
-                 * @hooked woocommerce_template_single_rating - 10
-                 * @hooked woocommerce_template_single_price - 10
-                 * @hooked woocommerce_template_single_excerpt - 20
-                 * @hooked woocommerce_template_single_add_to_cart - 30
-                 * @hooked woocommerce_template_single_meta - 40
-                 * @hooked woocommerce_template_single_sharing - 50
-                 */
-                //do_action( 'woocommerce_single_product_summary' );
-            ?>
-            
+        <div class="grid-5 column-2<?php echo isset( $sticky_product_details ) ? $sticky_product_details : ''; ?>">  
             <div class="single-product-details">
+                
+                <?php woocommerce_show_product_sale_flash(); ?>
 
                 <?php
                 /**
                  * Displays the product title Above The Content
                 **/
-                if ( $ti_option['smwc_single_title_position'] == 'abovecontent' ) {
+                if ( $ti_option['smwc_single_title_position'] == 'abovecontent' ) :
                 ?>
                 <div class="page-title single-title above-content-title">
                     <h1 class="entry-title" itemprop="name"><?php the_title(); ?></h1>
                 </div>
-                <?php } ?>
+                <?php endif ?>
                 
-                <?php woocommerce_template_single_price(); ?>
-                
-                <?php woocommerce_show_product_sale_flash(); ?>
-
-                <div class="entry-content">
-                    <?php woocommerce_template_single_excerpt(); ?>
-                </div>
-
-                <?php woocommerce_template_single_meta(); ?>
-
-                <?php woocommerce_template_single_add_to_cart(); ?>
-
-                <?php woocommerce_template_single_sharing(); ?>
-
-                <?php //get_template_part( 'inc/single', 'share' ); ?>
+                <?php
+                    /**
+                     * woocommerce_single_product_summary hook
+                     *
+                     * @hooked woocommerce_template_single_title - 5
+                     * @hooked woocommerce_template_single_rating - 10
+                     * @hooked woocommerce_template_single_price - 10
+                     * @hooked woocommerce_template_single_excerpt - 20
+                     * @hooked woocommerce_template_single_add_to_cart - 30
+                     * @hooked woocommerce_template_single_meta - 40
+                     * @hooked woocommerce_template_single_sharing - 50
+                     */
+                    do_action( 'woocommerce_single_product_summary' );
+                ?>
 
             </div><!-- .single-product-details -->
         </div><!-- .grid-6 -->
@@ -128,7 +114,7 @@ if ( $ti_option['smwc_single_title_position'] == 'fullwidth' ) {
     ?>
     
     
-    <div class="single-box tab-box related-posts-tabs">
+    <div class="tab-box related-posts-tabs">
 
         <ul class="tab-box-button clearfix">
             

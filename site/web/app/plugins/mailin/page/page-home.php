@@ -198,7 +198,14 @@ if(!class_exists('SIB_Page_Home'))
             }
 
             $home_settings = get_option(SIB_Manager::home_option_name);
-
+            // set default sender info
+            $senders = SIB_Page_Form::get_sender_lists();
+            if(!isset($home_settings['sender']) && SIB_Manager::is_done_validation() && is_array($senders)){
+                $home_settings['sender'] = $senders[0]['id'];
+                $home_settings['from_name'] = $senders[0]['from_name'];
+                $home_settings['from_email'] = $senders[0]['from_email'];
+                update_option(SIB_Manager::home_option_name, $home_settings);
+            }
         ?>
 
             <div id="main-content">
@@ -352,7 +359,7 @@ if(!class_exists('SIB_Page_Home'))
                             <div class="col-md-3">
                                 <select id="sender_list" class="col-md-12">
                                 <?php
-                                $senders = SIB_Manager::$sender_info;
+                                $senders = get_option(SIB_Manager::sender_option_name, array());
                                 foreach($senders as $sender){
                                     echo "<option value='".$sender['id']."' ". selected( $home_settings['sender'], $sender['id'] ) .">".$sender['from_name']."&nbsp;&lt;".$sender['from_email']."&gt;</option>";
                                 } ?>
@@ -564,8 +571,9 @@ if(!class_exists('SIB_Page_Home'))
             $sender_id = $_POST['sender']; // sender id
             $home_settings = get_option(SIB_Manager::home_option_name);
             $home_settings['sender'] = $sender_id;
-            $home_settings['from_name'] = SIB_Manager::$sender_info[$sender_id]['from_name'];
-            $home_settings['from_email'] = SIB_Manager::$sender_info[$sender_id]['from_email'];
+            $senders = get_option(SIB_Manager::sender_option_name, array());
+            $home_settings['from_name'] = $senders[$sender_id]['from_name'];
+            $home_settings['from_email'] = $senders[$sender_id]['from_email'];
             update_option(SIB_Manager::home_option_name, $home_settings);
             echo 'success';
             die();
@@ -618,6 +626,7 @@ if(!class_exists('SIB_Page_Home'))
         {
             $setting = array();
             update_option(SIB_Manager::main_option_name, $setting);
+            update_option(SIB_Manager::sender_option_name, $setting);
 
             $home_settings = array(
                 'activate_email' => 'no'
@@ -721,7 +730,8 @@ if(!class_exists('SIB_Page_Home'))
                 ),
             );
 
-            $campaign_records = $response['data']['campaign_records'];
+            $campaign_records = ($response['code'] == 'success') ? $response['data']['campaign_records'] : array();
+
             if(isset($campaign_records) && is_array($campaign_records)) {
                 foreach($campaign_records as $campaign_record) {
                     if($campaign_record['type'] == 'template' || $campaign_record['type'] == '')

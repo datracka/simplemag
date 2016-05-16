@@ -16,6 +16,7 @@ function tp2wp_importer_page_admin_menu () {
 }
 add_action( 'admin_menu', 'tp2wp_importer_page_admin_menu' );
 
+
 /**
  * Menu callback function to define the contents of the plugin's status
  * page.
@@ -71,8 +72,11 @@ function tp2wp_importer_status_page_callback () {
         'upload_directory_path' => tp2wp_importer_attachments_alt_upload_path(),
 
         'supports_url_rewrite' => got_url_rewrite(),
+
+        'is_cron_disabled' => tp2wp_importer_status_is_cron_disabled(),
     );
 
     $template_name = dirname( __FILE__ ) . '/templates/page.php';
     echo tp2wp_importer_process_template( $template_name, $variables );
 }
+

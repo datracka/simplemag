@@ -47,6 +47,8 @@
   color: #fff;
   margin: 0 0 10px;
   display: inline-block;
+  border-radius: 3px;
+  border-left: none;
 }
 .acf-field .acf-error-message:after {
   content: "";
@@ -275,16 +277,6 @@ html[dir="rtl"] .acf-fields.-left > .acf-field > .acf-input {
   border: 0 none;
   padding: 8px 0;
 }
-/* widget */
-.widget .widget-inside .acf-error-message p {
-  margin: 10px 0;
-}
-.widget .widget-inside div.acf-field.error {
-  border: 0 none;
-  background: transparent;
-  margin: 0 0 20px;
-  padding: 0;
-}
 /* width */
 .acf-field[data-width] {
   float: left;
@@ -486,7 +478,7 @@ html[dir="rtl"] input.acf-is-prepended.acf-is-appended {
   padding: 5px 5px 5px 7px;
 }
 .select2-container.-acf .select2-search-choice-close {
-  top: 3px;
+  margin-top: -1px;
 }
 /* open */
 .select2-container.-acf.select2-container-active .select2-choices,
@@ -1347,6 +1339,7 @@ html[dir="rtl"] .acf-image-uploader .view {
   display: block;
   padding: 0;
   margin: 0;
+  max-width: 48px;
 }
 .acf-file-uploader .file-info {
   padding: 10px;
@@ -1361,20 +1354,18 @@ html[dir="rtl"] .acf-image-uploader .view {
 .acf-file-uploader .file-info a {
   text-decoration: none;
 }
-/*
-*  Hover
-*/
-.acf-file-uploader .acf-soh-target {
+.acf-file-uploader .file-info ul {
   position: absolute;
   top: 5px;
   right: 5px;
+  /* rtl */
 }
-html[dir="rtl"] .acf-file-uploader .acf-soh-target {
+.acf-file-uploader .file-info ul li {
+  margin: 0 0 0 4px;
+}
+html[dir="rtl"] .acf-file-uploader .file-info ul {
   right: auto;
   left: 5px;
-}
-.acf-file-uploader .acf-soh-target li {
-  margin: 0 0 0 4px;
 }
 /*---------------------------------------------------------------------------------------------
 *
@@ -1643,11 +1634,6 @@ html[dir="rtl"] .acf-taxonomy-field[data-type="select"] .acf-icon {
   word-wrap: break-word;
   white-space: pre-wrap;
 }
-/* image select button fix */
-.media-frame a.acf-button {
-  border: 1px solid #bbbbbb;
-  color: #333;
-}
 /*---------------------------------------------------------------------------------------------
 *
 *  Media Model (Edit Mode)
@@ -1829,6 +1815,17 @@ p.submit .acf-spinner {
 }
 .widget .acf-field .acf-label label {
   font-weight: normal;
+}
+.widget .widget-inside > form > .acf-error-message {
+  margin-top: 15px;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	Customizer
+*
+*--------------------------------------------------------------------------------------------*/
+.customize-control .acf-field {
+  margin: 1em 0;
 }
 /*--------------------------------------------------------------------------
 *

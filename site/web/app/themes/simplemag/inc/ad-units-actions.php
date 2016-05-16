@@ -49,8 +49,11 @@ function main_header_ad_unit() {
         ?>
 
         <div class="inner-cell">
-            <div class="ad-block">
-        		<?php echo $ti_option['header_code_ad']; ?>
+            <div class="ad-block">      
+                <?php
+                $header_ad = $ti_option['header_code_ad'];
+                echo apply_filters( 'be_the_content', $header_ad );
+                ?>
              </div>
         </div>
 
@@ -85,8 +88,9 @@ function single_post_above_content_ad_unit() {
                 <?php                           
                 // Code Ad
                 } elseif( $ti_option['single_code_top_ad'] == true ) {
-
-                    echo $ti_option['single_code_top_ad'];
+                        
+                    $top_ad = $ti_option['single_code_top_ad'];
+                    echo apply_filters( 'be_the_content', $top_ad );
                     
                 }
                 ?>
@@ -127,7 +131,8 @@ function single_post_below_content_ad_unit() {
                 // Code Ad
                 } elseif ( $ti_option['single_code_bottom_ad'] == true ) {
                     
-                    echo $ti_option['single_code_bottom_ad'];
+                    $bottom_ad = $ti_option['single_code_bottom_ad'];
+                    echo apply_filters( 'be_the_content', $bottom_ad );
                     
                 } ?>
                 
@@ -166,7 +171,8 @@ function main_footer_ad_unit() {
         			// Code Ad
                     } elseif( $ti_option['footer_code_ad'] == true ) {
                         
-                        echo $ti_option['footer_code_ad'];
+                        $footer_ad = $ti_option['footer_code_ad'];
+                        echo apply_filters( 'be_the_content', $footer_ad );
                         
                     } ?>
                 </div>

@@ -37,11 +37,11 @@
     $posts_to_show = get_sub_field( 'reviews_posts_per_page' );
     $ti_latest_reviews = new WP_Query(
         array(
-            'post_type' => 'post',
             'meta_key' => 'enable_rating',
             'meta_value' => '1',
             'posts_per_page' => $posts_to_show,
-            'post__not_in' => get_option( 'sticky_posts' )
+            'post__not_in' => get_option( 'sticky_posts' ),
+            'no_found_rows' => true,
         )
     );
     ?>
@@ -55,23 +55,7 @@
             while ( $ti_latest_reviews->have_posts() ) : $ti_latest_reviews->the_post(); 
             
             
-                // Call total score calculation function
-                $get_result = apply_filters( 'ti_score_total', '' );
-
-                // Get the final score
-                $total_score = number_format( $get_result, 1, '.', '' );
-
-                // If final score is decimal like 5.0 or is equal to 10.0
-                // remove .0 to display it as integer
-                if ( strlen ( $total_score ) || $total_score == '10.0' ) {
-                    $final_result = str_replace( ".0", "", $total_score );
-                } else {
-                    $final_result = $total_score;
-                }
-
-                // Multiply by 10 to remove the decimal value
-                // Displayed in data-cirlce attr.
-                $final_result_no_decimal = $total_score * 10;
+                include( locate_template( 'inc/rating-calculations.php' ) );
             
                 // Post Item size
                 $item_size = ( $final_result_no_decimal + 100 ) / 13;

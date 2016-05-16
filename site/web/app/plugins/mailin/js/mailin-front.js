@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
 
-    jQuery('.sib-default-btn').click(function(){
+    jQuery('.sib_signup_form').submit(function(e){
         var form = jQuery(this).closest('form');
         var form_id = form.find("input[name=reference_id]").val();
         form.find('.sib_loader').show();
@@ -38,5 +38,6 @@ jQuery(document).ready(function(){
                     form.find('.sib_msg_disp').html(jqXHR).show();
                 }
             });
+        e.preventDefault();
     });
 });

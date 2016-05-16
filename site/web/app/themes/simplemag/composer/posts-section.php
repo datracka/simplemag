@@ -140,4 +140,4 @@
     
     <?php endif; // End if sidebar ?>
     
-</section><!-- Latest Posts -->
+</section><!-- Posts Section: <?php the_sub_field ( 'latest_section_type' ); ?> -->

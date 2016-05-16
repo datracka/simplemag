@@ -35,7 +35,7 @@ $woocommerce_loop['columns'] = apply_filters( 'woocommerce_cross_sells_columns',
 
 if ( $products->have_posts() ) : ?>
     
-	<div class="single-box related-posts cross-sells">
+	<div class="related-posts cross-sells">
 
 		<h3 class="title single-box-title"><?php _e( 'You may be interested in&hellip;', 'woocommerce' ); ?></h3>
         

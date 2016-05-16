@@ -74,45 +74,45 @@ global $ti_option;
 
                         <?php if ( $ti_hp_slider->have_posts() ) : ?>
 
-                        <div class="global-sliders posts-slider content-over-image content-over-image-tint post-page-slider">
+                            <div class="global-sliders posts-slider content-over-image content-over-image-tint post-page-slider">
 
-                            <?php while ( $ti_hp_slider->have_posts() ) : $ti_hp_slider->the_post(); ?>
+                                <?php while ( $ti_hp_slider->have_posts() ) : $ti_hp_slider->the_post(); ?>
 
-                                <div <?php post_class(); ?>>
-                                    <figure class="image-tint">
-                                        <a class="entry-link" href="<?php the_permalink(); ?>"></a>
-                                        <?php if ( has_post_thumbnail() ) { ?>
-                                            <?php the_post_thumbnail( 'medium-size' ); ?>
-                                        <?php } else { ?>
-                                            <img class="alter" src="<?php echo get_template_directory_uri(); ?>/images/pixel.gif" alt="<?php the_title(); ?>" />
-                                        <?php } ?>
-                                    </figure>
-                                    <header class="entry-header">
-                                        <div class="inner">
-                                            <div class="inner-cell">
-                                                <div class="entry-meta">
-                                                    <span class="entry-category"><?php the_category(', '); ?></span>
+                                    <div <?php post_class(); ?>>
+                                        <figure class="image-tint">
+                                            <a class="entry-link" href="<?php the_permalink(); ?>"></a>
+                                            <?php if ( has_post_thumbnail() ) { ?>
+                                                <?php the_post_thumbnail( 'medium-size' ); ?>
+                                            <?php } else { ?>
+                                                <img class="alter" src="<?php echo get_template_directory_uri(); ?>/images/pixel.gif" alt="<?php the_title(); ?>" />
+                                            <?php } ?>
+                                        </figure>
+                                        <header class="entry-header">
+                                            <div class="inner">
+                                                <div class="inner-cell">
+                                                    <div class="entry-meta">
+                                                        <span class="entry-category"><?php the_category(', '); ?></span>
+                                                    </div>
+                                                    <h2 class="entry-title">
+                                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                    </h2>
+                                                    <a class="read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'themetext' ); ?></a>
                                                 </div>
-                                                <h2 class="entry-title">
-                                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                                </h2>
-                                                <a class="read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'themetext' ); ?></a>
                                             </div>
-                                        </div>
-                                    </header>
-                                </div>
+                                        </header>
+                                    </div>
 
-                            <?php endwhile; ?>
+                                <?php endwhile; ?>
 
-                            <?php wp_reset_postdata(); ?>
+                                <?php wp_reset_postdata(); ?>
 
-                            <?php endif; ?>
-
-                        </div><!-- Slider -->
-
-                    <?php endif; ?>
+                            </div><!-- Slider -->
                     
-                <?php endif; ?>
+                        <?php endif; ?>
+
+                    <?php endif; // If slider is enbaled in Theme Options ?>
+                    
+                <?php endif; // If first page ?>
                 
                     
                 <?php

@@ -8,14 +8,35 @@
 **/
 
 
+$media_type = get_sub_field( 'full_media_type' );
+$get_image_bg = get_sub_field( 'full_image_upload' );
+$get_video_bg = get_sub_field( 'full_video_upload' );
+
 /**
  * Get image and it's ID and pass it as a class
 **/
-$get_image_bg = get_sub_field( 'full_image_upload' );
-if ( ! empty( $get_image_bg ) ) {
+if ( $media_type == 'media_type_image' && ! empty( $get_image_bg ) ) :
     $image_bg = sanitize_html_class( 'image-' . $get_image_bg['id'] );
-}
+endif;
 
+/**
+ * Get uploaed video as src
+**/
+if ( $media_type == 'media_type_video' && ! empty( $get_video_bg ) ) :
+    $video_bg = $get_video_bg;
+endif;
+
+/**
+ * Section styling based on section media type:
+ * Image or Video
+**/
+if ( $media_type == 'media_type_image' ) :
+    $section_media_type = 'full-width-image';
+else :
+    $section_media_type = 'full-width-video';
+endif;
+
+$section_media = sanitize_html_class( $section_media_type );
 
 /**
  * Section styling based on field selection:
@@ -48,7 +69,12 @@ $sub_title = get_sub_field( 'full_image_sub_title' );
 ?>
 
 
-<section class="home-section full-width-section title-with-bg full-width-image <?php echo ( isset ( $image_bg ) ? $image_bg : '' ) . ' ' . $section_style; ?>">
+<section class="home-section full-width-section content-over-image <?php echo $section_media . ' ' . ( isset ( $image_bg ) ? $image_bg : '' ) . ' ' . $section_style; ?>">
+
+    <?php if ( $media_type == 'media_type_video' && ! empty ( $video_bg ) ) : ?>
+        <video src="<?php echo esc_url( $video_bg ); ?>" autobuffer autoplay="autoplay" loop></video>
+    <?php endif; ?>
+        
     <div class="entry-header">
         <div class="inner">
             <div class="inner-cell">

@@ -363,6 +363,18 @@
                         'subtitle'  => __('Enable or Disable the mega menu', 'redux-framework-demo'),
                         'default'   => 1,
                     ),
+                    array(
+                        'id'        => 'site_mega_menu_type',
+                        'type'      => 'button_set',
+                        'title'     => __('Mega Menu Type', 'redux-framework-demo'),
+                        'subtitle'  => __('Select between ajax or regular menu', 'redux-framework-demo'),
+                        'options'   => array(
+                            'menu_ajax' => 'Ajax',
+                            'menu_regular' => 'Regular'
+                        ),
+                        'default'   => 'menu_ajax',
+                        'required'  => array('site_mega_menu', '=', '1'),
+                    ),
             array(
                 'id'        => 'site_main_menu_end',
                 'type'      => 'section',
@@ -541,7 +553,7 @@
                             'font-family' => 'Roboto',
                             'font-weight' => '500',
                         ),
-                        'output' => array('.menu-item a, #s, .entry-meta, .see-more span, .read-more, .read-more-link, .nav-title, .related-posts-tabs li a, #submit, input, textarea, .copyright, .copyright a'),
+                        'output' => array('.menu-item a, .entry-meta, .see-more span, .read-more, .read-more-link, .nav-title, .related-posts-tabs li a, #submit, input, textarea, .copyright, .copyright a'),
                     ),
             
                     array(
@@ -609,7 +621,7 @@
                             'font-weight' => '700',
                             
                         ),
-                        'output' => array('h1, h2, h3, h4, h5, h6, .main-menu .item-title a, .widget_pages, .widget_categories, .widget_nav_menu, .tagline, .sub-title, .entry-note, .manual-excerpt, .ltr:not(.woocommerce) .entry-content > p:first-of-type:first-letter, .sc-dropcap, .single-author-box .vcard, .comment-author, .comment-meta, .comment-reply-link, #respond label, #wp-calendar tbody, .latest-reviews .score-line i, .score-box .total'),
+                        'output' => array('h1, h2, h3, h4, h5, h6, .main-menu .item-title a, .widget_pages, .widget_categories, .widget_nav_menu, .tagline, .sub-title, .entry-note, .manual-excerpt, .single-post.ltr:not(.woocommerce) .entry-content > p:first-of-type:first-letter, .sc-dropcap, .single-author-box .vcard, .comment-author, .comment-meta, .comment-reply-link, #respond label, #wp-calendar tbody, .latest-reviews .score-line i, .score-box .total'),
                     ),
 
                     /* Page Composer Titles */
@@ -743,41 +755,55 @@
         'icon'      => 'el-icon-magic',
         'title'     => __('Design Options', 'redux-framework-demo'),
         'fields'    => array(
-            /* Text Alignment */
             array(
-                'id'        => 'text_alignment',
-                'type'      => 'image_select',
-                'title'     => __('Text alignment', 'redux-framework-demo'),
-                'subtitle'  => __('Select your site text alignment. Centered or Left.', 'redux-framework-demo'),
-                'options'   => array(
-                    '1' => array('img' => get_template_directory_uri() .'/admin/images/to-icon-align-center.png'),
-                    '2' => array('img' => get_template_directory_uri() .'/admin/images/to-icon-align-left.png'),
-                ), 
-                'default' => '1'
+                'id'        => 'site_body_start',
+                'type'      => 'section',
+                'title'     => __('Main Site Options', 'redux-framework-demo'),
+                'indent'    => false,
+            ),
+                /* Text Alignment */
+                array(
+                    'id'        => 'text_alignment',
+                    'type'      => 'image_select',
+                    'title'     => __('Text alignment', 'redux-framework-demo'),
+                    'subtitle'  => __('Select your site text alignment. Centered or Left.', 'redux-framework-demo'),
+                    'options'   => array(
+                        '1' => array('img' => get_template_directory_uri() .'/admin/images/to-icon-align-center.png'),
+                        '2' => array('img' => get_template_directory_uri() .'/admin/images/to-icon-align-left.png'),
+                    ), 
+                    'default' => '1'
+                ),
+
+                /* Site Layout */
+                array(
+                    'id'        => 'site_layout',
+                    'type'      => 'image_select',
+                    'title'     => __('Site Layout', 'redux-framework-demo'),
+                    'subtitle'  => __('Select site layout. Fullwidth or Boxed.', 'redux-framework-demo'),
+                    'options'   => array(
+                        '1' => array('img' => get_template_directory_uri() .'/admin/images/to-icon-layout-full.png'),
+                        '2' => array('img' => get_template_directory_uri() .'/admin/images/to-icon-layout-boxed.png'),
+                    ), 
+                    'default' => '1'
+                ),
+
+                /* Body Background */
+                array(
+                    'id'        => 'site_body_bg',
+                    'type'      => 'background',
+                    'title'     => __('Body Background', 'redux-framework-demo'),
+                    'subtitle'  => __('Pick a body background color or upload an image', 'redux-framework-demo'),
+                    'default'  => array('background-color' => '#fff'),
+                    'required' => array('site_layout', '=', '2'),
+                    'output'  => array('background-color' => 'body')
+                ),
+
+            array(
+                'id'        => 'site_body_end',
+                'type'      => 'section',
+                'indent'    => false,
             ),
             
-            /* Site Layout */
-            array(
-                'id'        => 'site_layout',
-                'type'      => 'image_select',
-                'title'     => __('Site Layout', 'redux-framework-demo'),
-                'subtitle'  => __('Select site layout. Fullwidth or Boxed.', 'redux-framework-demo'),
-                'options'   => array(
-                    '1' => array('img' => get_template_directory_uri() .'/admin/images/to-icon-layout-full.png'),
-                    '2' => array('img' => get_template_directory_uri() .'/admin/images/to-icon-layout-boxed.png'),
-                ), 
-                'default' => '1'
-            ),
-            
-            /* Body Background */
-            array(
-                'id'        => 'site_body_bg',
-                'type'      => 'background',
-                'title'     => __('Body Background', 'redux-framework-demo'),
-                'subtitle'  => __('Pick a body background color or upload an image', 'redux-framework-demo'),
-                'default'  => array('background-color' => '#fff'),
-                'output'  => array('background-color' => 'body, .site-content, .layout-full .title-with-sep .title, .layout-full .title-with-sep .entry-title'),
-            ),
             
             /* Main Colors. For Comments avatar, rating bar, rating cirlce */
             array(
@@ -792,7 +818,7 @@
                         'title'     => __('Main Color', 'redux-framework-demo'),
                         'subtitle'  => __('Color for comments avatar, ratings, etc.', 'redux-framework-demo'),
                         'default'   => '#ffcc0d',
-                        'output'    => array( 'background-color' => '.score-line span, .rating-total-indicator .sides span, .widget_ti_most_commented span', 'border-color' => '.comment-list .bypostauthor .avatar', 'border-top-color' => '.widget_ti_most_commented span i:before' ),
+                        'output'    => array( 'background-color' => '.score-line, .rating-total-indicator .sides span, .widget_ti_most_commented span', 'border-color' => '.comment-list .bypostauthor .avatar, .post-item .content-loading .load-media-content:before, .media-posts .content-loading .load-media-content:before, .post-item .content-loading .load-media-content:after, .media-posts .content-loading .load-media-content:after', 'border-top-color' => '.widget_ti_most_commented span i:before' ),
                     ),
                     array(
                         'id'        => 'secondary_site_color',
@@ -808,7 +834,33 @@
                 'indent'    => false,
             ),
             
-
+            
+            /* Mobile Menu */
+            array(
+                'id'        => 'mobile_color_start',
+                'type'      => 'section',
+                'title'     => __('Mobile Menu', 'redux-framework-demo'),
+                'indent'    => false,
+            ),
+                array(
+                    'id'        => 'mobile_menu_color',
+                    'type'      => 'button_set',
+                    'title'     => __('Color', 'redux-framework-demo'),
+                    'subtitle'  => __('Select mobile menu color', 'redux-framework-demo'),
+                    'options'   => array( 
+                        'mobilewhite' => 'White',
+                        'mobiledark' => 'Dark'
+                    ),
+                    'default'   => 'mobilewhite'
+                ),
+            array(
+                'id'        => 'mobile_color_end',
+                'type'      => 'section',
+                'indent'    => false,
+            ),
+            
+            
+            
             /* Header */  
             array(
                 'id'        => 'header_colors_start',
@@ -843,7 +895,7 @@
                         'title'     => __('Background', 'redux-framework-demo'),
                         'subtitle'  => __('Top strip background color.', 'redux-framework-demo'),
                         'default'   => '#000',
-                        'output'  => array( 'background-color' => '.top-strip, .secondary-menu .sub-menu, .top-strip #searchform input[type="text"], .top-strip .social li ul' ),
+                        'output'  => array( 'background-color' => '.top-strip, .secondary-menu .sub-menu, .top-strip .search-form input[type="text"], .top-strip .social li ul' ),
                     ),
                     array(
                         'id'        => 'site_top_strip_bottom_border',
@@ -1005,25 +1057,25 @@
                 'indent'    => false,
             ),
 
-            /* Titles Background */
+            /* Titles Lines */
             array(
                 'id'        => 'titles_bg_start',
                 'type'      => 'section',
-                'title'     => __('Titles Background', 'redux-framework-demo'),
+                'title'     => __('Title Lines', 'redux-framework-demo'),
                 'indent'    => false,
             ),
                     array(
                         'id'        => 'titles_background_switch',
                         'type'      => 'switch',
                         'title'     => __('On/Off', 'redux-framework-demo'),
-                        'subtitle'  => __('Turn the background image on or off', 'redux-framework-demo'),
+                        'subtitle'  => __('Turn the lines image on or off', 'redux-framework-demo'),
                         'default'   => '1',
                     ),
                     array(
                         'id'        => 'titles_background_image',
                         'type'      => 'switch',
-                        'title'     => __('Background Type', 'redux-framework-demo'),
-                        'subtitle'  => __('Use deafult background or upload custom', 'redux-framework-demo'),
+                        'title'     => __('Lines Type', 'redux-framework-demo'),
+                        'subtitle'  => __('Use deafult lines or upload custom', 'redux-framework-demo'),
                         'required'  => array('titles_background_switch', '=', '1'),
                         'default'   => '1',
                         'on'        => 'Use Default',
@@ -1035,7 +1087,7 @@
                         'url'       => true,
                         'required'  => array('titles_background_image', '=', '0'),
                         'title'     => __('Upload Custom', 'redux-framework-demo'),
-                        'subtitle'  => __('Upload custom background', 'redux-framework-demo'),
+                        'subtitle'  => __('Upload custom lines image', 'redux-framework-demo'),
                         'default'   => '',
                     ),
             array(
@@ -1155,35 +1207,6 @@
                 'indent'    => false,
             ),
             
-            
-            /* Author */
-            array(
-                'id'        => 'author_box_start',
-                'type'      => 'section',
-                'title'     => __('Author Box', 'redux-framework-demo'),
-                'indent'    => false,
-            ),
-                    array(
-                        'id'        => 'author_box_color',
-                        'type'      => 'color',
-                        'title'     => __('Background', 'redux-framework-demo'),
-                        'subtitle'  => __('Pick a color for the backgound', 'redux-framework-demo'),
-                        'default'   => '#f7f7f7',
-                        'output'    => array( 'background-color' => '.author-box' ),
-                    ),
-                    array(
-                        'id'        => 'author_box_text',
-                        'type'      => 'color',
-                        'title'     => __('Text and Links', 'redux-framework-demo'),
-                        'subtitle'  => __('Pick a color for titles, text and links', 'redux-framework-demo'),
-                        'default'   => '#000000',
-                        'output'    => array( 'color' => '.author-box, .author-box a' ),
-                    ),
-            array(
-                'id'        => 'author_box_end',
-                'type'      => 'section',
-                'indent'    => false,
-            ),
 
             /* Widgetized Footer */
             array(
@@ -1214,7 +1237,7 @@
                         'title'     => __('Text', 'redux-framework-demo'),
                         'subtitle'  => __('Pick a color for widget text', 'redux-framework-demo'),
                         'default'   => '#ffffff',
-                        'output'    => array( 'color' => '.footer-sidebar, .footer-sidebar button, .footer-sidebar input,  .footer-sidebar input[type="submit"]', 'border-color' => '.footer-sidebar input, .footer-sidebar input[type="submit"]', 'border-bottom-color' => '.footer-sidebar .widget_ti_latest_comments .comment-text:before' ),
+                        'output'    => array( 'color' => '.footer-sidebar, .footer-sidebar button, .footer-sidebar select, .footer-sidebar input,  .footer-sidebar input[type="submit"]', 'border-color' => '.footer-sidebar input, .footer-sidebar select, .footer-sidebar input[type="submit"]', 'border-bottom-color' => '.footer-sidebar .widget_ti_latest_comments .comment-text:before' ),
                     ),
                     array(
                         'id'        => 'footer_links',
@@ -1486,6 +1509,17 @@
                 'subtitle'  => __('Your Twitter username for Twitter share link, without @', 'redux-framework-demo'),
             ),
             array(
+                'id'        => 'single_rating_box_style',
+                'type'      => 'button_set',
+                'title'     => __('Rating Box Style', 'redux-framework-demo'),
+                'subtitle'  => __('Select rating box style', 'redux-framework-demo'),
+                'options'   => array(
+                    'rating_circles' => 'Circles',
+                    'rating_bars' => 'Bars',
+                ), 
+                'default'   => 'rating_circles'
+            ),
+            array(
                 'id'        => 'single_rating_box',
                 'type'      => 'button_set',
                 'title'     => __('Rating Box Position', 'redux-framework-demo'),
@@ -1501,6 +1535,13 @@
                 'type'      => 'switch',
                 'title'     => __('Author Box', 'redux-framework-demo'),
                 'subtitle'  => __('Enable or Disable the author box', 'redux-framework-demo'),
+                'default'   => 1,
+            ),
+            array(
+                'id'        => 'single_author_icons',
+                'type'      => 'switch',
+                'title'     => __('Author Box Social Icons', 'redux-framework-demo'),
+                'subtitle'  => __('Enable or Disable the author box social icons', 'redux-framework-demo'),
                 'default'   => 1,
             ),
             array(
@@ -1659,6 +1700,24 @@
                         'asym-layout' => array('img' => get_template_directory_uri() . '/admin/images/to-icon-post-asym.png'),
                     ), 
                     'default' => 'grid-layout'
+                ),
+		
+                array(
+                    'id'        => 'smwc_product_item_columns',
+                    'type'      => 'button_set',
+                    'title'     => __('Number Of Columns', 'redux-framework-demo'),
+                    'subtitle'  => __('Select the number of columns for this layout<br/>(Applies only to Masonry or Grid layout)', 'redux-framework-demo'),
+                    'options'   => array(
+                        'columns_2' => '2', 
+                        'columns_3' => '3',
+                        'columns_4' => '4'
+                    ),
+                    'required'  => array(
+                                    array('smwc_page_layout', 'not', 'list-layout'),
+                                    array('smwc_page_layout', 'not', 'classic-layout'),
+                                    array('smwc_page_layout', 'not', 'asym-layout')
+                                ),
+                    'default'   => 'columns_3'
                 ),
 
                 array(

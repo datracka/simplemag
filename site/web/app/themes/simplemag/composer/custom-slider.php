@@ -22,6 +22,9 @@ else :
     $section_style_class = 'content-over-image-tint';
 endif;
 
+// Full Width option is selected
+$full_width_slider = get_sub_field ( 'custom_slider_type' ) == 'custom_slider_full';
+
 // With two posts option is selected
 $with_two_posts = get_sub_field ( 'custom_slider_type' ) == 'custom_slider_with_two';
 ?>
@@ -57,9 +60,24 @@ $with_two_posts = get_sub_field ( 'custom_slider_type' ) == 'custom_slider_with_
                                 $custom_slide_bg_image = 'style="background-image:url(' . esc_url( $custom_slide_image_src[0] ) . ');"';
                             ?>
 
-                                <div class="entry-image full-width-slider-image" <?php echo isset( $custom_slide_bg_image ) ? $custom_slide_bg_image : ''; ?>>
-                                    <a class="entry-link" href="<?php the_permalink(); ?>"></a>
-                                </div>
+                                <?php 
+                                /**
+                                 * Slider "Full Width" option is slected
+                                 * Slide image is being added as a background
+                                **/
+                                if ( $full_width_slider ) : ?>
+                                    <div class="entry-image full-width-slider-image" <?php echo isset( $custom_slide_bg_image ) ? $custom_slide_bg_image : ''; ?>></div>
+                                <?php 
+                                /**
+                                 * Slider "Regular" option is slected
+                                 * Slide image is being added as an image tag
+                                **/
+                                else : 
+                                ?>
+                                    <figure class="entry-image">
+                                        <img src="<?php echo esc_url( $custom_slide_image_src[0] ); ?>" alt="<?php the_sub_field( 'custom_slide_title' ); ?>" />
+                                    </figure>
+                                <?php endif ?>
 
                             <?php } else { ?>
 
@@ -67,11 +85,10 @@ $with_two_posts = get_sub_field ( 'custom_slider_type' ) == 'custom_slider_with_
 
                             <?php } ?>
 
-                            <?php if ( get_sub_field( 'custom_slide_url' ) ) { ?>
-                                <a class="entry-link" href="<?php the_sub_field( 'custom_slide_url' ); ?>"></a>
-                            <?php } ?>
-
                             <header class="entry-header <?php echo sanitize_html_class( $section_style_class ); ?>">
+                                <?php if ( get_sub_field( 'custom_slide_url' ) ) { ?>
+                                    <a class="entry-link" href="<?php the_sub_field( 'custom_slide_url' ); ?>"></a>
+                                <?php } ?>
                                 <div class="inner">
                                     <div class="inner-cell">
                                         <div class="entry-frame">
@@ -110,7 +127,6 @@ $with_two_posts = get_sub_field ( 'custom_slider_type' ) == 'custom_slider_with_
 
                     <article class="post-item content-over-image content-over-image-tint">
                         <figure class="entry-image">
-                            <a class="entry-link" href="<?php the_sub_field( 'custom_post_link' ); ?>"></a>
                             <?php
                             $custom_img = get_sub_field( 'custom_post_image' );
 
@@ -131,11 +147,14 @@ $with_two_posts = get_sub_field ( 'custom_slider_type' ) == 'custom_slider_with_
                         </figure>
 
                         <header class="entry-header">
+                            <?php if ( get_sub_field( 'custom_post_link' ) ) { ?>
+                            <a class="entry-link" href="<?php the_sub_field( 'custom_post_link' ); ?>"></a>
+                            <?php } ?>
                             <div class="inner">
                                 <div class="inner-cell">
                                     <div class="entry-frame">
                                         <h2 class="entry-title">
-                                            <a href="<?php the_sub_field( 'custom_post_link' ); ?>"><?php the_sub_field( 'custom_post_title' ); ?></a>
+                                            <?php the_sub_field( 'custom_post_title' ); ?>
                                         </h2>
                                     </div>
                                 </div>

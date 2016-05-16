@@ -44,7 +44,8 @@ class TI_Most_Commented extends WP_Widget {
 				'post_type' => 'post',
 				'order' => 'DECS',
 				'orderby' => 'comment_count',
-				'posts_per_page' => $items_num
+				'posts_per_page' => $items_num,
+                'no_found_rows' => true
 			)
 		);
 

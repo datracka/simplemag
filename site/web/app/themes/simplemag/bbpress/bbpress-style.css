@@ -75,7 +75,7 @@ a.logout-link:hover {
 #bbp_search_submit {
     position: absolute;
     right: 0;
-    top: 0;
+    top: -3px;
     z-index: 99;
     border: 0;
     color: #000;
@@ -527,7 +527,7 @@ span.bbp-admin-links,
 /* Display Stats */
 .widget_display_stats dd {
     float: right;
-    margin-top: -8%;
+    margin-top: -11%;
     line-height: 28px;
 }
 

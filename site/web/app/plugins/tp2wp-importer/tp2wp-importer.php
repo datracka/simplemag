@@ -6,7 +6,7 @@ Plugin URI: https://tp2wp.com
 Description: Collection of functionality to ease importing Typepad data into Wordpress.
 Author: Peter Snyder, ReadyMadeWeb
 Author URI: https://tp2wp.com
-Version: 1.0.12
+Version: 1.0.13
 Text Domain: tp2wp-importer
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */

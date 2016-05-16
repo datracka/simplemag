@@ -47,7 +47,10 @@ class TI_Code_Banner extends WP_Widget {
 		if ( $title ) echo $before_title . $title . $after_title;
         ?>
         
-        <?php echo $banner_code; ?>
+        <?php
+        $code_ad = $banner_code;
+        echo apply_filters( 'be_the_content', $code_ad );
+        ?>
             
 	    <?php 
 		echo $after_widget;

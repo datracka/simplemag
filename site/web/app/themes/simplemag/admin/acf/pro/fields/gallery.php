@@ -52,7 +52,7 @@ class acf_field_gallery extends acf_field {
 			'select'		=> __("Add Image to Gallery",'acf'),
 			'edit'			=> __("Edit Image",'acf'),
 			'update'		=> __("Update Image",'acf'),
-			'uploadedTo'	=> __("uploaded to this post",'acf'),
+			'uploadedTo'	=> __("Uploaded to this post",'acf'),
 			'max'			=> __("Maximum selection reached",'acf')
 		);
 		
@@ -371,7 +371,7 @@ class acf_field_gallery extends acf_field {
 					'name'		=> 'title',
 					'prefix'	=> $prefix,
 					'type'		=> 'text',
-					'label'		=> 'Title',
+					'label'		=> __('Title', 'acf'),
 					'value'		=> $attachment['title']
 				), 'tr');
 				
@@ -380,7 +380,7 @@ class acf_field_gallery extends acf_field {
 					'name'		=> 'caption',
 					'prefix'	=> $prefix,
 					'type'		=> 'textarea',
-					'label'		=> 'Caption',
+					'label'		=> __('Caption', 'acf'),
 					'value'		=> $attachment['caption']
 				), 'tr');
 				
@@ -389,7 +389,7 @@ class acf_field_gallery extends acf_field {
 					'name'		=> 'alt',
 					'prefix'	=> $prefix,
 					'type'		=> 'text',
-					'label'		=> 'Alt Text',
+					'label'		=> __('Alt Text', 'acf'),
 					'value'		=> $attachment['alt']
 				), 'tr');
 				
@@ -398,7 +398,7 @@ class acf_field_gallery extends acf_field {
 					'name'		=> 'description',
 					'prefix'	=> $prefix,
 					'type'		=> 'textarea',
-					'label'		=> 'Description',
+					'label'		=> __('Description', 'acf'),
 					'value'		=> $attachment['description']
 				), 'tr');
 				
@@ -540,7 +540,7 @@ class acf_field_gallery extends acf_field {
 			
 			<ul class="acf-hl">
 				<li>
-					<a href="#" class="acf-button blue add-attachment"><?php _e('Add to gallery', 'acf'); ?></a>
+					<a href="#" class="acf-button button button-primary add-attachment"><?php _e('Add to gallery', 'acf'); ?></a>
 				</li>
 				<li class="acf-fr">
 					<select class="bulk-actions">
@@ -566,10 +566,10 @@ class acf_field_gallery extends acf_field {
 			
 			<ul class="acf-hl">
 				<li>
-					<a href="#" class="acf-button close-sidebar"><?php _e('Close', 'acf'); ?></a>
+					<a href="#" class="acf-button button close-sidebar"><?php _e('Close', 'acf'); ?></a>
 				</li>
 				<li class="acf-fr">
-					<a class="acf-button blue update-attachment"><?php _e('Update', 'acf'); ?></a>
+					<a class="acf-button button button-primary update-attachment"><?php _e('Update', 'acf'); ?></a>
 				</li>
 			</ul>
 			

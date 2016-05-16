@@ -12,8 +12,7 @@
  * @package SimpleMag
  * @since 	SimpleMag 4.0
  *
-**/ 
-
+**/
 
 
 
@@ -29,51 +28,6 @@ function ajax_mega_menu_get_posts( $taxonomy ) {
     
 
     $taxonomy = $_POST['taxonomy'];
-
-    /**
-     * Show categpry title and link
-    **/ 
-    $menu_cat_name = new WP_Query( 
-        array(
-            'category_name'     => $taxonomy,
-            'post_type'         => 'post',
-            'posts_per_page'    => 1
-        )
-    );
-
-    if ( $menu_cat_name->have_posts() ) :
-
-        while ( $menu_cat_name->have_posts() ) : $menu_cat_name->the_post();
-            
-            $categories = get_the_category();
-            //$separator = '/';
-            $output = '';
-            
-            if ( ! empty( $categories ) ) {
-                foreach( $categories as $category ) {
-                    $output .= '<a class="mega-menu-posts-title alignleft" href="' . esc_url( get_category_link( $category->term_id ) ) . '">';
-                    $output .= esc_html( $category->name );
-                    $output .= '</a>';
-                }
-                echo $output;
-            }
-            
-        
-            /*
-            if ( !empty( $categories ) ) {
-                echo '<a class="clearfix mega-menu-posts-title" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">';
-                echo '<span class="alignleft title">' . esc_html( $categories[0]->name ) . '</span>';
-                echo '<span class="alignright see-more"><span>' . __( 'See More', 'themetext' ) . '</span><i class="icomoon-arrow-right"></i></span>';
-                echo '</a>';
-            }
-            */
-    
-        endwhile; 
-    
-        wp_reset_postdata();
-    
-    endif;
-    
     
     
     /**
@@ -84,7 +38,8 @@ function ajax_mega_menu_get_posts( $taxonomy ) {
             'category_name'     => $taxonomy,
             'post_type'         => 'post',
             'post_status'       => 'publish',
-            'posts_per_page'    => 3
+            'posts_per_page'    => 3,
+            'no_found_rows' => true,
         )
     );
 
@@ -95,7 +50,7 @@ function ajax_mega_menu_get_posts( $taxonomy ) {
             while ( $menu_cat_posts->have_posts() ) : $menu_cat_posts->the_post();
 
                 echo '<li class="mega-menu-item">';
-
+                        
                         echo '<figure><a href="' . get_the_permalink() . '">';
                         if ( has_post_thumbnail() ) {
                             the_post_thumbnail( 'rectangle-size' );
@@ -128,8 +83,6 @@ function ajax_mega_menu_get_posts( $taxonomy ) {
 
 add_action('wp_ajax_filter_posts', 'ajax_mega_menu_get_posts');
 add_action('wp_ajax_nopriv_filter_posts', 'ajax_mega_menu_get_posts');
-
-
 
 
 
@@ -182,23 +135,89 @@ class TI_Menu extends Walker_Nav_Menu {
         
 		
 		/**
-         * Add Mega menu only for: 
-		 * Parent category if the option is enabled in Theme Options
+         * Mega Menu:
+         * 1. Ajax
+         * 2. Regular
+         *
+		 * If the option is enabled in Theme Options
         **/
-		if ( $ti_option['site_mega_menu'] == true ) {
+        if ( $ti_option['site_mega_menu'] == true ) :
 
-			if ( $depth == 0 && $item->object == 'category' ) {
-                
+            if ( $depth == 0 && $item->object == 'category' ) :
+
+        
                 /**
-                 * Mega Menu output
+                 * AJAX Menu
                 **/
-                $item_output .= '<div class="sub-posts">';
-				    $item_output .= '<div class="clearfix mega-menu-container"></div>';
-                $item_output .= '</div>';
-				
-			}
+                if ( $ti_option['site_mega_menu_type'] == 'menu_ajax' ) :
+        
+                    
+                    $item_output .= '<div class="sub-posts">';
+                        $item_output .= '<div class="clearfix mega-menu-container mega-menu-ajax"></div>';
+                    $item_output .= '</div>';
+                
+        
+                /**
+                 * Regular Menu
+                **/
+                else :
+                    
+                    $item_output .= '<div class="sub-posts">';
 
-		}
+                        $item_output .= '<div class="mega-menu-container">';
+
+                            global $post;
+                            $menuposts = get_posts( array( 
+                                    'posts_per_page' => 3, 
+                                    'category' => $item->object_id,
+                                    'no_found_rows' => true,
+                                ) 
+                            );
+
+                            //$item_output .= '<a href="" class="mega-menu-posts-title alignleft">' . get_cat_name( $item->object_id ) . '</a>';
+
+
+                            $item_output .= '<ul class="mega-menu-posts">';
+
+                                foreach( $menuposts as $post ):
+
+                                    $post_title = get_the_title();
+                                    $post_link = get_permalink();
+                                    $post_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'rectangle-size' );
+
+                                    if ( $post_image != '' ){
+                                        $menu_post_image = '<img src="' . esc_url( $post_image[0] ) . '" alt="' . esc_attr( $post_title ) . '" width="' . esc_attr( $post_image[1] ) . '" height="' . esc_attr( $post_image[2] ) . '" />';
+                                    } elseif( first_post_image() ) {
+                                        $menu_post_image = '<img src="' . esc_url( first_post_image() ) . '" class="wp-post-image" alt="' . esc_attr( $post_title ) . '" />';
+                                    } else {
+                                        $menu_post_image = __( 'No image','themetext');
+                                    }
+
+                                    $item_output .= '
+                                        <li class="mega-menu-item">
+                                            <figure>
+                                                <a href="' . esc_url( $post_link ) . '">' . $menu_post_image . '</a>
+                                            </figure>
+                                            <div class="item-title">
+                                                <a href="' . esc_url( $post_link ) . '">' .esc_html( $post_title ) . '</a>
+                                            </div>
+                                        </li>';
+
+                                endforeach;
+
+                                wp_reset_postdata();
+
+                            $item_output .= '</ul>';
+
+                        $item_output .= '</div>';
+
+                    $item_output .= '</div>';
+
+                endif;
+
+            endif;
+        
+        endif;
 		
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }

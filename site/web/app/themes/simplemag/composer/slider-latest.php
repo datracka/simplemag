@@ -40,7 +40,8 @@ endif;
                     'post_type' => 'post',
                     'posts_per_page' => $slides_num,
                     'meta_key' => 'homepage_slider_add',
-                    'meta_value' => '1'
+                    'meta_value' => '1',
+                    'no_found_rows' => true,
                 )
             );
             ?>
@@ -53,7 +54,6 @@ endif;
                 
                     <div <?php post_class(); ?>>
                         <figure class="entry-image">
-                            <a class="entry-link" href="<?php the_permalink(); ?>"></a>
                             <?php if ( has_post_thumbnail() ) { ?>
                             	<?php the_post_thumbnail( 'medium-size' ); ?>
                             <?php } else { ?>
@@ -61,6 +61,7 @@ endif;
                             <?php } ?>
                         </figure>
                         <header class="entry-header <?php echo sanitize_html_class( $section_style_class ); ?>">
+                            <a class="entry-link" href="<?php the_permalink(); ?>"></a>
                             <div class="inner">
                                 <div class="inner-cell">
                                     <div class="entry-frame">
@@ -103,7 +104,8 @@ endif;
                     array(
                         'post_type' => 'post',
                         'posts_per_page' => 2,
-                        'ignore_sticky_posts' => 1
+                        'ignore_sticky_posts' => 1,
+                        'no_found_rows' => true,
                     )
                 );
 
@@ -116,7 +118,8 @@ endif;
                         'posts_per_page' => 2,
                         'meta_key' => 'featured_post_add',
                         'meta_value' => '1',
-                        'ignore_sticky_posts' => 1
+                        'ignore_sticky_posts' => 1,
+                        'no_found_rows' => true,
                     )
                 );
 
@@ -131,7 +134,6 @@ endif;
 
                         <article class="post-item content-over-image content-over-image-tint">
                             <figure class="entry-image">
-                                <a class="entry-link" href="<?php the_permalink(); ?>"></a>
                                 <?php 
                                 if ( has_post_thumbnail() ) {
                                     the_post_thumbnail( 'rectangle-size' );
@@ -142,10 +144,11 @@ endif;
                                 }?>
                             </figure>
                             <header class="entry-header">
+                                <a class="entry-link" href="<?php the_permalink(); ?>"></a>
                                 <div class="inner">
                                     <div class="inner-cell">
                                         <h2 class="entry-title">
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                            <?php the_title(); ?>
                                         </h2>
                                     </div>
                                 </div>
@@ -170,4 +173,4 @@ endif;
 
     </div><!-- Grids -->
 
-</section>
+</section><!-- Posts Slider with two posts -->

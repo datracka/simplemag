@@ -58,7 +58,7 @@ function latest_by_category_button() {
         $cat_section_name = $cat_name;
         $category_link = get_category_link( $cat_section_name );
 
-        // Add category name from the select field the the button
+        // Add category name from the select field into the button
         $cat_section = get_category( $cat_section_name );
         $button_text = $cat_section->name;
         ?>

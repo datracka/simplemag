@@ -22,7 +22,8 @@
                 'post__not_in' => array( $post->ID ),
                 'orderby' => 'rand',
                 'posts_per_page' => 1,
-                'ignore_sticky_posts' => 1
+                'ignore_sticky_posts' => 1,
+                'no_found_rows' => true
             )
         );
 		
@@ -39,16 +40,19 @@
 					} ?>
                 </a>
             </figure>
-            <header class="entry-header">
-                <div class="entry-meta">
-                    <?php the_category(', '); ?>
-                </div>
-                <h4>
-                    <a href="<?php the_permalink(); ?>">
-                        <?php the_title(); ?>
-                    </a>
-                </h4>
-            </header>
+            
+            <div class="entry-details">
+                <header class="entry-header">
+                    <div class="entry-meta">
+                        <span class="entry-category"><?php the_category(', '); ?></span>
+                    </div>
+                    <h4>
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_title(); ?>
+                        </a>
+                    </h4>
+                </header>
+            </div>
         </article>
         
     <?php endwhile; ?>

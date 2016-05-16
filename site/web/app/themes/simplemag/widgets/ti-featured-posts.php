@@ -53,7 +53,8 @@ class TI_Featured_Posts extends WP_Widget {
 				'post_type' => 'post',
 				'meta_key' => 'featured_post_add',
         		'meta_value' => '1',
-				'posts_per_page' => $items_num
+				'posts_per_page' => $items_num,
+                'no_found_rows' => true
 			)
 		);
 		?>

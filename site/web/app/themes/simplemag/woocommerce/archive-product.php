@@ -27,7 +27,7 @@ get_header( 'shop' ); ?>
         do_action( 'woocommerce_before_main_content' );
     ?>
 
-    <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+    <?php if ( apply_filters( 'woocommerce_show_page_title', true ) && !is_shop() ) : ?>
         <header class="entry-header page-header">
         <div class="page-title wrapper title-with-sep">
             <div class="wrapper">
@@ -67,9 +67,9 @@ get_header( 'shop' ); ?>
                 
             <?php endif ?>
 
-            <?php woocommerce_product_loop_start(); ?>
+            <?php woocommerce_product_subcategories( array( 'before' => '<div class="sub-categories"><div class="entries grids masonry-layout">', 'after' => "</div></div>" ) ) ?>
 
-                <?php woocommerce_product_subcategories(); ?>
+            <?php woocommerce_product_loop_start(); ?>
 
                 <?php while ( have_posts() ) : the_post(); ?>
                     <?php wc_get_template_part( 'content', 'product' ); ?>

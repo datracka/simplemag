@@ -1,11 +1,24 @@
 TP2WP Wordpress plugin Changelog
 ===
 
+1.0.13
+---
+  * Correcting error my MySQL function to check whether posts already exist
+    when doing main content import.
+  * Add small clarifying text to the attachment importer form, clarifying
+    that domains entered in the "domains to import from" field should not
+    include custom port information (ie we match only against domains, not
+    ports).
+  * Add additional status check, to encourage users to disable Wordpress's
+    cron sysem during import / migration
+  * Small formatting / code standard fixes in the status check part of the
+    plugin.
+
 1.0.12
 ---
   * When multiple TypePad posts have the same post name, we now generate
     a new unique postname for the duplicately named post(s).  This means that
-    all posts will be imported those, even those sharing the same post name /
+    all posts will be imported, even those sharing the same post name /
     slug (though some incoming links will be broken).
   * Small optimization to avoid needing to download duplicate linked to files.
   * Small formatting fixes / corrections

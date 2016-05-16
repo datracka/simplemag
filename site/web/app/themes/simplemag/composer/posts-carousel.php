@@ -8,7 +8,7 @@
 **/
 ?>
 
-<section class="home-section full-width-section posts-carousel">
+<section class="home-section full-width-media full-width-section posts-carousel">
 
     <?php
     /** 
@@ -18,29 +18,29 @@
     $carousel_slides_num = get_sub_field( 'carousel_slides_to_show' );
     $ti_posts_carousel = new WP_Query(
         array(
-            'post_type' => 'post',
             'posts_per_page' => $carousel_slides_num,
             'meta_key' => 'homepage_slider_add',
-            'meta_value' => '1'
+            'meta_value' => '1',
+            'no_found_rows' => true,
         )
     );
     ?>
 
     <?php if ( $ti_posts_carousel->have_posts() ) : ?>
     
-    <div id="gallery-carousel" class="global-sliders content-over-image content-over-image-tint">
+    <div class="gallery-carousel global-sliders content-over-image content-over-image-tint">
         
         <?php while ( $ti_posts_carousel->have_posts() ) : $ti_posts_carousel->the_post(); ?>
         
             <div class="gallery-item">
             	<figure class="entry-image">
-                    <a class="entry-link" href="<?php the_permalink(); ?>"></a>
                     <?php 
                     if ( has_post_thumbnail() ) {
                         the_post_thumbnail( 'gallery-carousel' );
                     } ?>
                 </figure>
 				<header class="entry-header">
+                    <a class="entry-link" href="<?php the_permalink(); ?>"></a>
                     <div class="inner">
                         <div class="inner-cell">
                             <div class="entry-meta">

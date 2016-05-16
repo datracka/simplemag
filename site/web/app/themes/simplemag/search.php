@@ -31,6 +31,8 @@ get_header(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class("clearfix"); ?>>
                         <div class="post-item-inner">
                     
+                        <?php // Check if an image exists.
+                            if ( has_post_thumbnail() || first_post_image() ) : ?>
                             <figure class="entry-image">
                                 <div class="entry-image-inner">
 
@@ -48,7 +50,7 @@ get_header(); ?>
                                     if ( 'gallery' == get_post_format() ): // Gallery
                                         echo '<i class="icomoon-camera-retro"></i>';
                                     elseif ( 'video' == get_post_format() ): // Video
-                                        echo '<i class="icomoon-camera"></i>';
+                                        echo '<i class="icomoon-video-camera"></i>';
                                     elseif ( 'audio' == get_post_format() ): // Audio
                                         echo '<i class="icomoon-music"></i>';
                                     endif;
@@ -56,6 +58,7 @@ get_header(); ?>
                                     
                                 </div>
                             </figure>
+                        <?php endif ?>
                             
                             <div class="entry-details">
                                 <header class="entry-header">
@@ -66,8 +69,11 @@ get_header(); ?>
 
                                 <div class="entry-summary">
                                     <?php the_excerpt(); ?>
-                                    <a class="read-more-link" href="<?php the_permalink() ?>"><?php _e( 'Read More', 'themetext' ); ?></a>
                                 </div>
+                            
+                                <footer class="entry-footer">
+                                    <a class="read-more-link" href="<?php the_permalink() ?>"><?php _e( 'Read More', 'themetext' ); ?></a>
+                                </footer>
                             </div>
                         
                         </div>

@@ -7,9 +7,13 @@
  */
 ?>
 
-<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-	<input type="text" name="s" id="s" value="<?php _e( 'Search', 'themetext' ); ?>" onfocus="if(this.value=='<?php _e( 'Search', 'themetext' ); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e( 'Search', 'themetext' ); ?>';" />
-    <button type="submit">
-    	<i class="icomoon-search"></i>
-    </button>
-</form>
+<div class="search-form">
+    <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+        <input type="text" name="s" id="s" value="<?php _e( 'Search', 'themetext' ); ?>" onfocus="if(this.value=='<?php _e( 'Search', 'themetext' ); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e( 'Search', 'themetext' ); ?>';" />
+        <button type="submit">
+            <i class="icomoon-search"></i>
+        </button>
+    </form>
+    
+    <div class="mobile-search-button"></div>
+</div>

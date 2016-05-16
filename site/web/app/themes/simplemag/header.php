@@ -46,9 +46,11 @@
 
             if ( !empty( $top_logo['url'] ) ) {
             ?>
-                <a class="alignleft top-strip-logo" href="<?php echo esc_url( home_url() ); ?>">
-                    <img src="<?php echo esc_url( $top_logo['url'] ); ?>" alt="<?php esc_attr( bloginfo( 'name' ) ); ?> - <?php esc_attr( bloginfo( 'description' ) ); ?>" width="<?php echo esc_attr( $top_logo['width'] ); ?>" height="<?php echo esc_attr( $top_logo['height'] ); ?>" />
-                </a><!-- Top Strip Logo -->
+                <div class="top-strip-logo alignleft">
+                    <a href="<?php echo esc_url( home_url() ); ?>">
+                        <img src="<?php echo esc_url( $top_logo['url'] ); ?>" alt="<?php esc_attr( bloginfo( 'name' ) ); ?> - <?php esc_attr( bloginfo( 'description' ) ); ?>" width="<?php echo esc_attr( $top_logo['width'] ); ?>" height="<?php echo esc_attr( $top_logo['height'] ); ?>" />
+                    </a><!-- Top Strip Logo -->
+                </div>
             <?php } ?>
 
             <?php
@@ -72,42 +74,42 @@
     
 
     <section id="site">
-
-        <div id="pageslide"><!-- Sidebar in Mobile View --></div>
+        
+        <?php $mobile_menu = sanitize_html_class( $ti_option['mobile_menu_color'] ); ?>
+        <div id="pageslide" class="<?php echo $mobile_menu; ?>"><!-- Sidebar in Mobile View --></div>
         
         <div class="site-content">
     
-            <header id="masthead" role="banner" class="clearfix<?php if ( $ti_option['site_main_menu'] == true ) { echo ' with-menu'; } ?>">
+            <header id="masthead" role="banner" class="clearfix">
                 
-                
+                <?php
+                // Main Logo Area
+                if ( $ti_option['site_main_area'] == true ) {
+                ?>
                 <div id="branding" class="anmtd">
+                    <div class="wrapper">
                     <?php
-                    // Main Logo Area
-                    if ( $ti_option['site_main_area'] == true ) {
+                        /**
+                         * Header Variations
+                         * are selected in Theme Options, Header tab.
+                        **/
+
+                        // Logo, Social Icons and Search
+                        if ( $ti_option['site_header'] == 'header_search' ) {
+                            get_template_part( 'inc/header', 'search' );
+
+                        // Logo and Ad unit
+                        } elseif ( $ti_option['site_header'] == 'header_banner' ) {
+                            get_template_part( 'inc/header', 'banner' );
+
+                        // Default - Centered Logo and Tagline
+                        } else { 
+                            get_template_part( 'inc/header', 'default' );
+                        }
                     ?>
-                        <div class="wrapper">
-                        <?php
-                            /**
-                             * Header Variations
-                             * are selected in Theme Options, Header tab.
-                            **/
-
-                            // Logo, Social Icons and Search
-                            if ( $ti_option['site_header'] == 'header_search' ) {
-                                get_template_part( 'inc/header', 'search' );
-
-                            // Logo and Ad unit
-                            } elseif ( $ti_option['site_header'] == 'header_banner' ) {
-                                get_template_part( 'inc/header', 'banner' );
-
-                            // Default - Centered Logo and Tagline
-                            } else { 
-                                get_template_part( 'inc/header', 'default' );
-                            }
-                        ?>
-                        </div><!-- .wrapper -->
-                    <?php } ?>
+                    </div><!-- .wrapper -->
                 </div><!-- #branding -->
+                <?php } ?>
                 
 				<?php
                 // Main Menu

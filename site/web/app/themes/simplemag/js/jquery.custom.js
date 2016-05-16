@@ -93,6 +93,12 @@ jQuery(document).ready(function($) {
         
     });
     
+    /* Mobile Search Form */
+    $('.top-strip .mobile-search-button').click(function(){
+        $('.top-strip').toggleClass("search-form-open");
+        $('.top-strip .search-form input').focus();
+    });
+    
 	
     /* Sliders */
 	$(function() {
@@ -154,57 +160,58 @@ jQuery(document).ready(function($) {
                 ]
             }, $slider_arrows)
         );
-
-        // Slider Above the Content
+        
+        
         $(function() {
+        
+            var $FullWidthCarousel = $('.full-width-media .gallery-carousel'),
+                $AboveContentCarousel = $('.above-content-media .gallery-carousel');
             
-            $('.above-content-slider').slick({
-                arrows:false,
-                adaptiveHeight:true,
-                asNavFor:'.above-content-caption'
-            });
+            var $GalleryCaption = $('.gallery-caption');
             
-            $('.above-content-caption').slick(
-                $.extend({
-                    dots:true,
-                    fade:true,
-                    adaptiveHeight:true,
-                    asNavFor:'.above-content-slider'
-                }, $slider_arrows)
-            );
-
-            var slider_image_count = $('.above-content-caption .slick-dots li').length;
-            $('.above-content-caption .slick-dots').append( '<li class="slider-image-count">' + slider_image_count + '</li>');
-            
-        });
-	
-		// Post Format gallery carousel
-        $(function() {
-            
-            var $carousel = $('#gallery-carousel');
-            
-            $carousel.slick(
+            // Page Composer and Post Format carousel
+            $FullWidthCarousel.slick(
                 $.extend({
                     dots:true,
                     centerMode:true,
                     variableWidth:true,
                     responsive: [{
-                        breakpoint:960,
+                        breakpoint:750,
                             settings: {
-                            slidesToShow:1,
+                            centerMode:false,
+                            variableWidth:false,
                             adaptiveHeight:true,
                         }
                     }]
                 }, $slider_arrows)
             );
-
-            var slider_image_count = $carousel.find('.slick-dots li').length;
-            $carousel.find('.slick-dots').append( '<li class="slider-image-count">' + slider_image_count + '</li>');
+            
+            // Gallery Above the Content
+            $AboveContentCarousel.slick({
+                arrows:false,
+                adaptiveHeight:true,
+                asNavFor:$GalleryCaption
+            });
+            
+            // Gallery Caption
+            $GalleryCaption.slick(
+                $.extend({
+                    dots:true,
+                    fade:true,
+                    adaptiveHeight:true,
+                    asNavFor:$AboveContentCarousel
+                }, $slider_arrows)
+            );
+            
+            $([$FullWidthCarousel, $GalleryCaption]).each( function(){
+                var $slider_image_count = $(this).find('.slick-dots li').length;
+                $(this).find('.slick-dots').append( '<li class="slider-image-count">' + $slider_image_count + '</li>');
+            });
             
         });
 	
 		// Related posts
-        $('.related-posts .carousel').slick(
+        $('.related-posts').find('.carousel').slick(
             $.extend({
                 slidesToShow:3,
                 adaptiveHeight:true,
@@ -377,8 +384,8 @@ jQuery(document).ready(function($) {
 	var tabContainers = $('.tab-box .tab-box-content > div');
 	tabContainers.addClass('tab-hidden').filter(':first').addClass('tab-visible');
 	
-	$('.tab-box .tab-box-button a').click(function() {
-        event.preventDefault();
+	$('.tab-box .tab-box-button a').click(function(e) {
+        e.preventDefault();
 		tabContainers.addClass('tab-hidden').removeClass('tab-visible');
 		tabContainers.filter(this.hash).addClass('tab-visible').removeClass('tab-hidden');
 		$('.tab-box .tab-box-button a').removeClass('active');
@@ -401,7 +408,13 @@ jQuery(document).ready(function($) {
 		offResolutions:[-1024],
 		wrapperClassName:'sticky-bar-container'
 	});
-	
+    
+    
+	/* Force equal height in Grid layout */
+    $('.grid-layout:not(".details-hover")').each(function() {
+        $(this).find('.entry-header').responsiveEqualHeightGrid();
+    });
+    
 	
 	/* Show an animation when images are loaded */
 	$('.entry-image').on('inview', function(event, isInView) {
@@ -430,7 +443,7 @@ jQuery(document).ready(function($) {
 	
 	}		
 	
-	/* Sitemap toogle */
+	/* Sitemap toggle */
 	$('.sitemap .row .trigger').click(function(e){
 		e.preventDefault();
 		$(this).toggleClass('active').next().slideToggle('fast');
@@ -439,7 +452,11 @@ jQuery(document).ready(function($) {
 
 	 /* LightBox */
 	if ( $().swipebox ){
-		$('.custom-gallery .gallery-item a, .entry-content figure a').swipebox({
+		$('.custom-gallery .gallery-item a').swipebox({
+			hideBarsDelay:0
+		});
+        
+        $('.entry-content a[href$="jpg"],.entry-content a[href$="jpeg"],.entry-content a[href$="png"],.entry-content a[href$="gif"]').swipebox({
 			hideBarsDelay:0
 		});
 	}
@@ -458,14 +475,14 @@ jQuery(document).ready(function($) {
     
    
     /* Scroll to comments form */
-	$('[href^=#comments]').click(function(){
-        event.preventDefault();
+	$('[href^="#comments"]').click(function(e){
+        e.preventDefault();
 		$('html, body').animate({scrollTop: $("#comments").offset().top}, 700);
 	});
     
 	/* Back to Top link */
-	$('.back-top').click(function(){
-        event.preventDefault();
+	$('.back-top').click(function(e){
+        e.preventDefault();
 		$('html, body').animate({scrollTop:0}, 'fast');
 	});
 

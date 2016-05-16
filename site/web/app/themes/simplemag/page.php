@@ -19,7 +19,7 @@ global $ti_option;
         if ( has_post_thumbnail() ) {
             $page_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), '' );
             $page_bg_image = 'style="background-image:url(' . esc_url( $page_image_url[0] ) . ');"';
-            $title_with_bg = 'title-with-bg full-width-image content-over-image-tint page-title-bg';
+            $title_with_bg = 'full-width-image content-over-image-tint page-title-bg';
         } else {
             $title_with_bg = 'wrapper title-with-sep';
         } ?>

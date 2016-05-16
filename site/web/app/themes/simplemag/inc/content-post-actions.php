@@ -21,13 +21,15 @@ function content_post_item_image() {
     ob_start();
 ?>
 
+        <?php // Check if an image exists.
+        if ( has_post_thumbnail() || first_post_image() ) : ?>
         <div class="entry-image">
             <div class="entry-image-inner">
 
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                     <span class="image-tint">
                         <?php
-                        /** 
+                        /**
                         * Different image size based on layout selection for
                         * Homepage, Categories and Posts Page
                         **/
@@ -65,29 +67,18 @@ function content_post_item_image() {
                 // If post has rating, show the score.
                 if ( get_field( 'enable_rating' ) == 'true' ) :
 
-                    // Call total score calculation function
-                    $get_result = apply_filters( 'ti_score_total', '' );
-
-                    // Get the final score
-                    $total_score = number_format( $get_result, 1, '.', '' );
-
-                    // If final score is decimal like 5.0 or is equal to 10.0
-                    // remove .0 to display it as integer
-                    if ( strlen ( $total_score ) || $total_score == '10.0' ) {
-                        $final_result = str_replace( ".0", "", $total_score );
-                    } else {
-                        $final_result = $total_score;
-                    }
+                    include( locate_template( 'inc/rating-calculations.php' ) );
                     ?>
 
-                    <span class="score-line" style="width:<?php echo ($total_score * 10) ?>%;">
-                        <span><i class="show-total"><?php echo $final_result; ?></i></span>
+                    <span class="score-outer" style="width:<?php echo ($total_score * 10) ?>%;">
+                        <span class="score-line"><i class="show-total"><?php echo esc_html( $final_result ); ?></i></span>
                     </span>
 
                 <?php endif; ?>
 
             </div>
         </div>
+        <?php endif ?>
 
 <?php
     $content_post_image = ob_get_clean();
@@ -331,7 +322,7 @@ function content_post_item_read_more() {
         $displays_read_more = is_array( $sd_read_more ) && in_array ( 'sd_read', $sd_read_more );
         
         if ( $displays_read_more ) :
-             echo '<a class="read-more-link" href="' . get_the_permalink(). '">' . __( 'Read More', 'themetext' ) . '</a>';
+             echo '<a class="read-more-link" href="' . get_the_permalink() . '">' . __( 'Read More', 'themetext' ) . '</a>';
         endif;
 
     /* Output in Archives */
@@ -339,7 +330,7 @@ function content_post_item_read_more() {
         
         global $ti_option;
         if ( $ti_option['post_item_read_more'] == '1' ) :
-            echo '<a class="read-more-link" href="' . get_the_permalink(). '">' . __( 'Read More', 'themetext' ) . '</a>';
+            echo '<a class="read-more-link" href="' . get_the_permalink() . '">' . __( 'Read More', 'themetext' ) . '</a>';
         endif;
 
     endif;

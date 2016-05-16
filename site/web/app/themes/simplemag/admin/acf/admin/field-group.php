@@ -239,25 +239,25 @@ class acf_admin_field_group {
 		);
 		
 		
-?>
-<script type="text/javascript">
-/* <![CDATA[ */
-if( typeof acf !== 'undefined' ) {
-
-	acf.o = <?php echo json_encode($o); ?>;
-	acf.l10n = <?php echo json_encode($l10n); ?>;
-	<?php do_action('acf/field_group/admin_footer_js'); ?>
-	
-	acf.do_action('prepare');
-	
-}
-/* ]]> */
-</script>
-<?php
+		?>
+		<script type="text/javascript">
+			acf = acf || {};
+			acf.o = <?php echo json_encode($o); ?>;
+			acf.l10n = <?php echo json_encode($l10n); ?>;
+			<?php do_action('acf/field_group/admin_footer_js'); ?>
+		</script>
+		<?php
 		
 		
-		// action for 3rd party customisation
+		// action
 		do_action('acf/field_group/admin_footer');
+		
+		
+		?>
+		<script type="text/javascript">
+			acf.do_action('prepare');
+		</script>
+		<?php
 		
 	}
 	
@@ -638,14 +638,18 @@ if( typeof acf !== 'undefined' ) {
 			*/
 			
 			case "post_type" :
+			
+				// get post types
+				$choices = acf_get_pretty_post_types();
 				
-				// all post types except attachment
-				$exclude = array('attachment');
-				$choices = acf_get_post_types( $exclude );
-				$choices = acf_get_pretty_post_types( $choices );
-
+				
+				// remove attachments
+				unset( $choices['attachment'] );
+				
+				
+				// end
 				break;
-				
+
 				
 			case "post" :
 				
@@ -802,8 +806,9 @@ if( typeof acf !== 'undefined' ) {
 			case "page_template" :
 				
 				$choices = array(
-					'default'	=>	__("Default Template",'acf'),
+					'default' => apply_filters( 'default_page_template_title',  __('Default Template', 'acf') ),
 				);
+				
 				
 				$templates = get_page_templates();
 				
@@ -900,8 +905,17 @@ if( typeof acf !== 'undefined' ) {
 				
 			case "comment" :
 				
-				$choices = array('all' => __('All', 'acf'));
-			
+				// vars
+				$choices = array(
+					'all'	=> __('All', 'acf')
+				);
+				
+				
+				// append post types
+				$choices = array_merge( $choices, acf_get_pretty_post_types() );
+				
+				
+				// end
 				break;
 			
 			
@@ -1100,7 +1114,7 @@ if( typeof acf !== 'undefined' ) {
 			echo '<p><strong>' . __('Move Complete.', 'acf') . '</strong></p>';
 			echo '<p>' . sprintf( __('The %s field can now be found in the %s field group', 'acf'), $v1, $v2 ). '</p>';
 			
-			echo '<a href="#" class="acf-button blue acf-close-popup">' . __("Close Window",'acf') . '</a>';
+			echo '<a href="#" class="button button-primary acf-close-popup">' . __("Close Window",'acf') . '</a>';
 			
 			die();
 			
@@ -1142,7 +1156,7 @@ if( typeof acf !== 'undefined' ) {
 			// render
 			acf_render_field_wrap( $field );
 			
-			echo '<button type="submit" class="acf-button blue">' . __("Move Field",'acf') . '</button>';
+			echo '<button type="submit" class="button button-primary">' . __("Move Field",'acf') . '</button>';
 			
 		echo '</form>';
 		
