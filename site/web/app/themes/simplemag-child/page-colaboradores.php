@@ -23,7 +23,9 @@ global $ti_option;
 
                 <article class="entry-content">
                     <div id="x-section-1" class="x-section bg-image"
-                         style=" margin: 0px; padding: 45px 0px; background-image: url(http://simplemag.dev/app/uploads/2016/05/open_book_macro-wallpaper-800x600.jpg); background-color: transparent;"
+                         style=" margin: 0px; padding: 45px 0px;
+                         background-image: url('../app/uploads/2016/05/open_book_macro-wallpaper-800x600.jpg');
+                         background-color: transparent;"
                          data-x-element="section"
                          data-x-params="{&quot;type&quot;:&quot;image&quot;,&quot;parallax&quot;:false}">
                         <div class="x-container" style="margin: 0px auto; padding: 0px; ">
