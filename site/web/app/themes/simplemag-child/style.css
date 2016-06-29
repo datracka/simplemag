@@ -47,3 +47,13 @@ Template: simplemag
     -webkit-transform: none;
     transform: none;
 }
+
+/* override mobile view. Brute force! I could not find where the styles are defined :_( */
+
+@media (max-width: 480px) {
+    .x-section .x-author-box .avatar {
+        display: block !important;
+        float: none !important;
+        margin-bottom: 10px;
+    }
+}
