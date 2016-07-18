@@ -2,7 +2,7 @@
 
 global $current_user;
 $auth_varble=0;
-get_currentuserinfo();
+wp_get_current_user();
 $imgpath= plugins_url()."/facebook-auto-publish/admin/images/";
 $heimg=$imgpath."support.png";
 $ms1="";
@@ -15,7 +15,7 @@ $redirecturl=admin_url('admin.php?page=facebook-auto-publish-settings&auth=1');
 require( dirname( __FILE__ ) . '/authorization.php' );
 
 
-if($_GET['fbap_notice'] == 'hide')
+if(isset($_GET['fbap_notice'])&& $_GET['fbap_notice'] == 'hide')
 {
 	update_option('xyz_fbap_dnt_shw_notice', "hide");
 	?>
@@ -65,14 +65,14 @@ if(isset($_POST['fb']))
 
 	$applidold=get_option('xyz_fbap_application_id');
 	$applsecretold=get_option('xyz_fbap_application_secret');
-	$fbidold=get_option('xyz_fbap_fb_id');
+	//$fbidold=get_option('xyz_fbap_fb_id');
 	
 	$posting_method=$_POST['xyz_fbap_po_method'];
 	$posting_permission=$_POST['xyz_fbap_post_permission'];
 	$appid=$_POST['xyz_fbap_application_id'];
 	$appsecret=$_POST['xyz_fbap_application_secret'];
 	$messagetopost=$_POST['xyz_fbap_message'];
-	$fbid=$_POST['xyz_fbap_fb_id'];
+	//$fbid=$_POST['xyz_fbap_fb_id'];
 	if($appid=="" && $posting_permission==1)
 	{
 		$ms1="Please fill facebook application id.";
@@ -83,11 +83,11 @@ if(isset($_POST['fb']))
 		$ms2="Please fill facebook application secret.";
 		$erf=1;
 	}
-	elseif($fbid=="" && $posting_permission==1)
+	/*elseif($fbid=="" && $posting_permission==1)
 	{
 		$ms3="Please fill facebook user id.";
 		$erf=1;
-	}
+	}*/
 	elseif($messagetopost=="" && $posting_permission==1)
 	{
 		$ms4="Please fill message format for posting.";
@@ -96,7 +96,7 @@ if(isset($_POST['fb']))
 	else
 	{
 		$erf=0;
-		if($appid!=$applidold || $appsecret!=$applsecretold || $fbidold!=$fbid)
+		if($appid!=$applidold || $appsecret!=$applsecretold)
 		{
 			update_option('xyz_fbap_af',1);
 			update_option('xyz_fbap_fb_token','');
@@ -109,7 +109,7 @@ if(isset($_POST['fb']))
 		update_option('xyz_fbap_application_id',$appid);
 		update_option('xyz_fbap_post_permission',$posting_permission);
 		update_option('xyz_fbap_application_secret',$appsecret);
-		update_option('xyz_fbap_fb_id',$fbid);
+		//update_option('xyz_fbap_fb_id',$fbid);
 		update_option('xyz_fbap_po_method',$posting_method);
 		update_option('xyz_fbap_message',$messagetopost);
 
@@ -194,10 +194,10 @@ function dethide(id)
 	$af=get_option('xyz_fbap_af');
 	$appid=esc_html(get_option('xyz_fbap_application_id'));
 	$appsecret=esc_html(get_option('xyz_fbap_application_secret'));
-	$fbid=esc_html(get_option('xyz_fbap_fb_id'));
+	//$fbid=esc_html(get_option('xyz_fbap_fb_id'));
 	$posting_method=get_option('xyz_fbap_po_method');
 	$posting_message=esc_textarea(get_option('xyz_fbap_message'));
-	if($af==1 && $appid!="" && $appsecret!="" && $fbid!="")
+	if($af==1 && $appid!="" && $appsecret!="")
 	{
 		?>
 	<span style="color: red;">Application needs authorisation</span> <br>
@@ -208,7 +208,7 @@ function dethide(id)
 
 	</form>
 	<?php }
-	else if($af==0 && $appid!="" && $appsecret!="" && $fbid!="")
+	else if($af==0 && $appid!="" && $appsecret!="")
 	{
 		?>
 	<form method="post">
@@ -278,14 +278,14 @@ function dethide(id)
 						value="<?php if($ms2=="") {echo $apsecret; }?>" />
 					</td>
 				</tr>
-				<tr valign="top">
+				<!-- <tr valign="top">
 					<td>Facebook user id 
 					</td>
 					<td><input id="xyz_fbap_fb_id" name="xyz_fbap_fb_id" type="text"
 						value="<?php if($ms3=="") {echo esc_html(get_option('xyz_fbap_fb_id'));}?>" />
 						<a href="http://kb.xyzscripts.com/how-can-i-find-my-facebook-user-id" target="_blank">How can I find my Facebook user id?</a>
 					</td>
-				</tr>
+				</tr>-->
 				<tr valign="top">
 					<td>Message format for posting <img src="<?php echo $heimg?>"
 						onmouseover="detdisplay('xyz_fb')" onmouseout="dethide('xyz_fb')">
@@ -354,19 +354,21 @@ function dethide(id)
 				<?php 
 
 				$xyz_acces_token=get_option('xyz_fbap_fb_token');
+				
 				if($xyz_acces_token!=""){
 
 					$offset=0;$limit=100;$data=array();
-					$fbid=get_option('xyz_fbap_fb_id');
+					//$fbid=get_option('xyz_fbap_fb_id');
 					do
 					{
 						$result1="";$pagearray1="";
 						$pp=wp_remote_get("https://graph.facebook.com/".XYZ_FBAP_FB_API_VERSION."/me/accounts?access_token=$xyz_acces_token&limit=$limit&offset=$offset");
+					
 						if(is_array($pp))
 						{
 							$result1=$pp['body'];
 							$pagearray1 = json_decode($result1);
-							if(is_array($pagearray1->data))                       
+							if(is_array($pagearray1->data)) 
 							$data = array_merge($data, $pagearray1->data);
 						}
 						else
@@ -459,8 +461,9 @@ function dethide(id)
         $xyz_fbap_peer_verification=$_POST['xyz_fbap_peer_verification'];
         $xyz_fbap_premium_version_ads=$_POST['xyz_fbap_premium_version_ads'];
         $xyz_fbap_default_selection_edit=$_POST['xyz_fbap_default_selection_edit'];
+	    $xyz_fbap_utf_decode_enable=$_POST['xyz_fbap_utf_decode_enable'];
         
-        $xyz_fbap_future_to_publish=$_POST['xyz_fbap_future_to_publish'];
+        //$xyz_fbap_future_to_publish=$_POST['xyz_fbap_future_to_publish'];
 		$fbap_customtype_ids="";
 
 		$xyz_fbap_applyfilters="";
@@ -498,9 +501,10 @@ function dethide(id)
 		update_option('xyz_fbap_peer_verification',$xyz_fbap_peer_verification);
 		update_option('xyz_fbap_premium_version_ads',$xyz_fbap_premium_version_ads);
 		update_option('xyz_fbap_default_selection_edit',$xyz_fbap_default_selection_edit);
-		update_option('xyz_fbap_future_to_publish',$xyz_fbap_future_to_publish);
+		update_option('xyz_fbap_utf_decode_enable',$xyz_fbap_utf_decode_enable);
+	//	update_option('xyz_fbap_future_to_publish',$xyz_fbap_future_to_publish);
 	}
-	$xyz_fbap_future_to_publish=get_option('xyz_fbap_future_to_publish');
+	//$xyz_fbap_future_to_publish=get_option('xyz_fbap_future_to_publish');
 	$xyz_credit_link=get_option('xyz_credit_link');
 	$xyz_fbap_include_pages=get_option('xyz_fbap_include_pages');
 	$xyz_fbap_include_posts=get_option('xyz_fbap_include_posts');
@@ -510,6 +514,7 @@ function dethide(id)
 	$xyz_fbap_peer_verification=esc_html(get_option('xyz_fbap_peer_verification'));
 	$xyz_fbap_premium_version_ads=esc_html(get_option('xyz_fbap_premium_version_ads'));
 	$xyz_fbap_default_selection_edit=esc_html(get_option('xyz_fbap_default_selection_edit'));
+	$xyz_fbap_utf_decode_enable=esc_html(get_option('xyz_fbap_utf_decode_enable'));
 
 	?>
 		<h2>Basic Settings</h2>
@@ -687,18 +692,28 @@ function dethide(id)
 					?>
 					</td>
 				</tr>	
-					
 				<tr valign="top">
+
+					<td scope="row" colspan="1" width="50%">Enable utf-8 decoding before publishing
+					</td><td><select name="xyz_fbap_utf_decode_enable" >
+					
+					<option value ="1" <?php if($xyz_fbap_utf_decode_enable=='1') echo 'selected'; ?> >Yes </option>
+					
+					<option value ="0" <?php if($xyz_fbap_utf_decode_enable=='0') echo 'selected'; ?> >No </option>
+					</select> 
+					</td>
+				</tr>	
+				<!-- <tr valign="top">
 
 					<td scope="row" colspan="1">Enable "future_to_publish" hook	</td>
 					<td><select name="xyz_fbap_future_to_publish" id="xyz_fbap_future_to_publish" >
 					
-					<option value ="1" <?php if($xyz_fbap_future_to_publish=='1') echo 'selected'; ?> >Yes </option>
+					<option value ="1" <?php //if($xyz_fbap_future_to_publish=='1') echo 'selected'; ?> >Yes </option>
 					
-					<option value ="2" <?php if($xyz_fbap_future_to_publish=='2') echo 'selected'; ?> >No </option>
+					<option value ="2" <?php //if($xyz_fbap_future_to_publish=='2') echo 'selected'; ?> >No </option>
 					</select>
 					</td>
-				</tr>
+				</tr>-->
 					
 				<tr valign="top">
 

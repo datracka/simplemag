@@ -2,9 +2,9 @@
 Contributors: f1logic
 Donate link: http://xyzscripts.com/donate/
 Tags:  facebook, facebook auto publish, publish post to facebook, add link to facebook, facebook publishing, post to facebook, post to fb, social media auto publish, social media publishing, social network auto publish, social media, social network
-Requires at least: 2.8
-Tested up to: 4.3
-Stable tag: 1.2.4
+Requires at least: 3.0																				
+Tested up to: 4.5.3
+Stable tag: 1.3.1
 License: GPLv2 or later
 
 Publish posts automatically to Facebook page or profile.
@@ -122,6 +122,18 @@ More questions ? [Drop a mail](http://xyzscripts.com/members/support/ "XYZScript
 
 == Changelog ==
 
+= Facebook Auto Publish 1.3.1 =
+* Fixed custom post types autopublish issue	
+* Fixed duplicate autopublish issue
+
+= Facebook Auto Publish 1.3 =
+* Added option to enable/disable utf-8 decoding before publishing	
+* Removed unwanted configuration related to 'future_to_publish' hook
+* Removed unwanted setting "Facebook user id"
+* Postid added in autopublish logs
+* Updated auto publish mechanism using transition_post_status hook
+* Open graph meta tags will be prefered for facebook attachments
+
 = Facebook Auto Publish 1.2.4 =
 * Added option to enable/disable "future_to_publish" hook for handling auto publish of scheduled posts	
 * Added options to enable/disable "the_content", "the_excerpt", "the_title" filters on content to be auto-published
@@ -189,7 +201,7 @@ Please read the FAQ first if you are having problems.
 
 = Requirements =
 
-    WordPress 2.8+
+    WordPress 3.0+
     PHP 5+ 
 
 = Feedback =

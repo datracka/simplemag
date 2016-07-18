@@ -27,7 +27,7 @@ function fbap_install_free()
 	}*/
 	
 	global $current_user;
-	get_currentuserinfo();
+	wp_get_current_user();
 	if(get_option('xyz_credit_link')=="")
 	{
 		add_option("xyz_credit_link", '0');
@@ -41,7 +41,7 @@ function fbap_install_free()
 	
 	add_option('xyz_fbap_application_id','');
 	add_option('xyz_fbap_application_secret', '');
-	add_option('xyz_fbap_fb_id', '');
+	//add_option('xyz_fbap_fb_id', '');
 	add_option('xyz_fbap_message', 'New post added at {BLOG_TITLE} - {POST_TITLE}');
  	add_option('xyz_fbap_po_method', '2');
 	add_option('xyz_fbap_post_permission', '1');
@@ -65,7 +65,7 @@ function fbap_install_free()
 	add_option('xyz_fbap_post_logs', '');
 	add_option('xyz_fbap_premium_version_ads', '1');
 	add_option('xyz_fbap_default_selection_edit', '0');
-	
+	add_option('xyz_fbap_utf_decode_enable', '0');
 }
 
 

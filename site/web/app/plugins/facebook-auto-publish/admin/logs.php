@@ -16,6 +16,7 @@
 					<tr class="xyz_smap_log_tr">
 						<th scope="col" width="1%">&nbsp;</th>
 						<th scope="col" width="12%">Post Id</th>
+						<th scope="col" width="12%">Post Title</th>
 						<th scope="col" width="18%">Published On</th>
 						<th scope="col" width="15%">Status</th>
 					</tr>
@@ -23,14 +24,17 @@
 					<?php 
 					
 					$post_fb_logsmain = get_option('xyz_fbap_post_logs' );
-					
+
+					if(is_array($post_fb_logsmain))
+					{
 					$post_fb_logsmain_array = array();
-					foreach ($post_fb_logsmain as $logkey => $logval)
+           				foreach ($post_fb_logsmain as $logkey => $logval)
 					{
 						$post_fb_logsmain_array[]=$logval;
 						
 					}
-					
+                                        
+                                         					
 					if($post_fb_logsmain=='')
 					{
 						?>
@@ -56,6 +60,9 @@
 								?>
 								<tr>
 									<td>&nbsp;</td>
+									<td  style="vertical-align: middle !important;padding: 5px;">
+									<?php echo $postid;	?>
+									</td>
 									<td  style="vertical-align: middle !important;padding: 5px;">
 									<?php echo get_the_title($postid);	?>
 									</td>
@@ -84,6 +91,7 @@
 								}
 						  }								
 					}
+}
 					?>
 				
            </table>

@@ -31,7 +31,7 @@ function fbap_free_destroy()
 	
 	delete_option('xyz_fbap_application_id');
 	delete_option('xyz_fbap_application_secret');
-	delete_option('xyz_fbap_fb_id');
+	//delete_option('xyz_fbap_fb_id');
 	delete_option('xyz_fbap_message');
 	delete_option('xyz_fbap_po_method');
 	delete_option('xyz_fbap_post_permission');
@@ -51,6 +51,8 @@ function fbap_free_destroy()
 	delete_option('xyz_fbap_post_logs');
 	delete_option('xyz_twap_premium_version_ads');
 	delete_option('xyz_fbap_default_selection_edit');
+	delete_option('xyz_fbap_utf_decode_enable');
+	
 }
 
 register_uninstall_hook(XYZ_FBAP_PLUGIN_FILE,'fbap_free_network_destroy');

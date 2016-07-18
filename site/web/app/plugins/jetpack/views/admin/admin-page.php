@@ -147,14 +147,14 @@
 					?>
 					<?php if ( current_user_can( 'jetpack_manage_modules' ) && $data['is_user_connected'] && ! Jetpack::is_development_mode() ) : ?>
 					<div id="manage-row" class="j-row goto <?php echo ( $manage_active ) ? 'activated' : ''; ?>">
-						<div class="feat j-col j-lrg-7 j-md-8 j-sm-7">
+						<div class="feat j-col <?php echo ( $manage_active ) ? '' : 'j-lrg-7 j-md-8 j-sm-7'; ?>">
 							<a href="<?php echo esc_url( 'https://wordpress.com/plugins/' . $normalized_site_url . '?from=jpnux' ); ?>" class="button button-primary manage-cta-active" target="_blank" style="display: <?php echo ( $manage_active ) ? 'inline-block' : 'none'; ?>;" title="<?php esc_attr_e( 'Go to WordPress.com to try these features', 'jetpack' ); ?>"><?php _e( 'Go to WordPress.com', 'jetpack' ); ?></a>
 							<label for="active-manage" class="button button-primary form-toggle manage-cta-inactive" style="display: <?php echo ( $manage_active ) ? 'none' : 'inline-block'; ?>" title="<?php esc_attr_e( 'Activate free WordPress.com features', 'jetpack' ); ?>"><?php _e( 'Activate features', 'jetpack' ); ?></label>
 						</div>
+						<?php if ( ! $manage_active ) : ?>
 						<div class="act j-col j-lrg-5 j-md-4 j-sm-5">
 							<div class="module-action">
 								<span>
-								<?php $manage_active = Jetpack::is_module_active( 'manage' ); ?>
 								<input class="is-compact form-toggle" type="checkbox" id="active-manage" <?php echo ( $manage_active ) ? 'checked' : ''; ?> />
 									<label class="form-toggle__label" for="active-manage">
 										<img class="module-spinner-manage" style="display: none;" width="16" height="16" src="<?php echo esc_url( includes_url( 'images/spinner-2x.gif' ) ); ?>" alt="Loading ..." />
@@ -166,6 +166,7 @@
 								</span>
 							</div>
 						</div>
+						<?php endif; ?>
 					</div><?php // j-row ?>
 					<?php endif; ?>
 
@@ -185,7 +186,6 @@
 			<?php
 				// Get a list of Jetpack Happiness Engineers.
 				$jetpack_hes = array(
-					'724cd8eaaa1ef46e4c38c4213ee1d8b7',
 					'623f42e878dbd146ddb30ebfafa1375b',
 					'561be467af56cefa58e02782b7ac7510',
 					'd8ad409290a6ae7b60f128a0b9a0c1c5',
@@ -195,10 +195,16 @@
 					'9d4b77080c699629e846d3637b3a661c',
 					'4626de7797aada973c1fb22dfe0e5109',
 					'190cf13c9cd358521085af13615382d5',
-					'0d6982875acab8158ccc8b77aa67251a',
 					'f7006d10e9f7dd7bea89a001a2a2fd59',
 					'16acbc88e7aa65104ed289d736cb9698',
 					'4d5ad4219c6f676ea1e7d40d2e8860e8',
+					'e301f7d01b09e7578fdfc1b1ec1bc08d',
+					'42f4c73f5337486e199f6e3b3910f168',
+					'e7b26de48e76498cff880abca1eed8da',
+					'764fb02aaae2ff64c0625c763d82b74e',
+					'4988305772319fb9bc8fce0a7acb3aa1',
+					'5d8695c4b81592f1255721d2644627ca',
+					'0e2249a7de3404bc6d5207a45e911187',
 				);
 
 				// Get a fallback profile image.

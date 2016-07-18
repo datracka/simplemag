@@ -1,6 +1,6 @@
 <?php 
 
-add_action('publish_post', 'xyz_fbap_link_publish');
+/*add_action('publish_post', 'xyz_fbap_link_publish');
 add_action('publish_page', 'xyz_fbap_link_publish');
 $xyz_fbap_future_to_publish=get_option('xyz_fbap_future_to_publish');
 
@@ -10,16 +10,57 @@ if($xyz_fbap_future_to_publish==1)
 function xyz_link_fbap_future_to_publish($post){
 	$postid =$post->ID;
 	xyz_fbap_link_publish($postid);
+}*/
+//////////////
+add_action(  'transition_post_status',  'xyz_link_fbap_future_to_publish', 10, 3 );
+
+function xyz_link_fbap_future_to_publish($new_status, $old_status, $post){
+	
+	if(!isset($GLOBALS['fbap_dup_publish']))
+		$GLOBALS['fbap_dup_publish']=array();
+	$postid =$post->ID;
+	$get_post_meta=get_post_meta($postid,"xyz_fbap",true);
+	
+	$post_permissin=get_option('xyz_fbap_post_permission');
+	if(isset($_POST['xyz_fbap_post_permission']))
+		$post_permissin=$_POST['xyz_fbap_post_permission'];
+	else 
+	{
+		if ($post_permissin == 1) {
+			if($new_status == 'publish')
+			{
+			if ($get_post_meta == 1 ) {
+					return;
+			}
+			}
+			else return;
+		}	
+	}
+	if($post_permissin == 1)
+	{
+		if($new_status == 'publish')
+		{
+		
+		if(!in_array($postid,$GLOBALS['fbap_dup_publish'])) {
+			
+		  $GLOBALS['fbap_dup_publish'][]=$postid;
+	       xyz_fbap_link_publish($postid);
+	      
+		   }
+	      
+		}
+	}
+	
 }
 
+//////////
 
-
-$xyz_fbap_include_customposttypes=get_option('xyz_fbap_include_customposttypes');
+/*$xyz_fbap_include_customposttypes=get_option('xyz_fbap_include_customposttypes');
 $carr=explode(',', $xyz_fbap_include_customposttypes);
 foreach ($carr  as $cstyps ) {
 	add_action('publish_'.$cstyps, 'xyz_fbap_link_publish');
 
-}
+}*/
 
 function xyz_fbap_link_publish($post_ID) {
 	$_POST_CPY=$_POST;
@@ -30,6 +71,7 @@ function xyz_fbap_link_publish($post_ID) {
 	$post_permissin=get_option('xyz_fbap_post_permission');
 	if(isset($_POST['xyz_fbap_post_permission']))
 		$post_permissin=$_POST['xyz_fbap_post_permission'];
+	
 	
 	if ($post_permissin != 1) {
 		$_POST=$_POST_CPY;
@@ -49,7 +91,7 @@ function xyz_fbap_link_publish($post_ID) {
 		add_post_meta($post_ID, "xyz_fbap", "1");
 
 	global $current_user;
-	get_currentuserinfo();
+	wp_get_current_user();
 	
 	////////////fb///////////
 	$appid=get_option('xyz_fbap_application_id');
@@ -61,7 +103,7 @@ function xyz_fbap_link_publish($post_ID) {
 	if(isset($_POST['xyz_fbap_message']))
 		$message=$_POST['xyz_fbap_message'];
 	
-	$fbid=get_option('xyz_fbap_fb_id');
+	//$fbid=get_option('xyz_fbap_fb_id');
 	
 	$posting_method=get_option('xyz_fbap_po_method');
 	if(isset($_POST['xyz_fbap_po_method']))
@@ -91,7 +133,7 @@ function xyz_fbap_link_publish($post_ID) {
 			}
 		}
 			
-		if($posttype=="post")
+		else if($posttype=="post")
 		{
 			$xyz_fbap_include_posts=get_option('xyz_fbap_include_posts');
 			if($xyz_fbap_include_posts==0)
@@ -121,6 +163,26 @@ function xyz_fbap_link_publish($post_ID) {
 				}
 			}
 		}
+		else
+		{
+					
+			$xyz_fbap_include_customposttypes=get_option('xyz_fbap_include_customposttypes');
+			if($xyz_fbap_include_customposttypes!='')
+			{		
+				$carr=explode(',', $xyz_fbap_include_customposttypes);
+
+				if(!in_array($posttype, $carr))
+				{
+					$_POST=$_POST_CPY;return;
+				}
+	
+			}
+			else
+			{
+				$_POST=$_POST_CPY;return;
+			}
+		
+		}
 
 		include_once ABSPATH.'wp-admin/includes/plugin.php';
 		
@@ -145,10 +207,11 @@ function xyz_fbap_link_publish($post_ID) {
 		$content = $postpp->post_content;
 		if($con_flag==1)
 			$content = apply_filters('the_content', $content);
+		$content = html_entity_decode($content, ENT_QUOTES, get_bloginfo('charset'));
 		$excerpt = $postpp->post_excerpt;
 		if($exc_flag==1)
 			$excerpt = apply_filters('the_excerpt', $excerpt);
-		
+		$excerpt = html_entity_decode($excerpt, ENT_QUOTES, get_bloginfo('charset'));
 		$content = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', "", $content);
 		$excerpt = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', "", $excerpt);
 
@@ -180,16 +243,16 @@ function xyz_fbap_link_publish($post_ID) {
 		
 		$name = $postpp->post_title;
 		$caption = html_entity_decode(get_bloginfo('title'), ENT_QUOTES, get_bloginfo('charset'));
+		//if(get_option('xyz_fbap_utf_decode_enable')==1)
+		//	$caption=utf8_decode($caption);
 		if($tit_flag==1)
-			$name = apply_filters('the_title', $name);
-		
+		$name = apply_filters('the_title', $name);
+		$name = html_entity_decode($name, ENT_QUOTES, get_bloginfo('charset'));
 
 		$name=strip_tags($name);
 		$name=strip_shortcodes($name);
-		
-		$description=strip_tags($description);		
+		$description=strip_tags($description);
 		$description=strip_shortcodes($description);
-	
 	   	$description=str_replace("&nbsp;","",$description);
 	
 		$excerpt=str_replace("&nbsp;","",$excerpt);
@@ -220,7 +283,7 @@ function xyz_fbap_link_publish($post_ID) {
 				}
 
 				$fb=new FBAPFacebook(array(
-						'appId'  => $acces_token,
+						'appId'  => $appid,
 						'secret' => $appsecret,
 						'cookie' => true
 				));
@@ -308,10 +371,18 @@ function xyz_fbap_link_publish($post_ID) {
 					}
 					
 				}
+				if($posting_method==1 || $posting_method==2)
+				{
+					
+						$attachment=xyz_wp_fbap_attachment_metas($attachment,$link);
+				}
 				try{
-				$result = $fb->api('/'.$page_id.'/'.$disp_type.'/', 'post', $attachment);}
+				$result = $fb->api('/'.$page_id.'/'.$disp_type.'/', 'post', $attachment);
+				
+				}
 							catch(Exception $e)
 							{
+								
 								$fb_publish_status[$page_id."/".$disp_type]=$e->getMessage();
 							}
 
@@ -319,7 +390,8 @@ function xyz_fbap_link_publish($post_ID) {
 
 			
 			if(count($fb_publish_status)>0)
-				$fb_publish_status_insert=serialize($fb_publish_status);
+				
+			    $fb_publish_status_insert=serialize($fb_publish_status);
 			else
 				$fb_publish_status_insert=1;
 			
@@ -343,6 +415,7 @@ function xyz_fbap_link_publish($post_ID) {
 			
 			array_shift($update_opt_array);
 			array_push($update_opt_array,$post_fb_options);
+			
 			update_option('xyz_fbap_post_logs', $update_opt_array);
 			
 			
