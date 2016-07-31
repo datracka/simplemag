@@ -48,6 +48,8 @@ Template: simplemag
     transform: none;
 }
 
+/* colaboradores */
+
 /* override mobile view. Brute force! I could not find where the styles are defined :_( */
 
 @media (max-width: 480px) {
@@ -55,5 +57,12 @@ Template: simplemag
         display: block !important;
         float: none !important;
         margin-bottom: 10px;
+    }
+
+}
+@media (max-width: 768px) {
+    .x-container__mobile {
+        padding: 0px 0px !important;
+        margin: 0px !important;
     }
 }

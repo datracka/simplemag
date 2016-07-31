@@ -42,7 +42,7 @@ global $ti_option;
                         </div>
                     </div>
                     <div class="x-container" style="margin: 0px auto; padding: 0px; ">
-                        <div draggable="false" class="x-section " id="x-section-3"  
+                        <div draggable="false" class="x-section x-container__mobile" id="x-section-3"  
                              style="padding: 45px 0px;margin: 0px;">
                             <?php
                             $index = 0;
@@ -54,9 +54,8 @@ global $ti_option;
                                     ) {
                                         if ($index > 0 and $index % 3 == 0) {
                                             echo '</div></div>';
-                                            echo '<div class="x-container" style="margin: 0px auto; padding: 0px; "> ';
-                                            echo '<div draggable="false" class="x-section " id="x-section-3"  
-         style="padding: 45px 0px;margin: 0px;">';
+                                            echo '<div class="x-container" style="margin: 0px auto; padding: 0px;"> ';
+                                            echo '<div draggable="false" class="x-section x-container__mobile" id="x-section-3"  style="padding: 45px 0px;margin: 0px;">';
                                         }
                                         ?><div class="x-column x-sm x-1-3" style="padding: 0px; "><div class="x-author-box cf">
                                             <?php echo get_avatar($user->user_email) ?>
