@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ./download_images laenredadera.io
+# ./download_images.sh laenredadera.io
 echo "compressing files from $1..."
 ssh -i ~/.ssh/dequevalavida_com root@$1 "cd /srv/www/laenredadera.io/current/web/app/uploads && tar -zcf - ." > /Users/vicensfayos/Projects/simplemag.dev/site/web/app/uploads.tar.gz
 
