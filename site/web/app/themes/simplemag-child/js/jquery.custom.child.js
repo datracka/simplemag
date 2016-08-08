@@ -1,8 +1,6 @@
 jQuery(document).ready(function ($) {
 
     "use strict";
-    console.log('localStorage', sessionStorage.getItem(window.location.hostname + '-newsletter'));
-    console.log('length', $('.slide-dock-news').length);
     if ($('.slide-dock-news').length && sessionStorage.getItem(window.location.hostname + '-newsletter') != 'true') {
         var $newsletter = $('.slide-dock-news');
         $('.js-slide-dock-trigger').on('inview', function (event, isInView, visiblePartX, visiblePartY) {
