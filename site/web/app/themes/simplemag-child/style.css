@@ -66,3 +66,30 @@ Template: simplemag
         margin: 0px !important;
     }
 }
+
+/* slide dock */
+.slide-dock-news-on {
+    transform: translate(-330px,0);
+    -webkit-transform: translate(-330px,0);
+    -o-transform: translate(-330px,0);
+    -moz-transform: translate(-330px,0);
+}
+
+.slide-dock-news-off {
+    visibility: hidden;
+    display: none;
+}
+
+.slide-dock-news {
+    position: fixed;
+    bottom: 30px;
+    width: 310px;
+    border: 1px solid #000;
+    z-index: 9999;
+    background-color: white;
+    right: -330px;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
