@@ -11,14 +11,6 @@
 
     <a class="close-dock" href="#" title="Close"><i class="icomoon-close"></i></a>
     <div class="entries">
-
-        <!-- Begin MailChimp Signup Form -->
-        <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-        <style type="text/css">
-            #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-            /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-               We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-        </style>
         <div id="mc_embed_signup">
             <form action="//laenredadera.us1.list-manage.com/subscribe/post?u=15390288374330f417f377e7f&amp;id=2008c2c92c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                 <div id="mc_embed_signup_scroll">

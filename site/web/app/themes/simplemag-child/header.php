@@ -87,7 +87,7 @@
 
     <div class="site-content">
 
-        <header id="masthead" role="banner" class="clearfix js-slide-dock-trigger">
+        <header id="masthead" role="banner" class="clearfix">
 
             <?php
             // Main Logo Area

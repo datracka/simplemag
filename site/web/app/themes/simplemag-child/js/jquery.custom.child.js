@@ -1,9 +1,11 @@
 jQuery(document).ready(function ($) {
 
     "use strict";
-    if ($('.slide-dock-news').length && sessionStorage.getItem(window.location.hostname + '-newsletter') != 'true') {
-        var $newsletter = $('.slide-dock-news');
-        $('.js-slide-dock-trigger').on('inview', function (event, isInView, visiblePartX, visiblePartY) {
+    var $trigger = $('.js-slide-dock-trigger'),
+        $newsletter = $('.slide-dock-news');
+    
+    if ($newsletter.length && sessionStorage.getItem(window.location.hostname + '-newsletter') != 'true') {
+        $trigger.on('inview', function (event, isInView, visiblePartX, visiblePartY) {
             if (isInView) {
                 $newsletter.addClass('slide-dock-news-on');
             } else {
@@ -19,5 +21,4 @@ jQuery(document).ready(function ($) {
         });
 
     }
-
 });// - document ready
