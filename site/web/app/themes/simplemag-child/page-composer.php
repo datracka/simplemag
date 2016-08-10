@@ -167,7 +167,7 @@ get_header(); ?>
     <?php endif; ?>
 
 </section>
-<!--<div class="js-slide-dock-trigger"></div>-->
+<<div class="js-slide-dock-trigger"></div>
 <?php get_footer(); ?>
 <?php
 // Show/Hide random posts slide dock

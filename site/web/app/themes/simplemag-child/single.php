@@ -180,7 +180,7 @@ $single_sidebar = get_post_meta( $post->ID, 'post_sidebar', true );
                        single_posts_nav();
                     }
                     ?>
-                
+
 
                     <?php comments_template(); // Post Comments ?>        
 
@@ -197,7 +197,7 @@ $single_sidebar = get_post_meta( $post->ID, 'post_sidebar', true );
                 
         
             <?php single_schema_markup(); // Rich Snippets Markup ?>
-                
+
                 
         </div><!-- .post -->
             
@@ -205,12 +205,6 @@ $single_sidebar = get_post_meta( $post->ID, 'post_sidebar', true );
 
     </main><!-- #content -->
 
-    <?php
-    // Show/Hide random posts slide dock
-    if ( $ti_option['single_slide_dock'] == 1 ) :
-        //get_template_part( 'inc/slide', 'dock' ); //disabled default slide dock
-        get_template_part( 'inc/slide', 'news' );
-    endif;
-    ?>
-    
+
+
 <?php get_footer(); ?>

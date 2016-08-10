@@ -8,8 +8,6 @@ jQuery(document).ready(function ($) {
         $trigger.on('inview', function (event, isInView, visiblePartX, visiblePartY) {
             if (isInView) {
                 $newsletter.addClass('slide-dock-news-on');
-            } else {
-                $newsletter.removeClass('slide-dock-news-on');
             }
         });
 

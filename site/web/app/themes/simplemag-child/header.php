@@ -11,13 +11,21 @@
 <!--[if (gte IE 9) | !(IE)]><!--><html <?php language_attributes(); ?> class="modern"><!--<![endif]-->
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width, height=device-height"/>
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
+<?php
+// Show/Hide random posts slide dock / news
+global $ti_option;
+if ( $ti_option['single_slide_dock'] == 1 ) :
+    //get_template_part( 'inc/slide', 'dock' ); //disabled default slide dock
+    get_template_part( 'inc/slide', 'news' );
+endif;
+?>
 <section class="no-print top-strip">
 
     <?php global $ti_option; ?>
@@ -71,20 +79,10 @@
     </div><!-- .wrapper -->
 
 </section><!-- .top-strip -->
-
-
 <section id="site">
 
     <?php $mobile_menu = sanitize_html_class( $ti_option['mobile_menu_color'] ); ?>
     <div id="pageslide" class="<?php echo $mobile_menu; ?>"><!-- Sidebar in Mobile View --></div>
-
-    <?php
-    // Show/Hide newsletter form
-    if ( $ti_option['single_slide_dock'] == 1 ):
-        get_template_part( 'inc/slide', 'news' );
-    endif
-    ?>
-
     <div class="site-content">
 
         <header id="masthead" role="banner" class="clearfix">

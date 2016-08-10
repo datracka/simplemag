@@ -8,9 +8,9 @@
                 method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
                 target="_blank" novalidate>
                 <div id="mc_embed_signup_scroll">
-                    <p>Dejanos tu e-mail y nombre y recibirás periódicamente una selección de los relatos de más éxito
-                        en tu buzón. Nada de Spam, prometido. :)</p>
-                    <div class="indicates-required"><span class="asterisk">*</span> obligatorio</div>
+                    <div class="mc-field-group">
+                        <h2><b>¡Apúntate a la newsletter!</b></h2>
+                    </div>
                     <div class="mc-field-group">
                         <label for="mce-EMAIL">Dirección de correo <span class="asterisk">*</span>
                         </label>
