@@ -1,5 +1,41 @@
 # Redux Framework Changelog
 
+## 3.6.1 - WP.org release
+
+## 3.6.0.11
+* Removed   Empty PHP file from editor field.
+* Modified: Replaced class primary function name in browser.php to __construct for PHP7 compatibility.
+
+## 3.6.0.10
+* Fixed:    #3051 - Color_RBGA field RGBA value outputting zeros when color is left blank.
+
+## 3.6.0.9
+* Fixed:    #3048 - Subsection tabs not including specified section class name.
+
+## 3.6.0.8
+* Fixed:    Incorrect string comparison result in admin link check.  Thanks @ksere.
+* Fixed:    Check value exists before validating when used with Metabox extension.  Thanks @Enchiridion
+
+
+## 3.6.0.7
+* Fixed:    Empty values not passing to validation_callback.
+
+
+## 3.6.0.6
+* Fixed:    Javascript error in customizer javascript, preventing save of changed options.
+* Fixed:    #3019 - Section descriptions incorrect when opt_name contains digits.
+
+## 3.6.0.5
+* Reverted: Changes to typography.  The on input variable solution was not working.
+* Fixed:    Support URL has generator was failing with an error.
+
+## 3.6.0.4
+* Changed:  Typography field is now only ONE input variable. Should reduce our 
+            max_input_vars errors dramatically.
+
+## 3.6.0.3
+* Fixed:    Some XSS vulnerabilities only available in the backend when authenticated as a user.
+
 ## 3.6.0.2
 * Fixed:    Customizer.min.js compression issue. Deploy.
 
