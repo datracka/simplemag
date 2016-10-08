@@ -239,6 +239,37 @@ http://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
     box-shadow: none !important;
 }
 
+/** override mailchimp styles */
+
+#mc_embed_signup .button {
+    transform: unset !important;
+    box-shadow: none !important;
+    border: none;
+    border-radius: 2px;
+    background-color: #1E81CC;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'roboto', Arial, sans-serif;
+    font-weight: bold;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 8px;
+    width: auto;
+    font-size: 0.8rem;
+    transition: all .3s ease-in-out 0s;
+}
+
+#mc_embed_signup input[type="submit"] {
+    padding: 8px;
+}
+
+#mc_embed_signup .button:hover {
+
+    -webkit-transform: translateX(0px) !important;
+    transform: unset !important;
+    box-shadow: none !important;
+}
+
 
 /**** fade in subscription popup ****/
 
