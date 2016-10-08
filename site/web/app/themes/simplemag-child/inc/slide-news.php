@@ -1,6 +1,6 @@
 <div class="slide-dock-news">
 
-    <a class="close-dock" href="#" title="Close"><i class="icomoon-close"></i></a>
+    <a class="close-dock close-dock--ltr" href="#" title="Close"><i class="icomoon-close"></i></a>
     <div class="entries">
         <div id="mc_embed_signup">
             <form
