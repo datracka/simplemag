@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-08-08 21:24:47+0000\n"
+"PO-Revision-Date: 2016-08-09 20:12:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,13 +10,53 @@ msgstr ""
 "X-Generator: GlotPress/2.1.0-alpha\n"
 "Project-Id-Version: Stable (latest release)\n"
 
+#: admin/admin.php:257
+msgid "How to correct this?"
+msgstr "¿Cómo corrijo esto?"
+
+#: admin/admin.php:538
+msgid "What's this?"
+msgstr "¿Qué es esto?"
+
 #: includes/config-validator.php:120
 msgid "Multiple form controls are placed inside a single label element."
 msgstr "Múltiples controles del formulario están puestos dentro de un único elemento etiqueta."
 
+#: includes/config-validator.php:200
+msgid "http://contactform7.com/configuration-errors/#form.body:error_multiple_controls_in_label"
+msgstr "http://contactform7.com/configuration-errors/#form.body:error_multiple_controls_in_label"
+
+#: includes/config-validator.php:237
+msgid "http://contactform7.com/configuration-errors/#mail.subject:error_maybe_empty"
+msgstr "http://contactform7.com/configuration-errors/#mail.subject:error_maybe_empty"
+
+#: includes/config-validator.php:249
+msgid "http://contactform7.com/configuration-errors/#mail.sender:error_invalid_syntax"
+msgstr "http://contactform7.com/configuration-errors/#mail.sender:error_invalid_syntax"
+
+#: includes/config-validator.php:253
+msgid "http://contactform7.com/configuration-errors/#mail.sender:error_email_not_in_site_domain"
+msgstr "http://contactform7.com/configuration-errors/#mail.sender:error_email_not_in_site_domain"
+
+#: includes/config-validator.php:265
+msgid "http://contactform7.com/configuration-errors/#mail.recipient:error_invalid_syntax"
+msgstr "http://contactform7.com/configuration-errors/#mail.recipient:error_invalid_syntax"
+
+#: includes/config-validator.php:285 includes/config-validator.php:293
+msgid "http://contactform7.com/configuration-errors/#mail.additional_headers:error_invalid_syntax"
+msgstr "http://contactform7.com/configuration-errors/#mail.additional_headers:error_invalid_syntax"
+
 #: includes/config-validator.php:291
 msgid "The %name% field value is invalid."
 msgstr "El valor del campo %name% no es válido."
+
+#: includes/config-validator.php:305
+msgid "http://contactform7.com/configuration-errors/#mail.body:error_maybe_empty"
+msgstr "http://contactform7.com/configuration-errors/#mail.body:error_maybe_empty"
+
+#: includes/config-validator.php:327
+msgid "http://contactform7.com/configuration-errors/#messages:error_html_in_message"
+msgstr "http://contactform7.com/configuration-errors/#messages:error_html_in_message"
 
 #: admin/admin.php:358
 msgid "FAQ about Configuration Validator"
@@ -178,8 +218,8 @@ msgstr "Por favor, prueba que no eres un robot."
 msgid "CAPTCHA (Really Simple CAPTCHA)"
 msgstr "CAPTCHA (Really Simple CAPTCHA)"
 
-#: modules/recaptcha.php:23 modules/recaptcha.php:184 modules/recaptcha.php:390
-#: modules/recaptcha.php:403 modules/recaptcha.php:413
+#: modules/recaptcha.php:23 modules/recaptcha.php:184 modules/recaptcha.php:401
+#: modules/recaptcha.php:414 modules/recaptcha.php:424
 msgid "reCAPTCHA"
 msgstr "reCAPTCHA"
 
@@ -223,40 +263,40 @@ msgstr "Configurar claves"
 msgid "For more details, see %s."
 msgstr "Para más detalles, véase %s."
 
-#: modules/recaptcha.php:184 modules/recaptcha.php:403
-#: modules/recaptcha.php:413
+#: modules/recaptcha.php:184 modules/recaptcha.php:414
+#: modules/recaptcha.php:424
 msgid "http://contactform7.com/recaptcha/"
 msgstr "http://contactform7.com/recaptcha/"
 
-#: modules/recaptcha.php:403
+#: modules/recaptcha.php:414
 msgid "To use reCAPTCHA, first you need to install an API key pair. For more details, see %s."
 msgstr "Para usar reCAPTCHA, primero tienes que instalar un par de claves de la API. Para más detalles, ver %s."
 
-#: modules/recaptcha.php:411
+#: modules/recaptcha.php:422
 msgid "Generate a form-tag for a reCAPTCHA widget. For more details, see %s."
 msgstr "Generar una etiqueta de formulario para un widget reCAPTCHA. Para más detalles, ver %s."
 
-#: modules/recaptcha.php:423 modules/recaptcha.php:426
+#: modules/recaptcha.php:434 modules/recaptcha.php:437
 msgid "Theme"
 msgstr "Tema"
 
-#: modules/recaptcha.php:427
+#: modules/recaptcha.php:438
 msgid "Light"
 msgstr "Claro"
 
-#: modules/recaptcha.php:429
+#: modules/recaptcha.php:440
 msgid "Dark"
 msgstr "Oscuro"
 
-#: modules/recaptcha.php:435 modules/recaptcha.php:438
+#: modules/recaptcha.php:446 modules/recaptcha.php:449
 msgid "Size"
 msgstr "Tamaño"
 
-#: modules/recaptcha.php:439
+#: modules/recaptcha.php:450
 msgid "Normal"
 msgstr "Normal"
 
-#: modules/recaptcha.php:441
+#: modules/recaptcha.php:452
 msgid "Compact"
 msgstr "Compacto"
 
@@ -497,7 +537,7 @@ msgstr "Hacer que funcione a la inversa"
 #: modules/acceptance.php:166 modules/checkbox.php:330 modules/date.php:198
 #: modules/file.php:268 modules/number.php:206 modules/quiz.php:200
 #: modules/really-simple-captcha.php:251 modules/really-simple-captcha.php:266
-#: modules/recaptcha.php:447 modules/select.php:206 modules/submit.php:71
+#: modules/recaptcha.php:458 modules/select.php:206 modules/submit.php:71
 #: modules/text.php:288 modules/textarea.php:171
 msgid "Id attribute"
 msgstr "Atributo de ID"
@@ -505,14 +545,14 @@ msgstr "Atributo de ID"
 #: modules/acceptance.php:171 modules/checkbox.php:335 modules/date.php:203
 #: modules/file.php:273 modules/number.php:211 modules/quiz.php:205
 #: modules/really-simple-captcha.php:256 modules/really-simple-captcha.php:271
-#: modules/recaptcha.php:452 modules/select.php:211 modules/submit.php:76
+#: modules/recaptcha.php:463 modules/select.php:211 modules/submit.php:76
 #: modules/text.php:293 modules/textarea.php:176
 msgid "Class attribute"
 msgstr "Atributo de clase"
 
 #: modules/acceptance.php:184 modules/checkbox.php:348 modules/date.php:215
 #: modules/file.php:286 modules/number.php:223 modules/quiz.php:218
-#: modules/really-simple-captcha.php:283 modules/recaptcha.php:465
+#: modules/really-simple-captcha.php:283 modules/recaptcha.php:476
 #: modules/select.php:224 modules/submit.php:89 modules/text.php:306
 #: modules/textarea.php:189
 msgid "Insert Tag"
@@ -916,7 +956,7 @@ msgstr "Takayuki Miyoshi"
 msgid "http://ideasilo.wordpress.com/"
 msgstr "http://ideasilo.wordpress.com/"
 
-#. #-#-#-#-#  tmp-contact-form-7.pot (Contact Form 7 4.5)  #-#-#-#-#
+#. #-#-#-#-#  tmp-contact-form-7.pot (Contact Form 7 4.5.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: admin/admin.php:21 modules/flamingo.php:137
 msgid "Contact Form 7"
