@@ -1,6 +1,6 @@
 <div class="slide-dock-news">
 
-    <a class="close-dock" href="#" title="Close"><i class="icomoon-close"></i></a>
+    <a class="close-dock close-dock--ltr" href="#" title="Close"><i class="icomoon-close"></i></a>
     <div class="entries">
         <div id="mc_embed_signup">
             <form
@@ -9,7 +9,7 @@
                 target="_blank" novalidate>
                 <div id="mc_embed_signup_scroll">
                     <div class="mc-field-group">
-                        <h2><b>¡Apúntate a la newsletter!</b></h2>
+                        <h2><b>¡Apúntate a nuestra newsletter y podrás descargar un eBook gratuito con teoría para mejorar tu escritura!</b></h2>
                     </div>
                     <div class="mc-field-group">
                         <label for="mce-EMAIL">Dirección de correo <span class="asterisk">*</span>
@@ -30,7 +30,7 @@
                                                                                               tabindex="-1" value="">
                     </div>
                     <div class="clear"><input type="submit" value="Enviar" name="Subscribe" id="mc-embedded-subscribe"
-                                              class="button"></div>
+                                              class="button vf-subscribe-button-rtl"></div>
                 </div>
             </form>
         </div>

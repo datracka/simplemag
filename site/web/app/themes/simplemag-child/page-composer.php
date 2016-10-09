@@ -6,7 +6,25 @@
  * @since    SimpleMag 1.1
  **/
 get_header(); ?>
+
 <section id="content" role="main" class="clearfix anmtd">
+    <section class="wrapper home-section vf-hello-bar">
+
+        <div class="vf-parent">
+            <div class="vf-child vf-child--one">
+                <h3 class="vf-child__header">¿Quieres mejorar la forma como escribes y poder plasmar de mejor forma
+                    todas esas ideas que corren
+                    por tu cabeza?</h3>
+                <p class="vf-child__text">La Enredadera te ofrece un eBook gratuito con teoría para mejorar tu
+                    escritura.</p>
+            </div>
+            <div class="vf-child vf-child--two">
+                <a href="#vf-light-box" class="vf-button--leads vf-js-open-modal" style="display: inline-block">
+                    <span style="display: inline-block;">Descarga GRATIS el ebook</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <?php
     /**
@@ -167,7 +185,47 @@ get_header(); ?>
     <?php endif; ?>
 
 </section>
-<<div class="js-slide-dock-trigger"></div>
+<div href="#_" class="vf-light-box vf-light-box--fade-in" id="vf-light-box">
+    <div class="vf-light-box-wrapper">
+        <div class="vf-light-form">
+            <a class="vf-close-dock-light-box vf-close-dock--rtl" href="#" title="Close">
+                <i class="icomoon-close vf-close-dock-light-box__icon"></i></a>
+            <form
+                action="//laenredadera.us1.list-manage.com/subscribe/post?u=15390288374330f417f377e7f&amp;id=2008c2c92c"
+                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                    <div class="mc-field-group">
+                        <h2><b>Déjanos tus datos y recibirás un e-mail con un link para descargarte el eBook </b></h2>
+                    </div>
+                    <div class="mc-field-group vf-light-form__group-form--align-left">
+                        <label for="mce-EMAIL">Dirección de correo <span class="asterisk">*</span>
+                        </label>
+                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                    </div>
+                    <div class="mc-field-group vf-light-form__group-form--align-left">
+                        <label for="mce-FNAME">Nombre </label>
+                        <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                    </div>
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                                                                              name="b_15390288374330f417f377e7f_2008c2c92c"
+                                                                                              tabindex="-1" value="">
+                    </div>
+                    <div class="clear">
+                        <input type="submit" value="Enviar" name="Subscribe" id="mc-embedded-subscribe"
+                               class="button vf-subscribe-button-rtl">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--<div class="js-slide-dock-trigger"></div>-->
 <?php get_footer(); ?>
 <?php
 // Show/Hide random posts slide dock
