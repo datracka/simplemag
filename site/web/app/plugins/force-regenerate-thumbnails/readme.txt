@@ -27,6 +27,9 @@ See the [screenshots tab](http://wordpress.org/extend/plugins/force-regenerate-t
 
 == ChangeLog ==
 
+= 2.0.6 =
+* Add PHP7 compatibility
+
 = 2.0.5 =
 * No timeout limit
 

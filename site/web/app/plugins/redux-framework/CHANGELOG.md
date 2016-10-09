@@ -1,9 +1,21 @@
 # Redux Framework Changelog
 
+## 3.6.2
+* WP.org release and cleanup
+
+## 3.6.1.3
+* Fixed:   #3105 - link_color output failing due to PHP error.
+
+## 3.6.1.2
+* Fixed:   #3103 - WP 4.6 forces new default date format, breaking date validation.
+
+## 3.6.1.1
+* Fixed:   Typography subsets error due to typo.
+
 ## 3.6.1 - WP.org release
 
 ## 3.6.0.11
-* Removed   Empty PHP file from editor field.
+* Removed:  Empty PHP file from editor field.
 * Modified: Replaced class primary function name in browser.php to __construct for PHP7 compatibility.
 
 ## 3.6.0.10
