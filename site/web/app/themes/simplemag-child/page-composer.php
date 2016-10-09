@@ -188,7 +188,8 @@ get_header(); ?>
 <div href="#_" class="vf-light-box vf-light-box--fade-in" id="vf-light-box">
     <div class="vf-light-box-wrapper">
         <div class="vf-light-form">
-            <a class="close-dock close-dock--rtl" href="#" title="Close"><i class="icomoon-close"></i></a>
+            <a class="vf-close-dock-light-box vf-close-dock--rtl" href="#" title="Close">
+                <i class="icomoon-close vf-close-dock-light-box__icon"></i></a>
             <form
                 action="//laenredadera.us1.list-manage.com/subscribe/post?u=15390288374330f417f377e7f&amp;id=2008c2c92c"
                 method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
@@ -224,7 +225,7 @@ get_header(); ?>
         </div>
     </div>
 </div>
-<div class="js-slide-dock-trigger"></div>
+<!--<div class="js-slide-dock-trigger"></div>-->
 <?php get_footer(); ?>
 <?php
 // Show/Hide random posts slide dock
