@@ -15,7 +15,7 @@ get_header(); ?>
                 <h3 class="vf-child__header">¿Quieres mejorar la forma como escribes y poder plasmar de mejor forma
                     todas esas ideas que corren
                     por tu cabeza?</h3>
-                <p class="vf-child__text">La Enredadera te ofrece un eBook gratuito con teoría para mejorar tu
+                <p class="vf-child__text">La Enredadera te ofrece un PDF gratuito con teoría para mejorar tu
                     escritura.</p>
             </div>
             <div class="vf-child vf-child--two">
