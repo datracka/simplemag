@@ -10,6 +10,13 @@
 <!--[if lt IE 9]><html <?php language_attributes(); ?> class="oldie"><![endif]-->
 <!--[if (gte IE 9) | !(IE)]><!--><html <?php language_attributes(); ?> class="modern"><!--<![endif]-->
 <head>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-7970702492501203",
+            enable_page_level_ads: true
+        });
+    </script>
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width, height=device-height"/>
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
