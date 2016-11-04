@@ -334,9 +334,23 @@ http://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
 
 /** end fade in */
 
+
+/** google adsense header. By default  */
+
+.ad-block__laptop {
+    display:block;
+}
+.ad-block__ipad {
+    display: none;
+}
+.ad-block__mobile {
+    display: none;
+}
+
+
 /** media queries **/
 
-
+/* ipad - smaller as 768px */
 @media (max-width: 768px){
     .vf-child--one {
         width: 100%;
@@ -351,14 +365,35 @@ http://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
         margin-top: 80px;
     }
 
+    .ad-block__laptop {
+        display:none;
+    }
+    .ad-block__ipad {
+        display: block;
+    }
+    .ad-block__mobile {
+        display: none;
+    }
+
 
 }
 
+/* mobile - smaller as 320px */
 @media (min-width: 320px) and (max-width: 480px)  {
     .vf-light-form {
         max-width: 320px;
         width: 320px;
         padding: 20px;
+    }
+
+    .ad-block__laptop {
+        display:none;
+    }
+    .ad-block__ipad {
+        display: none;
+    }
+    .ad-block__mobile {
+        display: block;
     }
 }
 
@@ -385,6 +420,9 @@ http://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
     }
 
 }
+
+
+
 
 
 
