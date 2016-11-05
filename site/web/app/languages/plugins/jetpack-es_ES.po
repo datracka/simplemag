@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Jetpack by WordPress.com - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-10-13 20:27:57+0000\n"
+"PO-Revision-Date: 2016-11-02 17:00:47+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,6 +22,46 @@ msgstr "Hubo un error al acceder vía WordPress.com. Por favor, prueba de nuevo 
 #: modules/sso.php:1025
 msgid "Logging in with WordPress.com is not currently available because this site is experiencing connection problems."
 msgstr "El acceso mediante WordPres.com no está disponible en este momento debido a que este sitio está experimentando problemas de conexión."
+
+#: _inc/jetpack-strings.php:403
+msgid "Search your content."
+msgstr "Busca en tu contenido."
+
+#: _inc/jetpack-strings.php:385
+msgid "{{a}}Manage Likes visibility from the Sharing Module Settings{{/a}}"
+msgstr "{{a}}Administra la visibilidad de los Me gusta desde los ajustes del módulo de Compartir{{/a}}"
+
+#: _inc/jetpack-strings.php:375
+msgid "Hide the stats smiley face image. The image helps collect stats but should still work when hidden."
+msgstr "Se ocultó la imagen de la cara sonriente de las estadísticas. La imagen ayuda a recoger las estadísticas pero debería funcionar cuando se oculta."
+
+#: _inc/jetpack-strings.php:372
+msgid "Your Current IP: %(ip)s"
+msgstr "Tu IP actual: %(ip)s"
+
+#: _inc/jetpack-strings.php:370
+msgid "Whitelisting an IP address prevents it from ever being blocked by Jetpack."
+msgstr "Poner en la lista blanca una dirección IP evita que sea bloqueado por Jetpack cada vez que se accede."
+
+#: _inc/jetpack-strings.php:368
+msgid "IPv4 and IPv6 are acceptable. {{br/}} To specify a range, enter the low value and high value separated by a dash. Example: 12.12.12.1-12.12.12.100"
+msgstr "IPv4 y IPv6 son aceptables. {{br/}} Para especificar un rango, introduzca el valor bajo y el valor alto separado por un guión. Ejemplo: 12.12.12.1-12.12.12.100"
+
+#: _inc/jetpack-strings.php:341
+msgid "Link your account to WordPress.com to start using this feature."
+msgstr "Vincula tu cuenta de WordPress.com para empezar a utilizar esta función."
+
+#: _inc/jetpack-strings.php:238
+msgid "This will reset all Jetpack options, are you sure?"
+msgstr "Esto restablecerá todas las opciones de Jetpack, ¿estás seguro?"
+
+#: _inc/jetpack-strings.php:197
+msgid "{{button}}View More Stats on WordPress.com {{/button}}"
+msgstr "{{button}}Ver más estadísticas en WordPress.com {{/button}}"
+
+#: _inc/jetpack-strings.php:37
+msgid "There are unsaved settings in this tab that will be lost if you leave it. Proceed?"
+msgstr "Hay ajustes sin guardar en esta pestaña que se perderán si la dejas. ¿Quieres proceder?"
 
 #: _inc/lib/class.core-rest-api-endpoints.php:279
 msgid "Invalid parameter \"dismissed\"."
@@ -1003,6 +1043,10 @@ msgstr "Promos para móvil"
 msgid "Show a promo for the WordPress mobile apps in the footer of the mobile theme"
 msgstr "Muestra una promo de las aplicaciones de WordPress para móviles en el pie de la versión móvil del tema."
 
+#: _inc/jetpack-strings.php:352
+msgid "Enter your meta key \"content\" value to verify your blog with {{a}}Google Search Console{{/a}}, {{a1}}Bing Webmaster Center{{/a1}} and {{a2}}Pinterest Site Verification{{/a2}}."
+msgstr "Introduce el valor de tu clave meta \"content\" para verificar tu sitio con {{a}}Google Search Console{{/a}}, {{a}}Bing Webmaster Center{{/a}} y {{a}}Pinterest Site Verification{{/a}}."
+
 #: _inc/jetpack-strings.php:349 _inc/jetpack-strings.php:350
 #: _inc/jetpack-strings.php:351
 msgid "Meta key example: "
@@ -1144,6 +1188,10 @@ msgstr "Estás completo de combustible y listo para ir."
 #: _inc/jetpack-strings.php:286
 msgid "You are currently running a development version of Jetpack."
 msgstr "En este momento estás ejecutando una versión de desarrollo de Jetpack."
+
+#: _inc/jetpack-strings.php:285
+msgid "Submit Beta feedback"
+msgstr "Envía tus sugerencias"
 
 #: _inc/jetpack-strings.php:284
 msgid "You are running Jetpack on a {{a}}staging server{{/a}}."
@@ -1376,6 +1424,10 @@ msgstr "Visitas de todo el periodo"
 #: _inc/jetpack-strings.php:200
 msgid "All-time comments"
 msgstr "Todos los comentarios"
+
+#: _inc/jetpack-strings.php:198
+msgid "{{button}}View Old Stats{{/button}}"
+msgstr "{{button}}Ver más estadísticas{{/button}}"
 
 #: _inc/jetpack-strings.php:193
 msgid "Automated, comprehensive protection from threats and attacks."
@@ -1678,6 +1730,10 @@ msgstr "La inspitación te llega en cualquier momento, en cualquier parte."
 msgid "Get WordPress apps for any screen."
 msgstr "Obtener aplicaciones de WordPress para cualquier pantalla."
 
+#: _inc/jetpack-strings.php:51
+msgid "In Your Pocket"
+msgstr "En tu bolsillo"
+
 #: _inc/jetpack-strings.php:50
 msgid "Publish content, track stats, moderate comments and so much more from anywhere in the world. Our mobile apps are open source, free and available to you on Apple or Android devices."
 msgstr "Publicar contenidos, consultar estadísticas, moderar comentarios y muchas más cosas desde cualquier lugar del mundo. Nuestras aplicaciones móviles son de cófigo abierto, gratuitas y disponibles para ti en dispositivos Apple o Android."
@@ -1689,6 +1745,10 @@ msgstr "WordPress.com en la App Store"
 #: _inc/jetpack-strings.php:48
 msgid "WordPress.com in Google Play"
 msgstr "WordPress.com en Google Play"
+
+#: _inc/jetpack-strings.php:47
+msgid "On Your Desktop"
+msgstr "En tu escritorio"
 
 #: _inc/jetpack-strings.php:46
 msgid "A desktop app that gives WordPress a permanent home on your computer. Not to mention the distraction free environment you get writing outside of a web browser."
@@ -1800,6 +1860,10 @@ msgstr "{{a}}Activa Gestionar{{/a}} para activar las actualizaciones automática
 msgid "Image Performance %(photon)s"
 msgstr "Rendimiento de imagen %(photon)s"
 
+#: _inc/jetpack-strings.php:105
+msgid "Jetpack is improving and optimizing your image speed."
+msgstr "Jeptack está mejorando y optimizando la velocidad de tus imágenes."
+
 #: _inc/jetpack-strings.php:103
 msgid "{{a}}Activate Photon{{/a}} to enhance the performance and speed of your images."
 msgstr "{{a}}Activar Photon{{/a}} para mejorar el rendimiento y velocidad de carga de tus imágenes."
@@ -1908,6 +1972,10 @@ msgstr "Activando funcionalidades recomendadas..."
 msgid "Recommended features active."
 msgstr "Funcionalidades de recomendación activas."
 
+#: _inc/jetpack-strings.php:22
+msgid "Recommended features failed to activate. %(error)s"
+msgstr "No se pudieron activar las funcionalidades recomendadas. %(error)s"
+
 #: _inc/jetpack-strings.php:36
 msgid "Activating %(slug)s…"
 msgstr "Activando %(slug)s…"
@@ -1928,6 +1996,10 @@ msgstr "Desactivando %(slug)s…"
 msgid "%(slug)s has been deactivated."
 msgstr "%(slug)s ha sido desactivado."
 
+#: _inc/jetpack-strings.php:31
+msgid "%(slug)s failed to deactivate. %(error)s"
+msgstr "%(slug)s no se desactivaron. %(error)s"
+
 #: _inc/jetpack-strings.php:30
 msgid "Updating %(slug)s settings…"
 msgstr "Actualizando %(slug)s ajustes…"
@@ -1947,6 +2019,10 @@ msgstr "Actualizando la dirección %(slug)s…"
 #: _inc/jetpack-strings.php:26
 msgid "Regenerated %(slug)s address ."
 msgstr "Regenerar %(slug)s direcciones."
+
+#: _inc/jetpack-strings.php:25
+msgid "Error regenerating %(slug)s address. %(error)s"
+msgstr "Error regenerando la dirección %(slug). %(error)s"
 
 #: _inc/jetpack-strings.php:21
 msgid "Resetting Jetpack options…"
