@@ -335,7 +335,7 @@ http://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
 /** end fade in */
 
 
-/** google adsense header. By default  */
+/** google adsense header. By default. Laptop  */
 
 .ad-block__laptop {
     display:block;
@@ -347,6 +347,9 @@ http://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
     display: none;
 }
 
+.logo {
+    float:right;
+}
 
 /** media queries **/
 
@@ -373,6 +376,11 @@ http://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
     }
     .ad-block__mobile {
         display: none;
+    }
+
+    /* overrides in waterfall smaller devices */
+    .logo {
+        float:none;
     }
 
 
